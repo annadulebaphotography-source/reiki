@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Angebot – Reiki Karlsruhe & Umgebung</title>
+  <meta name="description" content="Reiki in Karlsruhe & Umgebung: ruhige, begleitende Sitzungen für innere Balance, Stressregulation und Klarheit. Dauer ca. 60 Min. Kosten 80–100 €." />
+
+  <style>
+    :root{
+      --bg:#f6f2ea;
+      --card:#ffffff;
+      --card2:#fbf8f2;
+      --text:#1b1b1b;
+      --muted:#5e5a52;
+      --line:rgba(20,20,20,.10);
+      --accent:#b79a63;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:12px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
+
+    /* Topbar */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:18px;
+      padding:10px 0 18px;
+      border-bottom:1px solid var(--line);
+    }
+    .brand{display:flex; flex-direction:column; gap:4px;}
+    .brand strong{font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+    .brand span{font-size:13px; color:var(--muted)}
+
+    .nav{
+      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+      font-size:14px;
+    }
+    .nav a{
+      text-decoration:none;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    .nav a:hover{background:rgba(255,255,255,.6); color:var(--text)}
+    .nav .cta{
+      background:var(--accent);
+      color:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+    .nav .cta:hover{opacity:.92}
+
+    .nav .active{
+      background:rgba(255,255,255,.65);
+      color:var(--text);
+      border:1px solid var(--line);
+    }
+
+    .lang{display:flex; gap:10px; align-items:center; font-size:13px; color:var(--muted);}
+    .lang .pill{
+      border:1px solid var(--line);
+      padding:8px 10px; border-radius:999px;
+      background:rgba(255,255,255,.75);
+      color:var(--text);
+      user-select:none;
+    }
+    .lang .pill.muted{opacity:.75; cursor:default;}
+
+    /* Mobile burger (optional, działa jeśli już masz to na index) */
+    #menu-toggle{display:none;}
+    .burger{display:none;}
+
+    /* Page layout */
+    .page{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .page{grid-template-columns: 1fr;}
+    }
+
+    .panel{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .aside{
+      display:grid;
+      gap:14px;
+    }
+    .note{
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:16px;
+    }
+    .kicker{
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size:34px;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    h2{
+      margin:22px 0 10px;
+      font-size:18px;
+      letter-spacing:.02em;
+    }
+    p{margin:10px 0; color:var(--muted); font-size:15px}
+    .lead{
+      margin:10px 0 0;
+      color:var(--text);
+      font-size:15px;
+    }
+
+    ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    li{margin:6px 0;}
+
+    .price{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:10px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:var(--card2);
+      color:var(--text);
+      font-weight:700;
+      font-size:14px;
+      white-space:nowrap;
+    }
+    .badge small{
+      font-weight:600;
+      color:var(--muted);
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.95);
+      text-decoration:none;
+      font-weight:800;
+      color:var(--text);
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background:var(--accent);
+      color:#fff;
+      border-color:rgba(0,0,0,.08);
+    }
+    .btn:hover{transform: translateY(-1px);}
+    .btn:active{transform: translateY(0);}
+
+    /* FAQ */
+    .faq{
+      margin-top:24px;
+      display:grid;
+      gap:10px;
+    }
+    details{
+      background:var(--card2);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      color:var(--text);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none;}
+    details p{
+      margin:10px 0 0;
+      color:var(--muted);
+    }
+
+    footer{
+      margin-top:34px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+    }
+
+    /* Mobile cleanup */
+    @media (max-width: 900px){
+      .topbar{align-items:flex-start}
+      h1{font-size:28px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <strong>Reiki</strong>
+        <span>Innere Balance • bewusste Veränderung</span>
+      </div>
+
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html">Start</a>
+        <a href="worum.html">Worum es geht</a>
+        <a class="active" href="angebot.html">Angebot</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a class="cta" href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="lang" aria-label="Sprachauswahl">
+        <span class="pill">DE</span>
+        <span class="pill muted" title="Bald verfügbar">PL/EN</span>
+      </div>
+    </div>
+
+    <main class="page">
+      <!-- MAIN -->
+      <section class="panel" aria-label="Angebot">
+        <span class="kicker">Angebot</span>
+        <h1>Reiki – begleitende Sitzungen für innere Balance</h1>
+        <p class="sub"><strong>in Karlsruhe &amp; Umgebung</strong></p>
+
+        <p class="lead">
+          Reiki verstehe ich nicht als Technik, sondern als ruhige, bewusste Begleitung.
+          Im Mittelpunkt steht nicht „Behandlung“, sondern Wahrnehmung, Regulation und innere Klarheit.
+        </p>
+
+        <p>
+          Meine Reiki-Arbeit richtet sich an Menschen aus <strong>Karlsruhe und Umgebung</strong>,
+          die im Alltag viel tragen, funktionieren – und wieder bei sich ankommen möchten.
+        </p>
+
+        <h2>Was dich erwartet</h2>
+        <ul>
+          <li>ein geschützter, ruhiger Raum</li>
+          <li>achtsame Präsenz ohne Bewertung</li>
+          <li>Zeit zum Ankommen, Nachspüren und Innehalten</li>
+          <li>Unterstützung bei innerer Unruhe, Stress und emotionaler Überforderung</li>
+          <li>mehr Klarheit im Umgang mit Grenzen, Beziehungen und Verantwortung</li>
+        </ul>
+
+        <p>
+          Reiki kann helfen, innere Prozesse bewusst wahrzunehmen und zu ordnen.
+          Nicht, indem etwas „repariert“ wird – sondern indem <strong>Stabilität entsteht</strong>.
+        </p>
+
+        <h2>Für wen Reiki sinnvoll sein kann</h2>
+        <ul>
+          <li>bei innerer Unruhe, Anspannung oder Erschöpfung</li>
+          <li>wenn Gedanken nicht zur Ruhe kommen</li>
+          <li>bei stressigen Lebensphasen oder emotionalen Umbrüchen</li>
+          <li>für Eltern, die wieder klarer und ruhiger präsent sein möchten</li>
+          <li>für Menschen aus Karlsruhe und Umgebung, die bewusst mit sich arbeiten wollen</li>
+        </ul>
+
+        <p><strong>Reiki ist kein schneller Ausweg, sondern ein ehrlicher, ruhiger Prozess.</strong></p>
+
+        <h2>Ablauf &amp; Rahmen</h2>
+        <ul>
+          <li>Einzeltermine nach Vereinbarung</li>
+          <li>Dauer einer Sitzung: ca. 60 Minuten</li>
+          <li>Ort: ruhige, geschützte Umgebung (Karlsruhe &amp; Umgebung)</li>
+          <li>kurzes Vorgespräch + Zeit zum Nachspüren</li>
+        </ul>
+
+        <p>
+          Es gibt keinen festen Ablauf. Jede Sitzung orientiert sich an dem, was gerade da ist.
+        </p>
+
+        <h2>Kosten</h2>
+        <div class="price">
+          <div class="badge">
+            80 – 100 €
+            <small> / ca. 60 Minuten</small>
+          </div>
+          <div class="badge">
+            <small>Rahmen:</small> nach Dauer &amp; individuellem Setting
+          </div>
+        </div>
+        <p>
+          Wenn du unsicher bist, ob Reiki für dich passend ist, kannst du mich gerne vorab kontaktieren.
+        </p>
+
+        <h2>Wichtiger Hinweis</h2>
+        <p>
+          Reiki ersetzt keine medizinische, psychologische oder therapeutische Behandlung.
+          Es versteht sich als <strong>begleitende Methode</strong>, die Selbstwahrnehmung und innere Balance unterstützen kann.
+        </p>
+
+        <h2>FAQ</h2>
+        <div class="faq" aria-label="FAQ">
+          <details>
+            <summary>Was ist Reiki – und was ist es nicht?</summary>
+            <p>
+              Reiki ist für mich eine ruhige, achtsame Begleitung. Es geht nicht um „Wunder“ oder schnelle Lösungen,
+              sondern um Wahrnehmung, Regulation und Klarheit. Es ersetzt keine Diagnose oder Therapie.
+            </p>
+          </details>
+
+          <details>
+            <summary>Wie läuft eine Reiki-Sitzung ab?</summary>
+            <p>
+              Wir starten mit einem kurzen Vorgespräch. Danach folgt eine ruhige Phase zum Ankommen und Nachspüren.
+              Es gibt keinen starren Ablauf – die Sitzung orientiert sich an dem, was im Moment da ist.
+            </p>
+          </details>
+
+          <details>
+            <summary>Muss ich an etwas glauben, damit es wirkt?</summary>
+            <p>
+              Nein. Du musst an nichts „glauben“. Wichtig ist nur, dass du dir Zeit gibst und offen beobachtest,
+              was du wahrnimmst – körperlich, emotional, gedanklich.
+            </p>
+          </details>
+
+          <details>
+            <summary>Wo findet die Sitzung statt?</summary>
+            <p>
+              In einer ruhigen, geschützten Umgebung in <strong>Karlsruhe &amp; Umgebung</strong>.
+              Details klären wir individuell bei der Terminvereinbarung.
+            </p>
+          </details>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="kontakt.html">Kontakt aufnehmen</a>
+          <a class="btn" href="worum.html">Worum es geht</a>
+        </div>
+      </section>
+
+      <!-- ASIDE -->
+      <aside class="aside" aria-label="Kurzinfos">
+        <div class="note">
+          <span class="kicker">Kurz &amp; klar</span>
+          <p style="margin:0; color:var(--muted);">
+            <strong>Reiki Karlsruhe</strong> – für Menschen, die innerlich ruhiger werden,
+            klarer reagieren und wieder stabiler im Alltag stehen möchten.
+          </p>
+        </div>
+
+        <div class="note">
+          <span class="kicker">Rahmen</span>
+          <p style="margin:0; color:var(--muted);">
+            Ca. 60 Minuten · Einzeltermine · Karlsruhe &amp; Umgebung · 80–100 €
+          </p>
+        </div>
+
+        <div class="note">
+          <span class="kicker">Hinweis</span>
+          <p style="margin:0; color:var(--muted);">
+            Begleitend – kein Ersatz für ärztliche/therapeutische Behandlung.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="y"></span> • Reiki • Klarheit, Balance, bewusste Veränderung
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
