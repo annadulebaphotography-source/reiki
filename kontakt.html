@@ -29,23 +29,7 @@
     h1{margin:0 0 10px; font-size:34px}
     p{margin:0 0 14px; color:var(--muted); font-size:16px}
 
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px; border-radius:12px;
-      background:var(--accent); color:#fff; font-weight:700;
-      border:1px solid rgba(0,0,0,.08);
-      cursor:pointer;
-    }
-    .btn:hover{filter:brightness(.98)}
-    .btn.secondary{
-      background:transparent;
-      color:var(--text) !important;
-      border:1px solid var(--line);
-      font-weight:600;
-    }
-    .btn.secondary:hover{background:rgba(183,154,99,.10)}
-
-    /* Formularz (spójny z Twoim UI) */
+    /* Formularz */
     .grid{display:grid; gap:14px; margin-top:16px;}
     @media (min-width: 720px){
       .grid.two{grid-template-columns: 1fr 1fr;}
@@ -73,23 +57,30 @@
       box-shadow: 0 0 0 4px rgba(183,154,99,.18);
       background:#fff;
     }
-    .form-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:12px;
+      background:var(--accent); color:#fff; font-weight:700;
+      border:1px solid rgba(0,0,0,.08);
+      cursor:pointer;
+    }
+    .btn:hover{filter:brightness(.98)}
+    .form-actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:14px;}
+    .smallnote{font-size:12.5px; color:var(--muted); margin-top:10px;}
+    .divider{height:1px; background:var(--line); margin:18px 0;}
+
+    /* komunikaty */
+    .notice{
       margin-top:14px;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(183,154,99,.10);
+      color:var(--text);
+      display:none;
     }
-    .smallnote{
-      font-size:12.5px;
-      color:var(--muted);
-      margin-top:10px;
-    }
-    .divider{
-      height:1px;
-      background:var(--line);
-      margin:18px 0;
-    }
+    .notice.show{display:block}
+    .notice.error{background:rgba(180,60,60,.10)}
   </style>
 </head>
 
@@ -113,8 +104,8 @@
       <h1>Kontakt</h1>
       <p>Schreib mir kurz, worum es für dich geht und was du dir wünschst. Ich antworte dir in Ruhe.</p>
 
-      <!-- Formularz Formspree -->
-      <form action="https://formspree.io/f/mojeyvej" method="POST">
+      <!-- Formspree (wysyła do Ciebie, klient nie otwiera poczty) -->
+      <form id="contactForm" action="https://formspree.io/f/mojeyvej" method="POST">
         <div class="grid two">
           <div class="field">
             <label for="name">Name</label>
@@ -135,13 +126,22 @@
           </div>
         </div>
 
+        <!-- optional: temat w mailu do Ciebie -->
+        <input type="hidden" name="_subject" value="Neue Kontaktanfrage – Reiki">
+
         <div class="form-actions">
           <button class="btn" type="submit">Nachricht senden</button>
-          <a class="btn secondary" href="mailto:annaduleba.reiki@gmail.com">Lieber per E-Mail</a>
         </div>
 
         <div class="smallnote">
           Mit dem Absenden erklärst du dich einverstanden, dass ich deine Angaben zur Bearbeitung deiner Anfrage verwende.
+        </div>
+
+        <div id="successMsg" class="notice">
+          Danke! Deine Nachricht ist angekommen. Ich melde mich in Ruhe bei dir zurück.
+        </div>
+        <div id="errorMsg" class="notice error">
+          Ups – das hat gerade nicht geklappt. Bitte versuche es erneut oder lade die Seite neu.
         </div>
       </form>
 
@@ -152,5 +152,36 @@
       </p>
     </main>
   </div>
+
+  <script>
+    // Wysyłka bez przeładowania strony + ładny komunikat
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMsg');
+    const errorMsg = document.getElementById('errorMsg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successMsg.classList.remove('show');
+      errorMsg.classList.remove('show');
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.reset();
+          successMsg.classList.add('show');
+        } else {
+          errorMsg.classList.add('show');
+        }
+      } catch (err) {
+        errorMsg.classList.add('show');
+      }
+    });
+  </script>
 </body>
 </html>
