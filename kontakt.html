@@ -1,187 +1,47 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kontakt – Reiki</title>
+<main class="card">
+  <h1>Kontakt</h1>
+  <p>Schreib mir kurz, worum es für dich geht – ich melde mich in Ruhe zurück.</p>
 
-  <style>
-    :root{
-      --bg:#f6f2ea; --card:#fff; --text:#1b1b1b; --muted:#5e5a52;
-      --line:rgba(20,20,20,.10); --accent:#b79a63; --shadow:0 10px 30px rgba(0,0,0,.08);
-      --radius:12px; --max:900px;
-    }
-    *{box-sizing:border-box}
-    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.7}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
-    a{text-decoration:none}
-    .top{
-      display:flex; justify-content:space-between; align-items:center;
-      border-bottom:1px solid var(--line);
-      padding:10px 0 18px;
-      gap:12px;
-    }
-    .nav{display:flex; gap:10px; flex-wrap:wrap}
-    .nav a{color:var(--muted); padding:8px 10px; border-radius:999px}
-    .nav a:hover{background:rgba(255,255,255,.6); color:var(--text)}
-    .cta{background:var(--accent); color:#fff !important; border:1px solid rgba(0,0,0,.08)}
-    .card{margin-top:22px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px;}
-    h1{margin:0 0 10px; font-size:34px}
-    p{margin:0 0 14px; color:var(--muted); font-size:16px}
+  <form action="https://formspree.io/f/mojeyvej" method="POST" style="margin-top:16px;">
+    <div style="display:grid; gap:12px; max-width:680px;">
+      
+      <label style="font-weight:600;">
+        Name
+        <input type="text" name="name" required
+               style="width:100%; margin-top:6px; padding:12px 12px; border:1px solid var(--line); border-radius:12px; font-size:15px;">
+      </label>
 
-    /* Formularz */
-    .grid{display:grid; gap:14px; margin-top:16px;}
-    @media (min-width: 720px){
-      .grid.two{grid-template-columns: 1fr 1fr;}
-    }
-    .field label{
-      display:block;
-      font-size:13px;
-      color:var(--muted);
-      margin:0 0 6px;
-    }
-    .input, .textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(246,242,234,.35);
-      outline:none;
-      font:inherit;
-      color:var(--text);
-      transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
-    }
-    .textarea{min-height:140px; resize:vertical}
-    .input:focus, .textarea:focus{
-      border-color: rgba(183,154,99,.65);
-      box-shadow: 0 0 0 4px rgba(183,154,99,.18);
-      background:#fff;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px; border-radius:12px;
-      background:var(--accent); color:#fff; font-weight:700;
-      border:1px solid rgba(0,0,0,.08);
-      cursor:pointer;
-    }
-    .btn:hover{filter:brightness(.98)}
-    .form-actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:14px;}
-    .smallnote{font-size:12.5px; color:var(--muted); margin-top:10px;}
-    .divider{height:1px; background:var(--line); margin:18px 0;}
+      <label style="font-weight:600;">
+        E-Mail
+        <input type="email" name="email" required
+               style="width:100%; margin-top:6px; padding:12px 12px; border:1px solid var(--line); border-radius:12px; font-size:15px;">
+      </label>
 
-    /* komunikaty */
-    .notice{
-      margin-top:14px;
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(183,154,99,.10);
-      color:var(--text);
-      display:none;
-    }
-    .notice.show{display:block}
-    .notice.error{background:rgba(180,60,60,.10)}
-  </style>
-</head>
+      <label style="font-weight:600;">
+        Nachricht
+        <textarea name="message" required rows="6"
+                  style="width:100%; margin-top:6px; padding:12px 12px; border:1px solid var(--line); border-radius:12px; font-size:15px; resize:vertical;"></textarea>
+      </label>
 
-<body>
-  <div class="wrap">
-    <div class="top">
-      <div>
-        <div style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);">Reiki</div>
-        <div style="font-size:13px; color:var(--muted);">Innere Balance • bewusste Veränderung</div>
-      </div>
-      <nav class="nav">
-        <a href="index.html">Start</a>
-        <a href="worum.html">Worum es geht</a>
-        <a href="angebot.html">Angebot</a>
-        <a href="ueber-mich.html">Über mich</a>
-        <a class="cta" href="kontakt.html">Kontakt</a>
-      </nav>
-    </div>
+      <!-- Anti-Spam (honeypot) -->
+      <input type="text" name="_gotcha" style="display:none">
 
-    <main class="card">
-      <h1>Kontakt</h1>
-      <p>Schreib mir kurz, worum es für dich geht und was du dir wünschst. Ich antworte dir in Ruhe.</p>
+      <!-- Optional: Betreff in deinem Email -->
+      <input type="hidden" name="_subject" value="Neue Kontaktanfrage – Reiki">
 
-      <!-- Formspree (wysyła do Ciebie, klient nie otwiera poczty) -->
-      <form id="contactForm" action="https://formspree.io/f/mojeyvej" method="POST">
-        <div class="grid two">
-          <div class="field">
-            <label for="name">Name</label>
-            <input class="input" id="name" name="name" type="text" autocomplete="name" required>
-          </div>
+      <!-- Optional: Weiterleitung nach dem Absenden -->
+      <!-- <input type="hidden" name="_redirect" value="https://annaduleba-reiki.com/danke.html"> -->
 
-          <div class="field">
-            <label for="email">E-Mail</label>
-            <input class="input" id="email" name="email" type="email" autocomplete="email" required>
-          </div>
-        </div>
+      <button type="submit"
+              style="display:inline-flex; align-items:center; justify-content:center; gap:8px;
+                     padding:12px 16px; border-radius:12px; background:var(--accent); color:#fff;
+                     font-weight:800; border:1px solid rgba(0,0,0,.08); cursor:pointer; width:max-content;">
+        Nachricht senden
+      </button>
 
-        <div class="grid">
-          <div class="field">
-            <label for="message">Worum geht es?</label>
-            <textarea class="textarea" id="message" name="message" required
-              placeholder="Kurzbeschreibung: Was ist gerade wichtig für dich? Was wünschst du dir?"></textarea>
-          </div>
-        </div>
-
-        <!-- optional: temat w mailu do Ciebie -->
-        <input type="hidden" name="_subject" value="Neue Kontaktanfrage – Reiki">
-
-        <div class="form-actions">
-          <button class="btn" type="submit">Nachricht senden</button>
-        </div>
-
-        <div class="smallnote">
-          Mit dem Absenden erklärst du dich einverstanden, dass ich deine Angaben zur Bearbeitung deiner Anfrage verwende.
-        </div>
-
-        <div id="successMsg" class="notice">
-          Danke! Deine Nachricht ist angekommen. Ich melde mich in Ruhe bei dir zurück.
-        </div>
-        <div id="errorMsg" class="notice error">
-          Ups – das hat gerade nicht geklappt. Bitte versuche es erneut oder lade die Seite neu.
-        </div>
-      </form>
-
-      <div class="divider"></div>
-
-      <p style="font-size:13px; margin:0; color:var(--muted);">
+      <p style="font-size:13px; color:var(--muted); margin:8px 0 0;">
         Hinweis: Reiki kann begleitend unterstützen, ersetzt jedoch keine Diagnose oder Behandlung durch Ärzt:innen oder Therapeut:innen.
       </p>
-    </main>
-  </div>
-
-  <script>
-    // Wysyłka bez przeładowania strony + ładny komunikat
-    const form = document.getElementById('contactForm');
-    const successMsg = document.getElementById('successMsg');
-    const errorMsg = document.getElementById('errorMsg');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      successMsg.classList.remove('show');
-      errorMsg.classList.remove('show');
-
-      try {
-        const data = new FormData(form);
-        const res = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          form.reset();
-          successMsg.classList.add('show');
-        } else {
-          errorMsg.classList.add('show');
-        }
-      } catch (err) {
-        errorMsg.classList.add('show');
-      }
-    });
-  </script>
-</body>
-</html>
+    </div>
+  </form>
+</main>
