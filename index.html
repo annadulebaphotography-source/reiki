@@ -1,69 +1,58 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
- <head>
   <meta charset="utf-8">
-  <title>Reiki</title>
-
-  <style>
-  /* ===== LIGHT + SQUARE LOOK (override) ===== */
-  :root{
-    ...
-  }
-  body{
-    ...
-  }
-  </style>
-
-</head>
-
   <title>Reiki – innere Balance & bewusste Veränderung</title>
   <meta name="description" content="Reiki als ruhiger, klarer Weg zurück in innere Balance: Selbstwahrnehmung, Verantwortung und bewusste Veränderung – ohne Versprechen von Wundern." />
 
   <style>
+    /* ===== LIGHT + SQUARE LOOK ===== */
     :root{
-      --bg:#0b0c10;
-      --card:#11131a;
-      --text:#e9ecf2;
-      --muted:#b6bdc9;
-      --line:rgba(255,255,255,.10);
-      --accent:#c9b37e;
-      --shadow:0 18px 60px rgba(0,0,0,.45);
-      --radius:18px;
+      --bg:#f6f2ea;             /* jasne tło */
+      --card:#ffffff;           /* karty */
+      --card2:#fbf8f2;          /* delikatnie cieplejsze kafle */
+      --text:#1b1b1b;           /* tekst */
+      --muted:#5e5a52;          /* opis */
+      --line:rgba(20,20,20,.10);
+      --accent:#b79a63;         /* złoto-beż */
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:12px;            /* bardziej kwadratowo */
       --max:1100px;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 20% -10%, rgba(201,179,126,.18), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(120,180,255,.10), transparent 55%),
-        var(--bg);
+      background:var(--bg);
       line-height:1.6;
     }
-    a{color:inherit}
+
+    a{color:#3a2f1f}
+    a:hover{opacity:.85}
+
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
+
     header{
       display:flex; align-items:center; justify-content:space-between;
       padding:10px 0 22px;
       border-bottom:1px solid var(--line);
     }
-    .brand{
-      display:flex; flex-direction:column; gap:4px;
-    }
+
+    .brand{display:flex; flex-direction:column; gap:4px;}
     .brand strong{font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
     .brand span{font-size:13px; color:var(--muted)}
-    .lang{
-      display:flex; gap:10px; align-items:center;
-      font-size:13px; color:var(--muted);
-    }
+
+    .lang{display:flex; gap:10px; align-items:center; font-size:13px; color:var(--muted);}
     .lang .pill{
       border:1px solid var(--line);
       padding:8px 10px; border-radius:999px;
-      background:rgba(255,255,255,.03);
+      background:rgba(255,255,255,.75);
+      color:var(--text);
     }
+
     .hero{
       padding:44px 0 28px;
       display:grid; grid-template-columns:1.15fr .85fr;
@@ -73,75 +62,80 @@
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr; padding-top:34px;}
     }
+
     h1{
       margin:0 0 12px;
       font-size:44px; line-height:1.12;
       letter-spacing:-.02em;
     }
-    @media (max-width: 520px){
-      h1{font-size:34px}
-    }
+    @media (max-width: 520px){ h1{font-size:34px} }
+
     .lead{
       margin:0 0 18px;
       font-size:18px;
       color:var(--muted);
       max-width:60ch;
     }
+
     .ctaRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:18px}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px; border-radius:12px;
+      padding:12px 16px;
+      border-radius:12px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
+      background:#ffffff;
       text-decoration:none;
       font-weight:600;
+      color:var(--text);
     }
     .btn.primary{
-      background:linear-gradient(180deg, rgba(201,179,126,.25), rgba(201,179,126,.08));
-      border-color:rgba(201,179,126,.35);
+      background:var(--accent);
+      border-color:rgba(0,0,0,.10);
+      color:#fff;
     }
     .btn:hover{transform:translateY(-1px)}
+
     .card{
-      background:rgba(17,19,26,.78);
+      background:var(--card);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:18px;
-      backdrop-filter: blur(10px);
     }
+
     .card h2{
       margin:0 0 10px;
       font-size:16px; letter-spacing:.06em; text-transform:uppercase;
       color:var(--muted);
     }
+
     .list{
       margin:0; padding:0; list-style:none; display:grid; gap:10px;
     }
+    /* kafelki "Auf einen Blick" jaśniejsze i bardziej graficzne */
     .list li{
       padding:12px 12px;
       border:1px solid var(--line);
-      border-radius:14px;
-      background:rgba(255,255,255,.02);
+      border-radius:10px;
+      background:var(--card2);
+      box-shadow:none;
     }
-    .list li strong{
-      display:block; font-size:14px; margin-bottom:4px;
-      color:var(--text);
-    }
+    .list li strong{display:block; font-size:14px; margin-bottom:4px; color:var(--text);}
     .list li span{color:var(--muted); font-size:14px}
+
     .grid{
       display:grid; grid-template-columns:1fr 1fr;
       gap:16px; margin-top:18px;
     }
-    @media (max-width: 900px){
-      .grid{grid-template-columns:1fr}
-    }
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+
     section{margin-top:26px}
-    section h3{
-      margin:0 0 10px;
-      font-size:18px;
-    }
+    section h3{margin:0 0 10px; font-size:18px;}
+
     .muted{color:var(--muted)}
     .divider{height:1px; background:var(--line); margin:26px 0}
+
     footer{
       margin-top:34px;
       color:var(--muted);
@@ -149,14 +143,9 @@
       border-top:1px solid var(--line);
       padding-top:18px;
     }
-    .fine{
-      font-size:12px;
-      color:rgba(182,189,201,.92);
-    }
-    .accent{
-      color:var(--accent);
-      font-weight:700;
-    }
+
+    .fine{font-size:12px; color:rgba(94,90,82,.92);}
+    .accent{color:var(--accent); font-weight:700;}
   </style>
 </head>
 
@@ -257,7 +246,6 @@
             Ich antworte dir in Ruhe.
           </p>
 
-          <!-- Platzhalter: später ersetzen wir das durch Formspree / eigenen Mailer -->
           <p class="fine">
             (Kontaktformular folgt. Für den Start kannst du hier einen Mail-Link einsetzen.)
             <br />
@@ -279,92 +267,3 @@
   </script>
 </body>
 </html>
-/* ===== LIGHT + SQUARE LOOK (override) ===== */
-
-:root{
-  --bg: #f6f2ea;          /* jasne tło */
-  --panel: #ffffff;       /* karty */
-  --panel-2: #fbf8f2;     /* delikatnie cieplejsze sekcje */
-  --text: #1b1b1b;        /* główny tekst */
-  --muted: #5e5a52;       /* opis */
-  --border: rgba(20,20,20,.10);
-  --shadow: 0 10px 30px rgba(0,0,0,.08);
-  --radius: 12px;         /* bardziej kwadratowo */
-  --radius-sm: 10px;
-  --accent: #b79a63;       /* złoto-beż */
-}
-
-body{
-  background: var(--bg) !important;
-  color: var(--text) !important;
-}
-
-/* usuń dark glow jeśli gdzieś był */
-body:before, body:after{
-  content: none !important;
-}
-
-/* Linki */
-a{ color: #3a2f1f; }
-a:hover{ opacity:.85; }
-
-/* Sekcje/boxy */
-.card,
-.panel,
-.box,
-section.card{
-  background: var(--panel) !important;
-  border: 1px solid var(--border) !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--shadow) !important;
-}
-
-/* jeśli masz klasę np. .muted */
-.muted{
-  color: var(--muted) !important;
-}
-
-/* Nagłówek hero */
-h1{
-  color: var(--text) !important;
-}
-h1 span, .accent{
-  color: var(--accent) !important;
-}
-
-/* “Auf einen Blick” – kafle w środku */
-#auf-einen-blick .item,
-#auf-einen-blick .card,
-#auf-einen-blick .row > div{
-  background: var(--panel-2) !important;
-  border: 1px solid var(--border) !important;
-  border-radius: var(--radius-sm) !important;
-  box-shadow: none !important;
-}
-
-/* Przyciski */
-button, .btn, a.btn{
-  border-radius: 12px !important;
-  border: 1px solid var(--border) !important;
-  background: #ffffff !important;
-  color: var(--text) !important;
-}
-button.primary, .btn.primary, a.btn.primary{
-  background: var(--accent) !important;
-  color: #fff !important;
-  border-color: rgba(0,0,0,.10) !important;
-}
-
-/* Górny pasek / “chip” języka jeśli był ciemny */
-.lang, .chip, .badge{
-  background: rgba(255,255,255,.75) !important;
-  border: 1px solid var(--border) !important;
-  color: var(--text) !important;
-  border-radius: 999px !important;
-}
-
-/* Delikatniejsze separatory */
-hr{
-  border-color: rgba(0,0,0,.08) !important;
-}
-
