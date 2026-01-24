@@ -65,6 +65,11 @@
       padding:8px 10px; border-radius:999px;
       background:rgba(255,255,255,.75);
       color:var(--text);
+      user-select:none;
+    }
+    .lang .pill.muted{
+      opacity:.75;
+      cursor:default;
     }
 
     /* HERO */
@@ -79,7 +84,7 @@
       gap:22px;
       align-items:center;
 
-      min-height:520px;
+      min-height:540px;
 
       background-image:url("mohnblumenfeld.png");
       background-size:cover;
@@ -94,7 +99,7 @@
     .hero::before{
       content:"";
       position:absolute; inset:0;
-      background:linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.28) 55%, rgba(0,0,0,.12) 100%);
+      background:linear-gradient(90deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.30) 55%, rgba(0,0,0,.14) 100%);
       pointer-events:none;
     }
     .hero > *{position:relative; z-index:1;}
@@ -112,6 +117,7 @@
       color:rgba(255,255,255,.92);
       max-width:62ch;
     }
+
     .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -123,6 +129,7 @@
       font-weight:700;
       color:var(--text);
       backdrop-filter: blur(6px);
+      white-space:nowrap;
     }
     .btn.primary{
       background:var(--accent);
@@ -154,7 +161,7 @@
     .list strong{display:block; font-size:14px; margin-bottom:3px;}
     .list span{font-size:14px; color:var(--muted);}
 
-    /* Calm blocks under hero */
+    /* Under hero */
     .grid{
       margin-top:22px;
       display:grid;
@@ -177,6 +184,14 @@
     }
     .tile p{margin:0; color:var(--muted); font-size:15px}
 
+    .tile .meta{
+      margin-top:10px;
+      font-size:13px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      padding-top:10px;
+    }
+
     footer{
       margin-top:34px;
       color:var(--muted);
@@ -186,7 +201,7 @@
     }
 
     @media (max-width: 900px){
-      .hero{grid-template-columns:1fr; padding:34px 22px;}
+      .hero{grid-template-columns:1fr; padding:34px 22px; min-height:auto}
       h1{font-size:34px}
       .topbar{align-items:flex-start}
     }
@@ -211,7 +226,7 @@
 
       <div class="lang" aria-label="Sprachauswahl">
         <span class="pill">DE</span>
-        <span class="pill" title="Bald verfügbar">PL/EN</span>
+        <span class="pill muted" title="Bald verfügbar">PL/EN</span>
       </div>
     </div>
 
@@ -219,13 +234,15 @@
       <section class="hero" aria-label="Einführung">
         <div>
           <h1>Reiki als Weg zurück in <span class="accent">innere Stabilität</span> und Ruhe.</h1>
+
           <p class="lead">
             Ein klarer, ruhiger Prozess – ohne Show, ohne Versprechen von „Wundern“.
-            Für Menschen, die bereit sind, sich ehrlich zu begegnen und Verantwortung zu übernehmen.
+            Für Menschen, die viel tragen, funktionieren – und wieder bei sich ankommen wollen.
           </p>
 
           <div class="ctaRow">
             <a class="btn primary" href="kontakt.html">Kontakt aufnehmen</a>
+            <a class="btn" href="kontakt.html#contactForm" title="Kurzer Einstieg – ohne Druck">10-Min-Kennenlernen (kostenlos)</a>
             <a class="btn" href="worum.html">Mehr erfahren</a>
           </div>
         </div>
@@ -233,9 +250,9 @@
         <aside class="card">
           <h2>Auf einen Blick</h2>
           <ul class="list">
-            <li><strong>Bewusstsein</strong><span>Wahrnehmen, bevor du reagierst.</span></li>
-            <li><strong>Verantwortung</strong><span>Veränderung beginnt innen.</span></li>
-            <li><strong>Klarheit</strong><span>Kein Drama – ein echter Prozess.</span></li>
+            <li><strong>Mehr Ruhe im Kopf</strong><span>wenn alles zu laut wird – Schritt für Schritt.</span></li>
+            <li><strong>Klarere Grenzen</strong><span>ohne Schuldgefühl – mit Respekt für dich.</span></li>
+            <li><strong>Stabilität im Alltag</strong><span>damit Veränderung wirklich tragfähig wird.</span></li>
           </ul>
         </aside>
       </section>
@@ -243,15 +260,20 @@
       <section class="grid" aria-label="Kurzüberblick">
         <div class="tile">
           <h3>Worum es geht</h3>
-          <p>Selbstkontakt, innere Ordnung, Grenzen spüren – und Schritt für Schritt stabiler werden.</p>
+          <p>Selbstkontakt, innere Ordnung und das ehrliche Wahrnehmen: Was ist wirklich da – und was brauchst du jetzt?</p>
+          <div class="meta">Ruhig • klar • ohne Druck</div>
         </div>
+
         <div class="tile">
           <h3>Wie es abläuft</h3>
-          <p>Ruhig, klar, respektvoll. Du bekommst Raum – und eine saubere, strukturierte Begleitung.</p>
+          <p>Du bekommst Raum. Ich arbeite strukturiert, respektvoll und bodenständig – damit du dich sicher fühlst.</p>
+          <div class="meta">Online oder vor Ort (nach Absprache)</div>
         </div>
+
         <div class="tile">
-          <h3>Für wen</h3>
-          <p>Für Menschen, die nicht „gerettet“ werden wollen – sondern bereit sind, selbst zu gehen.</p>
+          <h3>Praktisch & sicher</h3>
+          <p>Du schreibst mir kurz – ich antworte in Ruhe. Keine Heilsversprechen, kein Drama. Nur ein echter Prozess.</p>
+          <div class="meta">Hinweis: Reiki ersetzt keine medizinische/therapeutische Behandlung.</div>
         </div>
       </section>
 
