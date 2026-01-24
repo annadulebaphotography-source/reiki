@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Reiki – innere Balance & bewusste Veränderung</title>
   <meta name="description" content="Reiki als ruhiger, klarer Weg zurück in innere Balance: Selbstwahrnehmung, Verantwortung und bewusste Veränderung – ohne Versprechen von Wundern." />
 
   <style>
-    /* ===== LIGHT + SQUARE LOOK ===== */
     :root{
-      --bg:#f6f2ea;             /* jasne tło */
-      --card:#ffffff;           /* karty */
-      --card2:#fbf8f2;          /* delikatnie cieplejsze kafle */
-      --text:#1b1b1b;           /* tekst */
-      --muted:#5e5a52;          /* opis */
+      --bg:#f6f2ea;
+      --card:#ffffff;
+      --card2:#fbf8f2;
+      --text:#1b1b1b;
+      --muted:#5e5a52;
       --line:rgba(20,20,20,.10);
-      --accent:#b79a63;         /* złoto-beż */
+      --accent:#b79a63;
       --shadow:0 10px 30px rgba(0,0,0,.08);
-      --radius:12px;            /* bardziej kwadratowo */
+      --radius:12px;
       --max:1100px;
     }
 
@@ -36,76 +36,126 @@
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
 
     header{
-      display:flex; align-items:center; justify-content:space-between;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
       padding:10px 0 22px;
       border-bottom:1px solid var(--line);
     }
 
     .brand{display:flex; flex-direction:column; gap:4px;}
-    .brand strong{font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+    .brand strong{
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted)
+    }
     .brand span{font-size:13px; color:var(--muted)}
 
     .lang{display:flex; gap:10px; align-items:center; font-size:13px; color:var(--muted);}
     .lang .pill{
       border:1px solid var(--line);
-      padding:8px 10px; border-radius:999px;
+      padding:8px 10px;
+      border-radius:999px;
       background:rgba(255,255,255,.75);
       color:var(--text);
     }
 
+    /* ===== HERO WITH BACKGROUND IMAGE ===== */
     .hero{
-      padding:44px 0 28px;
-      display:grid; grid-template-columns:1.15fr .85fr;
+      position:relative;
+      overflow:hidden;
+      padding:44px 28px 28px;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
       gap:26px;
       align-items:start;
-    
-      min-height: 85vh;
 
-  background-image: url("mohnblumenfeld.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+      min-height: 82vh;
 
-  color: #fff;
-      }
+      background-image: url("mohnblumenfeld.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
+      border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: var(--shadow);
+      color: #fff;
+    }
+
+    /* overlay żeby tekst był czytelny */
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.40) 45%, rgba(0,0,0,.18) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.20) 0%, rgba(0,0,0,.12) 40%, rgba(0,0,0,.20) 100%);
+      pointer-events:none;
+    }
+
+    /* wszystko w hero ma być nad overlayem */
+    .hero > *{
+      position:relative;
+      z-index:1;
+    }
 
     @media (max-width: 900px){
-      .hero{grid-template-columns:1fr; padding-top:34px;}
+      .hero{
+        grid-template-columns:1fr;
+        padding:34px 18px 18px;
+        min-height:auto;
+      }
+      .hero::before{
+        background: linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.28) 100%);
+      }
     }
 
     h1{
       margin:0 0 12px;
-      font-size:44px; line-height:1.12;
+      font-size:44px;
+      line-height:1.12;
       letter-spacing:-.02em;
     }
     @media (max-width: 520px){ h1{font-size:34px} }
 
+    /* lead w hero MUSI być jasny, nie muted */
     .lead{
       margin:0 0 18px;
       font-size:18px;
-      color:var(--muted);
+      color: rgba(255,255,255,.90);
       max-width:60ch;
     }
 
     .ctaRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:18px}
 
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:12px 16px;
       border-radius:12px;
-      border:1px solid var(--line);
-      background:#ffffff;
+      border:1px solid rgba(255,255,255,.20);
+      background:rgba(255,255,255,.92);
       text-decoration:none;
       font-weight:600;
-      color:var(--text);
+      color:#1b1b1b;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
     .btn.primary{
-      background:var(--accent);
-      border-color:rgba(0,0,0,.10);
+      background: rgba(183,154,99,.95);
+      border-color: rgba(0,0,0,.10);
       color:#fff;
     }
     .btn:hover{transform:translateY(-1px)}
+
+    .divider{
+      height:1px;
+      background: rgba(255,255,255,.22);
+      margin:26px 0;
+    }
 
     .card{
       background:var(--card);
@@ -113,18 +163,34 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:18px;
+      color: var(--text);
+    }
+
+    /* karta w hero ma być półprzezroczysta i „premium” */
+    .hero .card{
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,255,255,.35);
+      box-shadow: 0 10px 30px rgba(0,0,0,.20);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     .card h2{
       margin:0 0 10px;
-      font-size:16px; letter-spacing:.06em; text-transform:uppercase;
+      font-size:16px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
       color:var(--muted);
     }
 
     .list{
-      margin:0; padding:0; list-style:none; display:grid; gap:10px;
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
     }
-    /* kafelki "Auf einen Blick" jaśniejsze i bardziej graficzne */
+
     .list li{
       padding:12px 12px;
       border:1px solid var(--line);
@@ -136,8 +202,10 @@
     .list li span{color:var(--muted); font-size:14px}
 
     .grid{
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:16px; margin-top:18px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:18px;
     }
     @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
 
@@ -145,8 +213,6 @@
     section h3{margin:0 0 10px; font-size:18px;}
 
     .muted{color:var(--muted)}
-    .divider{height:1px; background:var(--line); margin:26px 0}
-
     footer{
       margin-top:34px;
       color:var(--muted);
@@ -193,7 +259,7 @@
 
           <section id="worum-es-geht">
             <h3>Worum es in meiner Reiki-Arbeit geht</h3>
-            <p class="muted">
+            <p style="margin:0; color: rgba(255,255,255,.90); max-width: 70ch;">
               Ich bin auf Reiki gestoßen, als ich mein Leben stabilisieren wollte – nicht nur innerlich,
               sondern auch im Alltag. Reiki hat mir Werkzeuge gegeben, mit denen ich heute bewusster entscheide:
               <strong>Meine Reaktion ist meine Entscheidung.</strong>
