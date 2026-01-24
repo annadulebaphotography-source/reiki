@@ -187,6 +187,78 @@
       .topbar{align-items:flex-start}
       .hero{min-height:320px}
     }
+    /* ===== MOBILE MENU ===== */
+.burger{
+  display:none;
+  width:44px;
+  height:44px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(255,255,255,.75);
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  padding:10px;
+  cursor:pointer;
+}
+
+.burger span{
+  display:block;
+  width:18px;
+  height:2px;
+  background:var(--text);
+  border-radius:999px;
+}
+/* burger base */
+.burger{
+  display:none;
+  width:44px;
+  height:44px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(255,255,255,.75);
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  padding:10px;
+  cursor:pointer;
+}
+
+.burger span{
+  display:block;
+  width:18px;
+  height:2px;
+  background:var(--text);
+  border-radius:999px;
+}
+
+/* mobile behaviour */
+@media (max-width: 900px){
+  .nav{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    gap:6px;
+    margin-top:12px;
+  }
+
+  #menu-toggle:checked + .burger + .nav{
+    display:flex;
+  }
+
+  .burger{
+    display:flex;
+  }
+
+  .lang{
+    display:none;
+  }
+
+  .topbar{
+    flex-wrap:wrap;
+  }
+}
+
   </style>
 </head>
 
