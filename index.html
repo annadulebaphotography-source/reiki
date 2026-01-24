@@ -265,3 +265,92 @@
   </script>
 </body>
 </html>
+/* ===== LIGHT + SQUARE LOOK (override) ===== */
+
+:root{
+  --bg: #f6f2ea;          /* jasne tło */
+  --panel: #ffffff;       /* karty */
+  --panel-2: #fbf8f2;     /* delikatnie cieplejsze sekcje */
+  --text: #1b1b1b;        /* główny tekst */
+  --muted: #5e5a52;       /* opis */
+  --border: rgba(20,20,20,.10);
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+  --radius: 12px;         /* bardziej kwadratowo */
+  --radius-sm: 10px;
+  --accent: #b79a63;       /* złoto-beż */
+}
+
+body{
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* usuń dark glow jeśli gdzieś był */
+body:before, body:after{
+  content: none !important;
+}
+
+/* Linki */
+a{ color: #3a2f1f; }
+a:hover{ opacity:.85; }
+
+/* Sekcje/boxy */
+.card,
+.panel,
+.box,
+section.card{
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* jeśli masz klasę np. .muted */
+.muted{
+  color: var(--muted) !important;
+}
+
+/* Nagłówek hero */
+h1{
+  color: var(--text) !important;
+}
+h1 span, .accent{
+  color: var(--accent) !important;
+}
+
+/* “Auf einen Blick” – kafle w środku */
+#auf-einen-blick .item,
+#auf-einen-blick .card,
+#auf-einen-blick .row > div{
+  background: var(--panel-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: none !important;
+}
+
+/* Przyciski */
+button, .btn, a.btn{
+  border-radius: 12px !important;
+  border: 1px solid var(--border) !important;
+  background: #ffffff !important;
+  color: var(--text) !important;
+}
+button.primary, .btn.primary, a.btn.primary{
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-color: rgba(0,0,0,.10) !important;
+}
+
+/* Górny pasek / “chip” języka jeśli był ciemny */
+.lang, .chip, .badge{
+  background: rgba(255,255,255,.75) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  border-radius: 999px !important;
+}
+
+/* Delikatniejsze separatory */
+hr{
+  border-color: rgba(0,0,0,.08) !important;
+}
+
