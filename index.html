@@ -72,19 +72,36 @@
       cursor:default;
     }
 
-    /* HERO */
-    .hero{
+    /* Intro text ABOVE hero */
+    .intro{
       margin-top:22px;
+      background:rgba(255,255,255,.55);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px 18px;
+    }
+    .intro h1{
+      margin:0 0 10px;
+      font-size:38px;
+      line-height:1.12;
+      letter-spacing:-.02em;
+    }
+    .accent{color:var(--accent); font-weight:800;}
+    .intro .lead{
+      margin:0;
+      font-size:16px;
+      color:var(--muted);
+      max-width:70ch;
+    }
+
+    /* HERO (image only) */
+    .hero{
+      margin-top:16px;
       position:relative;
       overflow:hidden;
 
-      padding:52px 34px;
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:22px;
-      align-items:center;
-
-      min-height:540px;
+      min-height:420px;
 
       background-image:url("mohnblumenfeld.png");
       background-size:cover;
@@ -94,57 +111,22 @@
       border-radius:var(--radius);
       border:1px solid rgba(0,0,0,.08);
       box-shadow:var(--shadow);
-      color:#fff;
     }
     .hero::before{
       content:"";
       position:absolute; inset:0;
-      background:linear-gradient(90deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.30) 55%, rgba(0,0,0,.14) 100%);
+      background:linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.28) 100%);
       pointer-events:none;
     }
-    .hero > *{position:relative; z-index:1;}
 
-    h1{
-      margin:0 0 12px;
-      font-size:44px;
-      line-height:1.12;
-      letter-spacing:-.02em;
-    }
-    .accent{color:#f2e6cf; font-weight:800;}
-    .lead{
-      margin:0;
-      font-size:18px;
-      color:rgba(255,255,255,.92);
-      max-width:62ch;
-    }
-
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.25);
-      background:rgba(255,255,255,.90);
-      text-decoration:none;
-      font-weight:700;
-      color:var(--text);
-      backdrop-filter: blur(6px);
-      white-space:nowrap;
-    }
-    .btn.primary{
-      background:var(--accent);
-      color:#fff;
-      border-color:rgba(0,0,0,.08);
-    }
-
+    /* Card (used below hero) */
     .card{
-      background:rgba(255,255,255,.92);
-      border:1px solid rgba(255,255,255,.22);
+      background:var(--card);
+      border:1px solid var(--line);
       border-radius:var(--radius);
-      box-shadow:0 10px 26px rgba(0,0,0,.14);
+      box-shadow:var(--shadow);
       padding:18px;
       color:var(--text);
-      backdrop-filter: blur(8px);
     }
     .card h2{
       margin:0 0 10px;
@@ -161,30 +143,30 @@
     .list strong{display:block; font-size:14px; margin-bottom:3px;}
     .list span{font-size:14px; color:var(--muted);}
 
-    /* Under hero */
-    .grid{
-      margin-top:22px;
+    /* Content section under hero */
+    .section{
+      margin-top:18px;
       display:grid;
-      grid-template-columns:1fr 1fr 1fr;
+      grid-template-columns:1fr 1fr;
       gap:16px;
+      align-items:start;
     }
-    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
+    @media (max-width: 980px){ .section{grid-template-columns:1fr} }
 
-    .tile{
+    .box{
       background:var(--card);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:18px;
     }
-    .tile h3{
+    .box h3{
       margin:0 0 8px;
       font-size:16px;
       letter-spacing:.04em;
     }
-    .tile p{margin:0; color:var(--muted); font-size:15px}
-
-    .tile .meta{
+    .box p{margin:0; color:var(--muted); font-size:15px}
+    .box .meta{
       margin-top:10px;
       font-size:13px;
       color:var(--muted);
@@ -201,9 +183,9 @@
     }
 
     @media (max-width: 900px){
-      .hero{grid-template-columns:1fr; padding:34px 22px; min-height:auto}
-      h1{font-size:34px}
+      .intro h1{font-size:30px}
       .topbar{align-items:flex-start}
+      .hero{min-height:320px}
     }
   </style>
 </head>
@@ -231,17 +213,20 @@
     </div>
 
     <main>
-      <section class="hero" aria-label="Einführung">
-        <div>
-          <h1>Reiki als Weg zurück in <span class="accent">innere Stabilität</span> und Ruhe.</h1>
+      <!-- TEXT ABOVE IMAGE -->
+      <section class="intro" aria-label="Einführungstext">
+        <h1>Reiki als Weg zurück in <span class="accent">innere Stabilität</span> und Ruhe.</h1>
+        <p class="lead">
+          Ein klarer, ruhiger Prozess – ohne Show, ohne Versprechen von „Wundern“.
+          Für Menschen, die viel tragen, funktionieren – und wieder bei sich ankommen wollen.
+        </p>
+      </section>
 
-          <p class="lead">
-            Ein klarer, ruhiger Prozess – ohne Show, ohne Versprechen von „Wundern“.
-            Für Menschen, die viel tragen, funktionieren – und wieder bei sich ankommen wollen.
-          </p>
+      <!-- IMAGE ONLY -->
+      <section class="hero" aria-label="Bildbereich"></section>
 
-        </div>
-
+      <!-- “AUF EINEN BLICK” MOVED DOWN + NEW EXPLANATION -->
+      <section class="section" aria-label="Inhalt">
         <aside class="card">
           <h2>Auf einen Blick</h2>
           <ul class="list">
@@ -250,6 +235,19 @@
             <li><strong>Stabilität im Alltag</strong><span>damit Veränderung wirklich tragfähig wird.</span></li>
           </ul>
         </aside>
+
+        <div class="box">
+          <h3>Worum es bei mir wirklich geht</h3>
+          <p>
+            Reiki ist für mich kein „Zauber“ und kein Versprechen auf sofortige Wunder.
+            Es ist ein ruhiger Rahmen, in dem du wieder spüren kannst, was gerade wirklich da ist:
+            Stress, Druck, Überforderung, innere Unruhe – oder einfach das Gefühl, ständig nur zu funktionieren.
+          </p>
+          <div class="meta">
+            Du bekommst Raum, Klarheit und eine respektvolle Begleitung – damit du wieder bei dir ankommst und
+            Veränderungen nicht nur „kurz besser“, sondern langfristig tragfähig werden.
+          </div>
+        </div>
       </section>
 
       <footer>
