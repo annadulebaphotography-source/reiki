@@ -2,48 +2,62 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reiki – innere Balance & bewusste Veränderung</title>
   <meta name="description" content="Reiki als ruhiger, klarer Weg zurück in innere Balance: Selbstwahrnehmung, Verantwortung und bewusste Veränderung – ohne Versprechen von Wundern." />
 
   <style>
-    /* ===== LIGHT + SQUARE LOOK ===== */
     :root{
-      --bg:#f6f2ea;             /* jasne tło */
-      --card:#ffffff;           /* karty */
-      --card2:#fbf8f2;          /* delikatnie cieplejsze kafle */
-      --text:#1b1b1b;           /* tekst */
-      --muted:#5e5a52;          /* opis */
+      --bg:#f6f2ea;
+      --card:#ffffff;
+      --card2:#fbf8f2;
+      --text:#1b1b1b;
+      --muted:#5e5a52;
       --line:rgba(20,20,20,.10);
-      --accent:#b79a63;         /* złoto-beż */
+      --accent:#b79a63;
       --shadow:0 10px 30px rgba(0,0,0,.08);
-      --radius:12px;            /* bardziej kwadratowo */
+      --radius:12px;
       --max:1100px;
     }
-
     *{box-sizing:border-box}
-
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:var(--bg);
       line-height:1.6;
     }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
 
-    a{color:#3a2f1f}
-    a:hover{opacity:.85}
-
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
-
-    header{
+    /* Topbar */
+    .topbar{
       display:flex; align-items:center; justify-content:space-between;
-      padding:10px 0 22px;
+      gap:18px;
+      padding:10px 0 18px;
       border-bottom:1px solid var(--line);
     }
-
     .brand{display:flex; flex-direction:column; gap:4px;}
     .brand strong{font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
     .brand span{font-size:13px; color:var(--muted)}
+
+    .nav{
+      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+      font-size:14px;
+    }
+    .nav a{
+      text-decoration:none;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    .nav a:hover{background:rgba(255,255,255,.6); color:var(--text)}
+    .nav .cta{
+      background:var(--accent);
+      color:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+    .nav .cta:hover{opacity:.92}
 
     .lang{display:flex; gap:10px; align-items:center; font-size:13px; color:var(--muted);}
     .lang .pill{
@@ -53,67 +67,52 @@
       color:var(--text);
     }
 
-    /* ===== HERO: uporządkowany ===== */
+    /* HERO */
     .hero{
+      margin-top:22px;
       position:relative;
       overflow:hidden;
 
-      padding:48px 32px;
+      padding:52px 34px;
       display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:28px;
+      grid-template-columns:1.2fr .8fr;
+      gap:22px;
       align-items:center;
 
-      min-height:520px; /* KLUCZ: zamiast vh */
+      min-height:520px;
 
-      background-image: url("mohnblumenfeld.png");
-      background-size: cover;
-      background-position: center 60%;
-      background-repeat: no-repeat;
+      background-image:url("mohnblumenfeld.png");
+      background-size:cover;
+      background-position:center 60%;
+      background-repeat:no-repeat;
 
-      border-radius: var(--radius);
-      border: 1px solid rgba(0,0,0,.08);
-      box-shadow: var(--shadow);
+      border-radius:var(--radius);
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow:var(--shadow);
       color:#fff;
     }
-
-    /* delikatny gradient dla czytelności tekstu */
     .hero::before{
       content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.30) 50%, rgba(0,0,0,.10) 100%);
+      position:absolute; inset:0;
+      background:linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.28) 55%, rgba(0,0,0,.12) 100%);
       pointer-events:none;
     }
-
-    .hero > *{ position:relative; z-index:1; }
-
-    @media (max-width: 900px){
-      .hero{
-        grid-template-columns:1fr;
-        padding:34px 22px;
-        min-height:520px;
-        background-position: center 55%;
-      }
-    }
+    .hero > *{position:relative; z-index:1;}
 
     h1{
       margin:0 0 12px;
-      font-size:44px; line-height:1.12;
+      font-size:44px;
+      line-height:1.12;
       letter-spacing:-.02em;
-      color:#fff;
     }
-    @media (max-width: 520px){ h1{font-size:34px} }
-
+    .accent{color:#f2e6cf; font-weight:800;}
     .lead{
-      margin:0 0 18px;
+      margin:0;
       font-size:18px;
       color:rgba(255,255,255,.92);
-      max-width:60ch;
+      max-width:62ch;
     }
-
-    .ctaRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:18px}
-
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 16px;
@@ -121,56 +120,62 @@
       border:1px solid rgba(255,255,255,.25);
       background:rgba(255,255,255,.90);
       text-decoration:none;
-      font-weight:600;
+      font-weight:700;
       color:var(--text);
       backdrop-filter: blur(6px);
     }
     .btn.primary{
       background:var(--accent);
-      border-color:rgba(0,0,0,.10);
       color:#fff;
+      border-color:rgba(0,0,0,.08);
     }
-    .btn:hover{transform:translateY(-1px)}
 
     .card{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:var(--radius);
+      box-shadow:0 10px 26px rgba(0,0,0,.14);
+      padding:18px;
+      color:var(--text);
+      backdrop-filter: blur(8px);
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:13px; letter-spacing:.10em; text-transform:uppercase;
+      color:var(--muted);
+    }
+    .list{margin:0; padding:0; list-style:none; display:grid; gap:10px;}
+    .list li{
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:var(--card2);
+    }
+    .list strong{display:block; font-size:14px; margin-bottom:3px;}
+    .list span{font-size:14px; color:var(--muted);}
+
+    /* Calm blocks under hero */
+    .grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:16px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
+
+    .tile{
       background:var(--card);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:18px;
     }
-
-    .card h2{
-      margin:0 0 10px;
-      font-size:16px; letter-spacing:.06em; text-transform:uppercase;
-      color:var(--muted);
+    .tile h3{
+      margin:0 0 8px;
+      font-size:16px;
+      letter-spacing:.04em;
     }
-
-    .list{
-      margin:0; padding:0; list-style:none; display:grid; gap:10px;
-    }
-
-    .list li{
-      padding:12px 12px;
-      border:1px solid var(--line);
-      border-radius:10px;
-      background:var(--card2);
-      box-shadow:none;
-    }
-    .list li strong{display:block; font-size:14px; margin-bottom:4px; color:var(--text);}
-    .list li span{color:var(--muted); font-size:14px}
-
-    .grid{
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:16px; margin-top:18px;
-    }
-    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
-
-    section{margin-top:26px}
-    section h3{margin:0 0 10px; font-size:18px;}
-
-    .muted{color:var(--muted)}
-    .divider{height:1px; background:var(--line); margin:26px 0}
+    .tile p{margin:0; color:var(--muted); font-size:15px}
 
     footer{
       margin-top:34px;
@@ -180,121 +185,78 @@
       padding-top:18px;
     }
 
-    .fine{font-size:12px; color:rgba(94,90,82,.92);}
-    /* akcent w HERO musi być jasny */
-    .accent{color:#f2e6cf; font-weight:800;}
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; padding:34px 22px;}
+      h1{font-size:34px}
+      .topbar{align-items:flex-start}
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <header>
+    <div class="topbar">
       <div class="brand">
         <strong>Reiki</strong>
         <span>Innere Balance • bewusste Veränderung</span>
       </div>
 
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html">Start</a>
+        <a href="worum.html">Worum es geht</a>
+        <a href="angebot.html">Angebot</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a class="cta" href="kontakt.html">Kontakt</a>
+      </nav>
+
       <div class="lang" aria-label="Sprachauswahl">
         <span class="pill">DE</span>
         <span class="pill" title="Bald verfügbar">PL/EN</span>
       </div>
-    </header>
+    </div>
 
     <main>
-      <!-- HERO: tylko nagłówek + CTA + karta -->
-      <div class="hero">
+      <section class="hero" aria-label="Einführung">
         <div>
           <h1>Reiki als Weg zurück in <span class="accent">innere Stabilität</span> und Ruhe.</h1>
           <p class="lead">
-            Für mich ist Reiki kein „Zauber“, keine Sammlung von Ritualen und keine Abkürzung.
-            Es ist ein klarer, ruhiger Prozess: zurück in Kontakt mit dir selbst – und in die Verantwortung dafür,
-            <em>wie</em> du reagierst, entscheidest und dich weiterentwickelst.
+            Ein klarer, ruhiger Prozess – ohne Show, ohne Versprechen von „Wundern“.
+            Für Menschen, die bereit sind, sich ehrlich zu begegnen und Verantwortung zu übernehmen.
           </p>
 
           <div class="ctaRow">
-            <a class="btn primary" href="#kontakt">Kontakt</a>
-            <a class="btn" href="#worum-es-geht">Worum es geht</a>
+            <a class="btn primary" href="kontakt.html">Kontakt aufnehmen</a>
+            <a class="btn" href="worum.html">Mehr erfahren</a>
           </div>
         </div>
 
         <aside class="card">
           <h2>Auf einen Blick</h2>
           <ul class="list">
-            <li>
-              <strong>Bewusstsein statt Automatismus</strong>
-              <span>Du lernst, dich selbst wahrzunehmen – bevor du reagierst.</span>
-            </li>
-            <li>
-              <strong>Verantwortung statt Abhängigkeit</strong>
-              <span>Veränderung beginnt innen – nicht im Außen.</span>
-            </li>
-            <li>
-              <strong>Klarheit statt Versprechen</strong>
-              <span>Keine „Wunder“, keine Magie – sondern ein echter Prozess.</span>
-            </li>
+            <li><strong>Bewusstsein</strong><span>Wahrnehmen, bevor du reagierst.</span></li>
+            <li><strong>Verantwortung</strong><span>Veränderung beginnt innen.</span></li>
+            <li><strong>Klarheit</strong><span>Kein Drama – ein echter Prozess.</span></li>
           </ul>
         </aside>
-      </div>
-
-      <!-- PRZENIESIONE POD HERO (żeby nic się nie nakładało) -->
-      <section id="worum-es-geht" class="card" style="margin-top:32px;">
-        <h3>Worum es in meiner Reiki-Arbeit geht</h3>
-        <p class="muted">
-          Ich bin auf Reiki gestoßen, als ich mein Leben stabilisieren wollte – nicht nur innerlich,
-          sondern auch im Alltag. Reiki hat mir Werkzeuge gegeben, mit denen ich heute bewusster entscheide:
-          <strong>Meine Reaktion ist meine Entscheidung.</strong>
-        </p>
       </section>
 
-      <div class="grid">
-        <section class="card" id="was-ist">
-          <h2>Was Reiki für mich ist</h2>
-          <p class="muted">
-            Reiki ist eine Einladung, dich selbst besser kennenzulernen: Muster zu erkennen,
-            Grenzen zu spüren, inneren Halt aufzubauen und ruhiger durch Konflikte zu gehen.
-            Veränderung entsteht aus vielen kleinen Entscheidungen, die in deinem Inneren beginnen.
-          </p>
-        </section>
-
-        <section class="card" id="was-nicht">
-          <h2>Was Reiki für mich nicht ist</h2>
-          <p class="muted">
-            Reiki ist für mich kein „Entfernen von Flüchen“, keine Arbeit mit Angstbildern und keine Bühne
-            für dramatische Geschichten. Es ist auch kein Ersatz für medizinische oder therapeutische Behandlung.
-          </p>
-          <p class="fine">
-            Hinweis: Reiki kann begleitend unterstützen, ersetzt jedoch keine Diagnose oder Behandlung durch Ärzt:innen oder Therapeut:innen.
-          </p>
-        </section>
-
-        <section class="card" id="fuer-wen">
-          <h2>Für wen meine Arbeit gedacht ist</h2>
-          <p class="muted">
-            Für Menschen, die bereit sind, sich ehrlich zu begegnen – und die verstehen,
-            dass echte Veränderung nicht „von außen“ kommt. Wenn du spürst: <em>Das ist mein Zeitpunkt</em>,
-            und du möchtest dich gehalten und klar begleitet fühlen, bist du hier richtig.
-          </p>
-        </section>
-
-        <section class="card" id="kontakt">
-          <h2>Kontakt</h2>
-          <p class="muted">
-            Wenn du magst, beschreibe kurz, worum es für dich geht und was du dir wünschst.
-            Ich antworte dir in Ruhe.
-          </p>
-
-          <p class="fine">
-            (Kontaktformular folgt. Für den Start kannst du hier einen Mail-Link einsetzen.)
-            <br />
-            Beispiel: <a href="mailto:deinname@domain.de">deinname@domain.de</a>
-          </p>
-        </section>
-      </div>
+      <section class="grid" aria-label="Kurzüberblick">
+        <div class="tile">
+          <h3>Worum es geht</h3>
+          <p>Selbstkontakt, innere Ordnung, Grenzen spüren – und Schritt für Schritt stabiler werden.</p>
+        </div>
+        <div class="tile">
+          <h3>Wie es abläuft</h3>
+          <p>Ruhig, klar, respektvoll. Du bekommst Raum – und eine saubere, strukturierte Begleitung.</p>
+        </div>
+        <div class="tile">
+          <h3>Für wen</h3>
+          <p>Für Menschen, die nicht „gerettet“ werden wollen – sondern bereit sind, selbst zu gehen.</p>
+        </div>
+      </section>
 
       <footer>
-        <div class="fine">
-          © <span id="y"></span> • Reiki • Klarheit, Balance, bewusste Veränderung
-        </div>
+        © <span id="y"></span> • Reiki • Klarheit, Balance, bewusste Veränderung
       </footer>
     </main>
   </div>
