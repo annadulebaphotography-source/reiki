@@ -3,8 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reiki – innere Balance & bewusste Veränderung</title>
-  <meta name="description" content="Reiki als ruhiger, klarer Weg zurück in innere Balance: Selbstwahrnehmung, Verantwortung und bewusste Veränderung – ohne Versprechen von Wundern." />
+
+  <!-- SEO: TITLE + DESCRIPTION -->
+  <title>Reiki Karlsruhe & Pfinztal – innere Balance, Ruhe & Stabilität</title>
+  <meta name="description" content="Reiki in Karlsruhe & Pfinztal: ruhige Begleitung für innere Balance, weniger Stress, mehr Klarheit und Stabilität im Alltag. Ohne Show, ohne Wunder-Versprechen – Schritt für Schritt zurück zu innerer Ruhe.">
+
+  <!-- SEO: TECH -->
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://annaduleba-reiki.com/index.html">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Reiki Karlsruhe & Pfinztal – innere Balance, Ruhe & Stabilität">
+  <meta property="og:description" content="Ruhige Begleitung für innere Balance, weniger Stress und mehr Stabilität im Alltag – Karlsruhe & Pfinztal.">
+  <meta property="og:url" content="https://annaduleba-reiki.com/index.html">
+  <meta property="og:image" content="https://annaduleba-reiki.com/mohnblumenfeld.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Reiki Karlsruhe & Pfinztal – innere Balance, Ruhe & Stabilität">
+  <meta name="twitter:description" content="Ruhige Begleitung für innere Balance, weniger Stress und mehr Stabilität im Alltag.">
+  <meta name="twitter:image" content="https://annaduleba-reiki.com/mohnblumenfeld.png">
+
+  <!-- Structured Data (Local SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Reiki – Innere Balance & bewusste Veränderung",
+    "url":"https://annaduleba-reiki.com/",
+    "image":"https://annaduleba-reiki.com/mohnblumenfeld.png",
+    "areaServed":[
+      {"@type":"City","name":"Karlsruhe"},
+      {"@type":"AdministrativeArea","name":"Pfinztal"},
+      {"@type":"Place","name":"Karlsruhe & Umgebung"}
+    ],
+    "description":"Reiki in Karlsruhe & Pfinztal: ruhige Begleitung für innere Balance, Stressregulation, Klarheit und Stabilität im Alltag.",
+    "makesOffer":{
+      "@type":"Offer",
+      "itemOffered":{
+        "@type":"Service",
+        "name":"Reiki Sitzung (ca. 60 Min.)",
+        "serviceType":"Reiki",
+        "areaServed":"Karlsruhe & Pfinztal"
+      }
+    }
+  }
+  </script>
 
   <style>
     :root{
@@ -67,10 +111,7 @@
       color:var(--text);
       user-select:none;
     }
-    .lang .pill.muted{
-      opacity:.75;
-      cursor:default;
-    }
+    .lang .pill.muted{opacity:.75; cursor:default;}
 
     /* Intro text ABOVE hero */
     .intro{
@@ -100,14 +141,11 @@
       margin-top:16px;
       position:relative;
       overflow:hidden;
-
       min-height:420px;
-
       background-image:url("mohnblumenfeld.png");
       background-size:cover;
       background-position:center 60%;
       background-repeat:no-repeat;
-
       border-radius:var(--radius);
       border:1px solid rgba(0,0,0,.08);
       box-shadow:var(--shadow);
@@ -174,6 +212,27 @@
       padding-top:10px;
     }
 
+    /* SEO text block */
+    .seo{
+      margin-top:16px;
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+    .seo h2{
+      margin:0 0 8px;
+      font-size:16px;
+      letter-spacing:.02em;
+    }
+    .seo p{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:15px;
+      max-width:80ch;
+    }
+
     footer{
       margin-top:34px;
       color:var(--muted);
@@ -187,57 +246,48 @@
       .topbar{align-items:flex-start}
       .hero{min-height:320px}
     }
-  /* ===== MOBILE MENU ===== */
-.burger{
-  display:none;
-  width:44px;
-  height:44px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:rgba(255,255,255,.75);
-  align-items:center;
-  justify-content:center;
-  flex-direction: column;   /* <<< TO JEST KLUCZ */
-  gap:5px;
-  padding:10px;
-  cursor:pointer;
-}
 
-.burger span{
-  display:block;
-  width:18px;
-  height:2px;
-  background:var(--text);
-  border-radius:999px;
-}
+    /* ===== MOBILE MENU ===== */
+    #menu-toggle{ display:none; }
 
-/* mobile behaviour */
-@media (max-width: 900px){
-  .nav{
-    display:none;
-    width:100%;
-    flex-direction:column;
-    gap:6px;
-    margin-top:12px;
-  }
+    .burger{
+      display:none;
+      width:44px;
+      height:44px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(255,255,255,.75);
+      align-items:center;
+      justify-content:center;
+      flex-direction: column;
+      gap:5px;
+      padding:10px;
+      cursor:pointer;
+    }
 
-  #menu-toggle:checked + .burger + .nav{
-    display:flex;
-  }
+    .burger span{
+      display:block;
+      width:18px;
+      height:2px;
+      background:var(--text);
+      border-radius:999px;
+    }
 
-  .burger{
-    display:flex;
-  }
+    @media (max-width: 900px){
+      .nav{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        gap:6px;
+        margin-top:12px;
+        align-items:flex-start;
+      }
 
-  .lang{
-    display:none;
-  }
-
-  .topbar{
-    flex-wrap:wrap;
-  }
-}
-
+      #menu-toggle:checked + .burger + .nav{ display:flex; }
+      .burger{ display:flex; }
+      .lang{ display:none; }
+      .topbar{ flex-wrap:wrap; }
+    }
   </style>
 </head>
 
@@ -249,26 +299,27 @@
         <span>Innere Balance • bewusste Veränderung</span>
       </div>
 
-    <input type="checkbox" id="menu-toggle" hidden>
+      <input type="checkbox" id="menu-toggle" hidden>
 
-<label for="menu-toggle" class="burger" aria-label="Menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</label>
+      <label for="menu-toggle" class="burger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
-<nav class="nav" aria-label="Navigation">
-  <a href="index.html">Start</a>
-  <a href="worum.html">Worum es geht</a>
-  <a href="angebot.html">Angebot</a>
-  <a href="ueber-mich.html">Über mich</a>
-  <a class="cta" href="kontakt.html">Kontakt</a>
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html">Start</a>
+        <a href="worum.html">Worum es geht</a>
+        <a href="angebot.html">Angebot</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a class="cta" href="kontakt.html">Kontakt</a>
+      </nav>
 
-  <div class="nav-lang">
-    <span class="pill">DE</span>
-    <span class="pill muted">PL/</span>
-  </div>
-</nav>
+      <div class="lang" aria-label="Sprachauswahl">
+        <span class="pill">DE</span>
+        <span class="pill muted" title="Bald verfügbar">PL</span>
+      </div>
+    </div><!-- ✅ WAŻNE: zamknięcie topbara -->
 
     <main>
       <!-- TEXT ABOVE IMAGE -->
@@ -276,14 +327,14 @@
         <h1>Reiki als Weg zurück in <span class="accent">innere Stabilität</span> und Ruhe.</h1>
         <p class="lead">
           Ein klarer, ruhiger Prozess – ohne Show, ohne Versprechen von „Wundern“.
-          Für Menschen, die viel tragen, funktionieren – und wieder bei sich ankommen wollen.
+          Für Menschen in <strong>Karlsruhe</strong>, <strong>Pfinztal</strong> und Umgebung, die viel tragen, funktionieren – und wieder bei sich ankommen wollen.
         </p>
       </section>
 
       <!-- IMAGE ONLY -->
       <section class="hero" aria-label="Bildbereich"></section>
 
-      <!-- “AUF EINEN BLICK” MOVED DOWN + NEW EXPLANATION -->
+      <!-- CONTENT -->
       <section class="section" aria-label="Inhalt">
         <aside class="card">
           <h2>Auf einen Blick</h2>
@@ -299,13 +350,28 @@
           <p>
             Reiki ist für mich kein „Zauber“ und kein Versprechen auf sofortige Wunder.
             Es ist ein ruhiger Rahmen, in dem du wieder spüren kannst, was gerade wirklich da ist:
-            Stress, Druck, Überforderung, innere Unruhe – oder einfach das Gefühl, ständig nur zu funktionieren.
+            Stress, Druck, Überforderung, innere Unruhe – oder das Gefühl, ständig nur zu funktionieren.
           </p>
           <div class="meta">
             Du bekommst Raum, Klarheit und eine respektvolle Begleitung – damit du wieder bei dir ankommst und
             Veränderungen nicht nur „kurz besser“, sondern langfristig tragfähig werden.
           </div>
         </div>
+      </section>
+
+      <!-- SEO / KEYWORD TEXT (natürlich, bez spamu) -->
+      <section class="seo" aria-label="Reiki Karlsruhe Pfinztal Innere Balance">
+        <h2>Reiki in Karlsruhe &amp; Pfinztal – innere Balance, Ruhe und Klarheit</h2>
+        <p>
+          Wenn du nach <strong>innerer Balance</strong>, <strong>innerer Ruhe</strong> oder mehr <strong>Stabilität im Alltag</strong> suchst,
+          bist du hier richtig: Meine Reiki-Arbeit in <strong>Karlsruhe</strong>, <strong>Pfinztal</strong> und Umgebung ist eine ruhige,
+          klare Begleitung – besonders in stressigen Lebensphasen, bei Überforderung oder wenn du wieder besser spüren willst,
+          was du wirklich brauchst. Ohne Druck. Ohne Show. Sondern Schritt für Schritt zurück zu dir.
+        </p>
+        <p>
+          Mehr Details findest du unter <a href="angebot.html"><strong>Angebot</strong></a> und <a href="worum.html"><strong>Worum es geht</strong></a>.
+          Wenn du direkt starten möchtest: <a href="kontakt.html"><strong>Kontakt</strong></a>.
+        </p>
       </section>
 
       <footer>
