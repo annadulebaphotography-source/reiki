@@ -222,3 +222,16 @@ footer{
   .lang{ display:none; }
   .topbar{ flex-wrap:wrap; align-items:flex-start; }
 }
+/* FULL WIDTH HERO (jak Jimdo) */
+.fullbleed{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+}
+
+.hero{
+  width:100%;
+  min-height:420px;
+  border-radius:12px;
+}
+
