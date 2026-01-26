@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Angebot – Reiki Karlsruhe & Umgebung</title>
-  <meta name="description" content="Reiki in Karlsruhe & Umgebung: ruhige, begleitende Sitzungen für innere Balance, Stressregulation und Klarheit. Dauer ca. 60 Min. Kosten 80–100 €." />
+  <title>Angebot – Reiki Karlsruhe &amp; Umgebung</title>
+  <meta name="description" content="Reiki in Karlsruhe &amp; Umgebung: ruhige, begleitende Sitzungen für innere Balance, Stressregulation und Klarheit. Dauer ca. 60 Min. Kosten 80–100 €." />
 
   <style>
     :root{
@@ -75,52 +75,50 @@
     }
     .lang .pill.muted{opacity:.75; cursor:default;}
 
-   /* ===== MOBILE MENU ===== */
-#menu-toggle{ display:none; }
+    /* ===== MOBILE MENU ===== */
+    #menu-toggle{ display:none; }
 
-.burger{
-  display:none;
-  width:44px;
-  height:44px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:rgba(255,255,255,.75);
-  align-items:center;
-  justify-content:center;
-  flex-direction: column;
-  gap:5px;
-  padding:10px;
-  cursor:pointer;
-}
-.burger span{
-  display:block;
-  width:18px;
-  height:2px;
-  background:var(--text);
-  border-radius:999px;
-}
+    .burger{
+      display:none;
+      width:44px;
+      height:44px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(255,255,255,.75);
+      align-items:center;
+      justify-content:center;
+      flex-direction: column;
+      gap:5px;
+      padding:10px;
+      cursor:pointer;
+    }
+    .burger span{
+      display:block;
+      width:18px;
+      height:2px;
+      background:var(--text);
+      border-radius:999px;
+    }
 
-@media (max-width: 900px){
-  .nav{
-    display:none;
-    width:100%;
-    flex-direction:column;
-    gap:6px;
-    margin-top:12px;
-  }
+    @media (max-width: 900px){
+      .nav{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        gap:6px;
+        margin-top:12px;
+      }
 
-  #menu-toggle:checked + .burger + .nav{
-    display:flex;
-  }
+      #menu-toggle:checked + .burger + .nav{
+        display:flex;
+      }
 
-  .burger{ display:flex; }
+      .burger{ display:flex; }
+      .lang{ display:none; }
+      .topbar{ flex-wrap:wrap; align-items:flex-start; }
 
-  .lang{ display:none; }
-
-  .topbar{ flex-wrap:wrap; align-items:flex-start; }
-
-  h1{ font-size:28px; }
-}
+      h1{ font-size:28px; }
+    }
 
     /* Page layout */
     .page{
@@ -275,7 +273,6 @@
       border-top:1px solid var(--line);
       padding-top:18px;
     }
-    }
   </style>
 </head>
 
@@ -286,6 +283,14 @@
         <strong>Reiki</strong>
         <span>Innere Balance • bewusste Veränderung</span>
       </div>
+
+      <input type="checkbox" id="menu-toggle" hidden>
+
+      <label for="menu-toggle" class="burger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
       <nav class="nav" aria-label="Navigation">
         <a href="index.html">Start</a>
@@ -365,6 +370,7 @@
             <small>Rahmen:</small> nach Dauer &amp; individuellem Setting
           </div>
         </div>
+
         <p>
           Wenn du unsicher bist, ob Reiki für dich passend ist, kannst du mich gerne vorab kontaktieren.
         </p>
