@@ -3,76 +3,421 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Worum es geht – Reiki</title>
+
+  <title>Worum es geht – Reiki in Karlsruhe & Pfinztal | Natur, Ruhe, Klarheit</title>
+  <meta name="description" content="Worum es bei meiner Reiki-Arbeit wirklich geht: innere Ruhe, Klarheit, Grenzen, Stabilität – und Verbindung zur Natur. Reiki in Karlsruhe & Pfinztal, auch als intuitiver Spaziergang im Wald oder auf der Wiese.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://annaduleba-reiki.com/worum.html">
+  <meta name="theme-color" content="#f6f2ea">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Worum es geht – Reiki in Karlsruhe & Pfinztal | Natur, Ruhe, Klarheit">
+  <meta property="og:description" content="Reiki als ruhiger, klarer Prozess: Stabilität, Grenzen, innere Ruhe – und Verbindung zur Natur. Karlsruhe & Pfinztal.">
+  <meta property="og:url" content="https://annaduleba-reiki.com/worum.html">
+  <meta property="og:image" content="https://annaduleba-reiki.com/annadulebareiki2.jpg">
+  <meta property="og:image:alt" content="Reiki in der Natur – Ruhe, Klarheit und innere Stabilität">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Worum es geht – Reiki in Karlsruhe & Pfinztal">
+  <meta name="twitter:description" content="Ruhig, klar, bodenständig: Reiki für innere Stabilität – oft in der Natur (Wald/Wiese), auch als intuitiver Spaziergang.">
+  <meta name="twitter:image" content="https://annaduleba-reiki.com/annadulebareiki2.jpg">
+
+  <link rel="preload" as="image" href="annadulebareiki2.jpg">
 
   <style>
     :root{
-      --bg:#f6f2ea; --card:#fff; --text:#1b1b1b; --muted:#5e5a52;
-      --line:rgba(20,20,20,.10); --accent:#b79a63; --shadow:0 10px 30px rgba(0,0,0,.08);
-      --radius:12px; --max:900px;
+      --bg:#f6f2ea;
+      --card:#ffffff;
+      --card2:#fbf8f2;
+      --text:#1b1b1b;
+      --muted:#5e5a52;
+      --line:rgba(20,20,20,.10);
+      --accent:#b79a63;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:14px;
+      --max:1080px;
     }
+
     *{box-sizing:border-box}
-    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.7}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
-    a{text-decoration:none}
-    .top{
-      display:flex; justify-content:space-between; align-items:center;
-      border-bottom:1px solid var(--line);
-      padding:10px 0 18px;
-      gap:12px;
+    html,body{width:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.75;
+      overflow-x:hidden;
     }
-    .nav{display:flex; gap:10px; flex-wrap:wrap}
-    .nav a{color:var(--muted); padding:8px 10px; border-radius:999px}
+    a{color:inherit; text-decoration:none}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:22px 18px 74px;
+    }
+
+    /* Top */
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      padding:10px 0 18px;
+      border-bottom:1px solid var(--line);
+      flex-wrap:wrap;
+    }
+    .brand{display:flex; flex-direction:column; gap:4px;}
+    .brand strong{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+    .brand span{font-size:13px; color:var(--muted)}
+    .nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      font-size:14px;
+    }
+    .nav a{
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+    }
     .nav a:hover{background:rgba(255,255,255,.6); color:var(--text)}
-    .cta{background:var(--accent); color:#fff !important; border:1px solid rgba(0,0,0,.08)}
-    .card{margin-top:22px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px;}
-    h1{margin:0 0 10px; font-size:34px; letter-spacing:-.01em}
+    .nav a.active{
+      background:rgba(255,255,255,.65);
+      color:var(--text);
+      border:1px solid var(--line);
+    }
+    .cta{
+      background:var(--accent);
+      color:#fff !important;
+      border:1px solid rgba(0,0,0,.08);
+      padding:9px 12px !important;
+    }
+    .cta:hover{opacity:.92}
+
+    /* Hero strip (subtle, premium) */
+    .heroStrip{
+      margin-top:18px;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow:var(--shadow);
+      background:#000;
+      position:relative;
+      min-height:220px;
+    }
+    .heroStrip::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image:url('annadulebareiki2.jpg');
+      background-size:cover;
+      background-position:center 45%;
+      filter:saturate(1.02);
+      transform:scale(1.02);
+    }
+    .heroStrip::after{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(90deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.22) 45%, rgba(0,0,0,.10) 100%);
+    }
+    .heroContent{
+      position:relative;
+      padding:22px 22px;
+      color:#fff;
+      max-width:78ch;
+    }
+    .kicker{
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      opacity:.92;
+      margin:0 0 8px;
+    }
+    .heroTitle{
+      margin:0 0 10px;
+      font-size:28px;
+      line-height:1.18;
+      letter-spacing:-.02em;
+    }
+    .heroLead{
+      margin:0;
+      font-size:15px;
+      opacity:.92;
+    }
+
+    /* Main card + editorial grid */
+    .card{
+      margin-top:18px;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .editorial{
+      display:grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    .imageCard{
+      background:var(--card2);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+    }
+    .imageCard img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:12px;
+      box-shadow:0 8px 22px rgba(0,0,0,.14);
+    }
+    .caption{
+      margin-top:10px;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:30px;
+      line-height:1.2;
+      letter-spacing:-.01em;
+    }
     p{margin:0 0 14px; color:var(--muted); font-size:16px}
     strong{color:var(--text)}
+    .accent{color:var(--accent); font-weight:800}
+
+    .pillRow{display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 6px}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.7);
+      color:var(--text);
+      font-size:13px;
+      white-space:nowrap;
+    }
+
+    .divider{
+      margin:14px 0 16px;
+      height:1px;
+      background:var(--line);
+    }
+
+    .callout{
+      margin-top:14px;
+      background:rgba(183,154,99,.10);
+      border:1px solid rgba(183,154,99,.25);
+      border-radius:14px;
+      padding:14px 14px;
+      color:var(--text);
+    }
+    .callout p{color:var(--text); margin:0; font-size:15px}
+
+    .btnRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(255,255,255,.92);
+      font-weight:800;
+      color:var(--text);
+    }
+    .btn.primary{
+      background:var(--accent);
+      color:#fff;
+      border-color:rgba(0,0,0,.08);
+    }
+
+    /* SEO section */
+    .seo{
+      margin-top:16px;
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px 22px;
+    }
+    .seo h2{margin:0 0 8px; font-size:16px; letter-spacing:.02em;}
+    .seo p{margin:8px 0 0; color:var(--muted); font-size:15px; max-width:88ch;}
+
+    footer{
+      margin-top:32px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+    }
+
+    @media (max-width: 980px){
+      .editorial{grid-template-columns:1fr;}
+      .heroTitle{font-size:24px}
+      h1{font-size:26px}
+    }
   </style>
+
+  <!-- FAQ Schema (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Worum geht es bei Reiki in meiner Arbeit?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Reiki ist für mich ein ruhiger, klarer Prozess, der innere Stabilität, Grenzen und Ruhe stärkt. Es geht um Wahrnehmung, Klarheit und tragfähige Veränderung im Alltag – ohne Show und ohne Wunder-Versprechen."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Machst du Reiki auch in der Natur?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Ja. Natur ist für mich ein direkter Zugang zu Stille, Erdung und innerem Licht. Deshalb findet Reiki auf Wunsch auch draußen statt – im Wald oder auf der Wiese, oft verbunden mit einem intuitiven Spaziergang."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Für wen ist das passend?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Für Menschen, die viel tragen, funktionieren und wieder bei sich ankommen möchten – mehr Ruhe im Kopf, klarere Grenzen und Stabilität im Alltag. In Karlsruhe, Pfinztal und Umgebung."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
-<body>
+
+<body data-page="worum">
   <div class="wrap">
-    <div class="top">
-      <div>
-        <div style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);">Reiki</div>
-        <div style="font-size:13px; color:var(--muted);">Innere Balance • bewusste Veränderung</div>
+    <header class="topbar">
+      <div class="brand">
+        <strong>Reiki</strong>
+        <span>Innere Balance • bewusste Veränderung</span>
       </div>
-      <nav class="nav">
+
+      <nav class="nav" aria-label="Navigation">
         <a href="index.html">Start</a>
-        <a href="worum.html">Worum es geht</a>
+        <a class="active" href="worum.html">Worum es geht</a>
         <a href="angebot.html">Angebot</a>
         <a href="ueber-mich.html">Über mich</a>
         <a class="cta" href="kontakt.html">Kontakt</a>
       </nav>
-    </div>
+    </header>
+
+    <section class="heroStrip" aria-label="Reiki in der Natur">
+      <div class="heroContent">
+        <p class="kicker">Karlsruhe • Pfinztal • Natur</p>
+        <h2 class="heroTitle">Worum es wirklich geht: Ruhe, Klarheit – und Verbindung.</h2>
+        <p class="heroLead">
+          Reiki ist für mich Kontakt zu dir selbst und zur ursprünglichen Kraft von Natur und Licht –
+          bodenständig, still und tragfähig im Alltag.
+        </p>
+      </div>
+    </section>
 
     <main class="card">
-      <h1>Worum es in meiner Reiki-Arbeit geht</h1>
+      <div class="editorial">
+        <aside class="imageCard">
+          <img src="annadulebareiki2.jpg" alt="Reiki in der Natur in Karlsruhe und Pfinztal – Ruhe, Klarheit und innere Stabilität">
+          <div class="caption">
+            Reiki draußen: Wald, Wiese, Stille. Nicht als „Show“, sondern als natürlicher Rahmen,
+            um wieder zu spüren, was wirklich da ist.
+          </div>
+        </aside>
 
-      <p>
-        Für mich ist Reiki kein „Zauber“ und keine Abkürzung. Es ist ein ruhiger, klarer Prozess,
-        der dich zurück in Kontakt mit dir selbst bringt – damit du bewusst entscheiden kannst,
-        statt im Automatismus zu reagieren.
-      </p>
+        <section>
+          <h1>Worum es in meiner Reiki-Arbeit geht</h1>
 
-      <p>
-        Ich begleite dich dabei, <strong>Muster zu erkennen</strong>, deine <strong>Grenzen zu spüren</strong>
-        und inneren Halt aufzubauen. Es geht nicht darum, etwas im Außen zu „reparieren“,
-        sondern die Basis in dir zu stabilisieren.
-      </p>
+          <div class="pillRow" aria-label="Schwerpunkte">
+            <span class="pill">Innere Ruhe</span>
+            <span class="pill">Klarheit & Grenzen</span>
+            <span class="pill">Stabilität im Alltag</span>
+            <span class="pill">Natur & Licht</span>
+          </div>
 
-      <p>
-        Wenn du möchtest, schauen wir gemeinsam:
-        Was stresst dich wirklich? Wo verlierst du dich? Was brauchst du, um wieder in Ruhe zu kommen –
-        und diese Ruhe im Alltag zu halten?
-      </p>
+          <p>
+            Für mich ist Reiki kein „Zauber“ und keine Abkürzung. Es ist ein ruhiger, klarer Prozess,
+            der dich zurück in Kontakt mit dir selbst bringt – damit du bewusst entscheiden kannst,
+            statt im Automatismus zu reagieren.
+          </p>
 
-      <p>
-        <strong>Meine Haltung:</strong> Klarheit, Respekt, Struktur. Keine Dramatisierung, keine Versprechen,
-        keine Abhängigkeit. Du bleibst immer die Person, die entscheidet.
-      </p>
+          <p>
+            Ich begleite dich dabei, <strong>Muster zu erkennen</strong>, deine <strong>Grenzen zu spüren</strong>
+            und <strong>inneren Halt</strong> aufzubauen. Es geht nicht darum, etwas im Außen zu „reparieren“,
+            sondern die Basis in dir zu stabilisieren – Schritt für Schritt.
+          </p>
+
+          <div class="divider"></div>
+
+          <p>
+            Ein zentraler Teil meiner Arbeit ist die <strong>Verbindung zur Natur</strong>.
+            Für mich bedeutet Reiki auch: sich mit der <span class="accent">ursprünglichen Kraft von Licht</span>
+            und Lebendigkeit zu verbinden. Deshalb findet Reiki auf Wunsch nicht nur im Raum,
+            sondern auch <strong>im Wald oder auf der Wiese</strong> statt.
+          </p>
+
+          <div class="callout">
+            <p>
+              <strong>Intuitiver Spaziergang</strong> (optional): eine ruhige, geführte Geh-Session, in der wir
+              Wahrnehmung, Atmung, innere Signale und klare Ausrichtung verbinden – damit Ruhe nicht nur „fühlbar“,
+              sondern im Alltag auch <strong>haltbar</strong> wird.
+            </p>
+          </div>
+
+          <p style="margin-top:14px;">
+            Wenn du möchtest, schauen wir gemeinsam:
+            Was stresst dich wirklich? Wo verlierst du dich? Was brauchst du, um wieder in Ruhe zu kommen –
+            und diese Ruhe im Alltag zu halten?
+          </p>
+
+          <p>
+            <strong>Meine Haltung:</strong> Klarheit, Respekt, Struktur. Keine Dramatisierung, keine Versprechen,
+            keine Abhängigkeit. Du bleibst immer die Person, die entscheidet.
+          </p>
+
+          <div class="btnRow">
+            <a class="btn primary" href="kontakt.html">Kontakt aufnehmen</a>
+            <a class="btn" href="angebot.html">Angebot ansehen</a>
+          </div>
+        </section>
+      </div>
     </main>
+
+    <section class="seo" aria-label="Reiki Karlsruhe Pfinztal SEO">
+      <h2>Reiki in Karlsruhe &amp; Pfinztal: naturverbunden, klar, tragfähig</h2>
+      <p>
+        Wenn du nach <strong>Reiki in Karlsruhe</strong> oder <strong>Reiki in Pfinztal</strong> suchst:
+        Meine Arbeit ist bewusst ruhig und bodenständig – mit Fokus auf <strong>innere Stabilität</strong>,
+        <strong>Stressregulation</strong>, klare <strong>Grenzen</strong> und mehr <strong>Ruhe im Alltag</strong>.
+        Auf Wunsch verbinden wir Reiki mit der Natur: <strong>Wald</strong>, <strong>Wiese</strong>,
+        Stille – als natürlicher Rahmen für Klarheit und innere Ordnung.
+      </p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> • Reiki • Karlsruhe & Pfinztal • Klarheit, Balance, bewusste Veränderung
+    </footer>
   </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
