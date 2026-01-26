@@ -3,205 +3,87 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Über mich – Reiki</title>
-  <meta name="description" content="Über mich: ruhig, klar und bodenständig. Reiki als Weg zu innerer Stabilität – ohne Show, ohne Versprechen." />
+  <title>Über mich – Reiki Karlsruhe & Pfinztal</title>
+  <meta name="description" content="Über mich: ruhig, klar und bodenständig. Reiki als Weg zu innerer Stabilität – ohne Show, ohne Versprechen.">
 
+  <link rel="stylesheet" href="styles.css">
   <style>
-    :root{
-      --bg:#f6f2ea;
-      --card:#ffffff;
-      --card2:#fbf8f2;
-      --text:#1b1b1b;
-      --muted:#5e5a52;
-      --line:rgba(20,20,20,.10);
-      --accent:#b79a63;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
-      --radius:12px;
-      --max:1100px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.6;
-    }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
+    /* Drobna, bezpieczna „nakładka” premium tylko dla tej podstrony */
+    body{ overflow-x:hidden; }
 
-    /* Topbar */
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:18px;
-      padding:10px 0 18px;
-      border-bottom:1px solid var(--line);
-      flex-wrap:wrap;
-    }
-    .brand{display:flex; flex-direction:column; gap:4px;}
-    .brand strong{font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
-    .brand span{font-size:13px; color:var(--muted)}
-
-    .nav{
-      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-      font-size:14px;
-    }
-    .nav a{
-      text-decoration:none;
-      color:var(--muted);
-      padding:8px 10px;
-      border-radius:999px;
-    }
-    .nav a:hover{background:rgba(255,255,255,.6); color:var(--text)}
-    .nav .cta{
-      background:var(--accent);
-      color:#fff;
-      border:1px solid rgba(0,0,0,.08);
-    }
-    .nav .cta:hover{opacity:.92}
-
-    .lang{display:flex; gap:10px; align-items:center; font-size:13px; color:var(--muted);}
-    .lang .pill{
-      border:1px solid var(--line);
-      padding:8px 10px; border-radius:999px;
-      background:rgba(255,255,255,.75);
-      color:var(--text);
-      user-select:none;
-    }
-    .lang .pill.muted{opacity:.75; cursor:default;}
-
-    /* Burger */
-    .burger{
-      display:none;
-      width:44px; height:44px;
-      border:1px solid var(--line);
-      border-radius:12px;
-      background:rgba(255,255,255,.75);
-      align-items:center;
-      justify-content:center;
-      gap:5px;
-      padding:10px;
-      cursor:pointer;
-    }
-    .burger span{
-      display:block;
-      width:18px;
-      height:2px;
-      background:var(--text);
-      border-radius:999px;
-    }
-
-    /* Page layout */
     .page{
       margin-top:22px;
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1fr;
       gap:18px;
       align-items:start;
     }
-    @media (max-width: 980px){ .page{grid-template-columns:1fr;} }
 
-    .card{
-      background:var(--card);
+    /* Układ obraz + tekst jak na Twojej stronie foto */
+    .about-grid{
+      display:grid;
+      grid-template-columns: 420px 1fr;
+      gap:20px;
+      align-items:start;
+    }
+
+    .about-image{
+      background:rgba(255,255,255,.65);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:22px;
+      padding:14px;
+      position:sticky;
+      top:18px;
     }
 
-    h1{
-      margin:0 0 10px;
-      font-size:34px;
-      line-height:1.15;
-      letter-spacing:-.02em;
-    }
-    .lead{
-      margin:0;
-      font-size:16px;
-      color:var(--muted);
-      max-width:75ch;
+    .about-image img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius: calc(var(--radius) - 6px);
+      object-fit:cover;
     }
 
-    .section{
-      margin-top:16px;
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:18px 22px;
-    }
-    .section h2{
-      margin:0 0 8px;
-      font-size:13px; letter-spacing:.10em; text-transform:uppercase;
-      color:var(--muted);
-    }
-    .section p{margin:0; color:var(--muted); font-size:15px}
-
-    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,.10);
-      background:rgba(255,255,255,.90);
-      text-decoration:none;
-      font-weight:700;
-      color:var(--text);
-      white-space:nowrap;
-    }
-    .btn.primary{
-      background:var(--accent);
-      color:#fff;
-      border-color:rgba(0,0,0,.08);
-    }
-
-    footer{
-      margin-top:34px;
-      color:var(--muted);
+    /* delikatny podpis pod zdjęciem (opcjonalny) */
+    .about-caption{
+      margin-top:10px;
       font-size:13px;
-      border-top:1px solid var(--line);
-      padding-top:18px;
+      color:var(--muted);
+      line-height:1.5;
     }
 
-    /* Mobile menu behaviour */
-    @media (max-width: 900px){
-      .burger{display:flex;}
-      .lang{display:none;}
-      .nav{display:none; width:100%; flex-direction:column; gap:6px; margin-top:12px;}
-      #menu-toggle:checked + .burger + .nav{display:flex;}
+    /* Sidebar po prawej jak wcześniej */
+    .aside-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      align-items:start;
+    }
+
+    @media (max-width: 980px){
+      .about-grid{ grid-template-columns: 1fr; }
+      .about-image{ position:relative; top:auto; }
+      .aside-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
-<body>
+<body data-page="ueber-mich">
   <div class="wrap">
-    <div class="topbar">
-      <div class="brand">
-        <strong>Reiki</strong>
-        <span>Innere Balance • bewusste Veränderung</span>
-      </div>
+    <div id="site-header"></div>
 
-      <input type="checkbox" id="menu-toggle" hidden>
-      <label for="menu-toggle" class="burger" aria-label="Menü">
-        <span></span><span></span><span></span>
-      </label>
+    <main class="page" aria-label="Über mich Seite">
 
-      <nav class="nav" aria-label="Navigation">
-        <a href="index.html">Start</a>
-        <a href="worum.html">Worum es geht</a>
-        <a href="angebot.html">Angebot</a>
-        <a href="ueber-mich.html" style="background:rgba(255,255,255,.6); color:var(--text);">Über mich</a>
-        <a class="cta" href="kontakt.html">Kontakt</a>
-      </nav>
+      <!-- OBRAZ + TEKST (premium, jak u Ciebie na foto stronie) -->
+      <section class="about-grid" aria-label="Über mich Inhalt">
+        <div class="about-image">
+          <img src="reikiannadulebakarlsruhe.jpg" alt="Anna Duleba – Reiki Karlsruhe & Pfinztal">
+          <div class="about-caption">
+            Ein persönliches Bild – als stiller Teil meiner Geschichte.
+          </div>
+        </div>
 
-      <div class="lang" aria-label="Sprachauswahl">
-        <span class="pill">DE</span>
-        <span class="pill muted" title="Bald verfügbar">PL/EN</span>
-      </div>
-    </div>
-
-    <main class="page">
-      <section>
         <div class="card">
           <h1>Über mich</h1>
 
@@ -241,15 +123,20 @@
             – und die Freiheit, bewusst zu gestalten, statt nur zu reagieren.
           </p>
 
-          <div class="ctaRow">
-            <a class="btn primary" href="kontakt.html">Kontakt aufnehmen</a>
-            <a class="btn" href="angebot.html">Angebot ansehen</a>
+          <div class="ctaRow" style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+            <a class="btn primary" href="kontakt.html" style="display:inline-flex; align-items:center; justify-content:center; padding:12px 16px; border-radius:12px; border:1px solid rgba(0,0,0,.10); background:var(--accent); color:#fff; text-decoration:none; font-weight:700;">
+              Kontakt aufnehmen
+            </a>
+            <a class="btn" href="angebot.html" style="display:inline-flex; align-items:center; justify-content:center; padding:12px 16px; border-radius:12px; border:1px solid rgba(0,0,0,.10); background:rgba(255,255,255,.90); color:var(--text); text-decoration:none; font-weight:700;">
+              Angebot ansehen
+            </a>
           </div>
         </div>
       </section>
 
-      <aside>
-        <div class="section">
+      <!-- DOLNE „KARTY” -->
+      <section class="aside-grid" aria-label="Zusatzinfos">
+        <div class="section" style="margin-top:0;">
           <h2>Für wen es passt</h2>
           <p>
             Für Menschen, die viel tragen, funktionieren – und wieder bei sich ankommen wollen.
@@ -257,22 +144,18 @@
           </p>
         </div>
 
-        <div class="section">
+        <div class="section" style="margin-top:0;">
           <h2>Hinweis</h2>
           <p>
             Reiki kann begleitend unterstützen, ersetzt jedoch keine Diagnose oder Behandlung durch Ärzt:innen oder Therapeut:innen.
           </p>
         </div>
-      </aside>
-    </main>
+      </section>
 
-    <footer>
-      © <span id="y"></span> • Reiki • Klarheit, Balance, bewusste Veränderung
-    </footer>
+      <div id="site-footer"></div>
+    </main>
   </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
