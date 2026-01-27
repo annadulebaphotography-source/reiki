@@ -139,7 +139,9 @@ a{color:inherit}
 .nav a.active{
   background:rgba(255,255,255,.65);
   color:var(--text);
-  border:
+  border:1px solid var(--line);
+}
+
     .site-header {
   background:#fff;
   border-bottom:1px solid #eee;
