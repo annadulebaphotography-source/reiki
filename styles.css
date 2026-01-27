@@ -216,4 +216,21 @@ a{color:inherit}
   top: 0;
   z-index: 9999;
 }
+/* MOBILE MENU FIX */
+@media(max-width:800px){
+
+  .burger{
+    display:flex !important;
+    z-index:9999;
+  }
+
+  .nav{
+    display:none !important;
+  }
+
+  .nav.active{
+    display:flex !important;
+  }
+
+}
 
