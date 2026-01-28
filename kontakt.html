@@ -15,9 +15,19 @@
       --radius:12px; --max:900px;
     }
     *{box-sizing:border-box}
-    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.7}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7
+    }
     .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
     a{text-decoration:none}
+
+    /* ✅ MINIMALNE STYLE HEADERA, żeby nie był "goły" */
+    .headerbar.fullbleed{width:100%;}
+    #site-header{max-width:var(--max); margin:0 auto; padding:12px 18px 0;}
 
     .card{margin-top:22px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px;}
     h1{margin:0 0 10px; font-size:34px}
@@ -87,7 +97,7 @@
 
       <div class="hint">
         <strong>Hinweis:</strong> Ich begleite Menschen aus <strong>Karlsruhe</strong>, <strong>Pfinztal</strong> und Umgebung.
-        Wenn du magst, nenn mir direkt 1–2 mögliche Termine (Wochentag / Uhrzeit).  
+        Wenn du magst, nenn mir direkt 1–2 mögliche Termine (Wochentag / Uhrzeit).
         <span style="display:block; margin-top:6px;">Antwortzeit: in der Regel innerhalb von <strong>24–48 Stunden</strong>.</span>
       </div>
 
@@ -116,7 +126,6 @@
           <textarea id="message" name="message" placeholder="Kurzbeschreibung: Was ist gerade wichtig für dich? Was wünschst du dir? (Optional: 1–2 Terminvorschläge)" required></textarea>
         </div>
 
-        <!-- optional -->
         <input type="hidden" name="_subject" value="Neue Reiki Anfrage (Website)">
         <input type="hidden" name="_captcha" value="false">
 
@@ -135,6 +144,7 @@
     <div id="site-footer"></div>
   </div>
 
-  <script src="main.js"></script>
+  <!-- ✅ KLUCZOWA ZMIANA: absolutna ścieżka + defer -->
+  <script src="/main.js" defer></script>
 </body>
 </html>
