@@ -267,4 +267,21 @@ a{color:inherit}
   .flowers-bl{ left: -80px; bottom: -90px; }
   .flowers-tr{ right: -80px; top: -90px; }
 }
+/* ===== KWIATKI NA SAMYM DOLE STRONY ===== */
+
+body{
+  position:relative;
+}
+
+body::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:420px; /* wysokość kwiatków */
+  background:url("flowers.png") center bottom / contain no-repeat;
+  pointer-events:none;
+  opacity:0.9;
+}
 
