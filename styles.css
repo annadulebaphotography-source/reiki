@@ -284,4 +284,8 @@ body::after{
   pointer-events:none;
   opacity:0.9;
 }
+.flowers{
+  opacity:0.4;
+  pointer-events:none;
+}
 
