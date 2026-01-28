@@ -281,6 +281,7 @@ body::after{
   bottom:0;
   height:420px; /* wysokość kwiatków */
   background:url("flowers.png") center bottom / contain no-repeat;
+  filter:opacity(40%);
   pointer-events:none;
   opacity:0.9;
 }
