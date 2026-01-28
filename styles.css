@@ -233,4 +233,38 @@ a{color:inherit}
   }
 
 }
+/* =========================
+   FLOWERS OVERLAY
+========================= */
+.flower-wrap{
+  position: relative;
+  overflow: hidden; /* żeby kwiatki nie wyjeżdżały poza kartę/sekcję */
+}
+
+.flowers{
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  opacity: .35;          /* premium subtil */
+  width: 420px;          /* możesz zmienić */
+  height: auto;
+  z-index: 0;
+  filter: saturate(1.02);
+}
+
+.flowers-bl{ left: -60px; bottom: -70px; }  /* bottom-left */
+.flowers-tr{ right: -60px; top: -70px; transform: scaleX(-1); } /* top-right (lustrzane) */
+
+/* Treść sekcji ma być nad kwiatkami */
+.flower-wrap > *:not(.flowers){
+  position: relative;
+  z-index: 1;
+}
+
+/* mobile – mniejsze i jeszcze delikatniejsze */
+@media (max-width: 800px){
+  .flowers{ width: 280px; opacity: .26; }
+  .flowers-bl{ left: -80px; bottom: -90px; }
+  .flowers-tr{ right: -80px; top: -90px; }
+}
 
