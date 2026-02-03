@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Kontakt – Reiki in Karlsruhe &amp; Pfinztal | Termin anfragen</title>
-  <meta name="description" content="Kontakt für Reiki in Karlsruhe & Pfinztal: Anfrage senden, Termin vereinbaren, Fragen klären. Ruhige Begleitung für innere Balance, Stressabbau & Klarheit." />
+  <meta name="description" content="Kontakt für Reiki in Karlsruhe &amp; Pfinztal: Anfrage senden, Termin vereinbaren, Fragen klären. Ruhige Begleitung für innere Balance, Stressabbau &amp; Klarheit." />
 
-  <!-- Jeśli styles.css jest w /reiki/ razem z kontakt.html -> zostaw styles.css
+  <!-- Jeśli styles.css jest w tym samym folderze co kontakt.html -> zostaw styles.css
        Jeśli styles.css jest w ROOT -> zmień na /styles.css -->
   <link rel="stylesheet" href="styles.css" />
 
@@ -19,7 +19,6 @@
       --muted:#7a5a63;
       --line:rgba(176,74,106,.16);
 
-      /* „róża” – elegancka, bez cukrowej waty 😉 */
       --accent:#b04a6a;
       --accent-strong:#8f3450;
       --accent-soft:#f7d3df;
@@ -39,7 +38,6 @@
       line-height:1.7;
     }
 
-    /* Header wrapper – menu wstrzykiwane do #site-header */
     .headerbar{width:100%;}
     #site-header{max-width:var(--max); margin:0 auto; padding:12px 18px 0;}
 
@@ -150,13 +148,15 @@
         ⏳ Bitte einen Moment… die freien Termine werden geladen.
       </div>
 
-      <iframe
-        id="reikiBookingFrame"
-        class="bookingFrame"
-        src="URL_IFRAME"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Reiki – Termin reservieren"></iframe>
+      <!-- ✅ TU MUSI BYĆ PRAWDZIWY LINK, nie placeholder -->
+     <iframe
+  id="reikiBookingFrame"
+  class="bookingFrame"
+  src="https://script.google.com/macros/s/AKfycbw3a7x4GxXUAHhyZthon0DOaDQTbns65ArRJ0T67vIVRkZdRE-DH4R3tiFgg_uZGNOpcw/exec"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  title="Reiki – Termin reservieren"></iframe>
+
 
       <p class="fineprint">Nach der Reservierung melde ich mich persönlich mit allen Details.</p>
     </section>
@@ -211,7 +211,7 @@
   </div>
 
   <!-- Jeśli main.js jest w root -> /main.js
-       Jeśli jest w /reiki/ -> main.js -->
+       Jeśli jest w tym samym folderze -> main.js -->
   <script src="/main.js" defer></script>
 
   <script>
@@ -220,9 +220,20 @@
       const loader = document.getElementById("reikiBookingLoader");
       if(!frame || !loader) return;
 
-      const base = frame.getAttribute("src");
-      // cache-buster
-      frame.src = base + (base.includes("?") ? "&" : "?") + "v=" + Date.now();
+      const base = frame.getAttribute("src") || "";
+      if(!base || base === "URL_IFRAME"){
+        loader.innerHTML = "⚠️ Konfiguration fehlt: Bitte setze den korrekten Buchungs-Link im iframe (src).";
+        return;
+      }
+
+      // cache-buster (ok, ale tylko jeśli base wygląda na URL)
+      try{
+        const u = new URL(base);
+        u.searchParams.set("v", Date.now().toString());
+        frame.src = u.toString();
+      }catch(e){
+        // jeśli to nie jest pełny URL, nie ruszamy
+      }
 
       frame.addEventListener("load", () => {
         loader.style.display = "none";
