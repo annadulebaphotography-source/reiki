@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Kontakt – Reiki in Karlsruhe &amp; Pfinztal | Termin anfragen</title>
-  <meta name="description" content="Kontakt für Reiki in Karlsruhe & Pfinztal: Anfrage senden, Termin vereinbaren, Fragen klären. Ruhige Begleitung für innere Balance, Stressabbau & Klarheit.">
+  <meta name="description" content="Kontakt für Reiki in Karlsruhe & Pfinztal: Anfrage senden, Termin vereinbaren, Fragen klären. Ruhige Begleitung für innere Balance, Stressabbau & Klarheit." />
 
-  <!-- Jeśli masz globalny CSS: zostaw -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Jeśli styles.css jest w /reiki/ razem z kontakt.html -> zostaw styles.css
+       Jeśli styles.css jest w ROOT -> zmień na /styles.css -->
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
     :root{
@@ -16,15 +17,16 @@
       --card:#ffffff;
       --text:#2a1f23;
       --muted:#7a5a63;
-      --line:rgba(120,60,80,.12);
+      --line:rgba(176,74,106,.16);
 
+      /* „róża” – elegancka, bez cukrowej waty 😉 */
       --accent:#b04a6a;
+      --accent-strong:#8f3450;
       --accent-soft:#f7d3df;
-      --accent-strong:#9e3f5d;
 
-      --shadow:0 10px 30px rgba(200,107,138,.18);
+      --shadow:0 14px 40px rgba(176,74,106,.14);
       --radius:16px;
-      --max:980px;
+      --max:900px;
     }
 
     *{box-sizing:border-box}
@@ -37,213 +39,196 @@
       line-height:1.7;
     }
 
-    /* Header injected by main.js */
+    /* Header wrapper – menu wstrzykiwane do #site-header */
     .headerbar{width:100%;}
-    #site-header{max-width:var(--max); margin:0 auto; padding:14px 18px 0;}
+    #site-header{max-width:var(--max); margin:0 auto; padding:12px 18px 0;}
 
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 80px;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
 
     .card{
-      margin-top:18px;
+      margin-top:22px;
       background:var(--card);
+      border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:26px;
-      border:1px solid var(--line);
+      padding:22px;
     }
 
-    h1{margin:0 0 12px; font-size:34px; letter-spacing:-.2px}
-    h2{margin:0 0 10px; font-size:26px; letter-spacing:-.2px}
-
-    p{margin:0 0 14px; color:var(--muted)}
+    h1{margin:0 0 10px; font-size:34px}
+    h2{margin:0 0 10px; font-size:26px}
+    p{margin:0 0 14px; color:var(--muted); font-size:16px}
 
     .hint{
-      margin-top:12px;
-      padding:14px 16px;
-      border-radius:14px;
-      background:rgba(255,255,255,.85);
+      margin-top:10px;
+      padding:12px 14px;
       border:1px solid var(--line);
-      box-shadow:0 6px 20px rgba(0,0,0,.05);
-      font-size:14px;
+      border-radius:14px;
+      background:rgba(255,255,255,.7);
       color:var(--muted);
+      font-size:14px;
     }
 
+    form{margin-top:16px}
     .row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    @media(max-width:780px){.row{grid-template-columns:1fr}}
+    @media (max-width:780px){ .row{grid-template-columns:1fr} }
 
     .field{display:flex; flex-direction:column; gap:6px; margin-bottom:12px}
     label{font-size:13px; color:var(--muted)}
 
-    input,textarea{
+    input, textarea{
       width:100%;
-      padding:13px 14px;
+      padding:12px 12px;
       border-radius:14px;
       border:1px solid var(--line);
       background:#fff;
       font:inherit;
       outline:none;
     }
-
-    input:focus,textarea:focus{
-      border-color:var(--accent);
-      box-shadow:0 0 0 4px rgba(216,161,176,.25);
+    input:focus, textarea:focus{
+      border-color:rgba(176,74,106,.6);
+      box-shadow:0 0 0 4px rgba(176,74,106,.14);
     }
-
     textarea{min-height:160px; resize:vertical}
 
     .btn{
-      margin-top:6px;
-      padding:14px 20px;
-      border-radius:999px;
-      border:none;
-      background:linear-gradient(135deg,var(--accent),var(--accent-strong));
-      color:white;
-      font-weight:800;
-      cursor:pointer;
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      padding:13px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-strong));
+      color:#fff;
+      font-weight:800;
+      border:0;
+      cursor:pointer;
       gap:8px;
     }
-    .btn:hover{opacity:.92}
-
-    .bookingFrame{
-      width:100%;
-      height:980px;
-      border:0;
-      border-radius:18px;
-      background:#fdecef;
-      box-shadow:0 12px 40px rgba(0,0,0,.08);
-      display:block;
-      overflow:hidden;
-    }
-
-    @media(max-width:780px){
-      .bookingFrame{height:1120px}
-    }
-
-    .bookingLoader{
-      margin:12px 0;
-      padding:12px 14px;
-      border-radius:12px;
-      background:rgba(255,255,255,.85);
-      border:1px solid var(--line);
-      box-shadow:0 6px 20px rgba(0,0,0,.05);
-      font-size:14px;
-      color:var(--muted);
-    }
+    .btn:hover{opacity:.93}
 
     .fineprint{font-size:13px; color:var(--muted); margin-top:10px}
 
     /* Honeypot */
-    .hp{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;}
+    .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
+
+    /* Booking */
+    .bookingLoader{
+      display:block;
+      margin:10px 0 12px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.75);
+      color:var(--muted);
+      font-size:14px;
+    }
+    .bookingFrame{
+      width:100%;
+      height:980px;
+      border:0;
+      display:block;
+      border-radius:18px;
+      background:#fff;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    @media (max-width:780px){ .bookingFrame{height:1120px;} }
   </style>
 </head>
 
-<body>
+<body data-page="kontakt">
 
-  <!-- ✅ MENU (wstrzykuje main.js) -->
   <div class="headerbar">
     <div id="site-header"></div>
   </div>
 
   <div class="wrap">
 
-    <!-- ✅ REZERWACJA -->
     <section class="card">
       <h2>Reiki-Termin direkt reservieren</h2>
-      <p>Wähle einen freien Termin (<strong>Mo &amp; Mi 17:00–19:00</strong>).</p>
+      <p>Wähle einen freien Termin (<strong>Mo &amp; Mi, 17:00–19:00</strong>).</p>
 
       <div id="reikiBookingLoader" class="bookingLoader">
-        ⏳ Einen Moment… Termine werden geladen.
-        <div style="margin-top:4px; font-size:12px; opacity:.85;">
-          Falls es länger dauert: kurz warten – das lädt gleich.
-        </div>
+        ⏳ Bitte einen Moment… die freien Termine werden geladen.
       </div>
 
       <iframe
         id="reikiBookingFrame"
         class="bookingFrame"
+        src="URL_IFRAME"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        src="https://script.google.com/macros/s/AKfycbxeFZKHHj9Z6cCYqP-SCOka1W2jPJAwBKxf5fwUvhdfJrLvbTOYPwv79YRa_t_NMLfcmw/exec"
-        title="Reiki – Termin reservieren">
-      </iframe>
+        title="Reiki – Termin reservieren"></iframe>
 
-      <p class="fineprint">
-        Nach der Reservierung melde ich mich persönlich mit allen Details (Ort, Ablauf &amp; Vorbereitung).
-      </p>
+      <p class="fineprint">Nach der Reservierung melde ich mich persönlich mit allen Details.</p>
     </section>
 
-    <!-- ✅ KONTAKT -->
     <main class="card">
       <h1>Kontakt</h1>
       <p>Schreib mir kurz, was gerade wichtig für dich ist. Ich antworte ruhig, klar und ohne Druck.</p>
 
       <div class="hint">
-        Ich begleite Menschen aus <strong>Karlsruhe</strong>, <strong>Pfinztal</strong> und Umgebung.
-        Antwort in der Regel innerhalb von <strong>24–48 Stunden</strong>.
+        <strong>Hinweis:</strong> Wenn du magst, nenn direkt 1–2 Terminvorschläge (Wochentag/Uhrzeit).<br>
+        Antwortzeit: in der Regel innerhalb von <strong>24–48 Stunden</strong>.
       </div>
 
       <form action="https://formspree.io/f/mojeyvej" method="POST">
         <div class="hp" aria-hidden="true">
           <label>Leave this field empty</label>
-          <input name="website" autocomplete="off" tabindex="-1">
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
         </div>
 
         <div class="row">
           <div class="field">
             <label for="name">Name</label>
-            <input id="name" name="name" required autocomplete="name" placeholder="Dein Name">
+            <input id="name" name="name" required autocomplete="name" />
           </div>
-
           <div class="field">
             <label for="email">E-Mail</label>
-            <input id="email" name="email" type="email" required autocomplete="email" placeholder="deine@email.de">
+            <input id="email" name="email" type="email" required autocomplete="email" />
           </div>
         </div>
 
         <div class="field">
           <label for="message">Nachricht</label>
-          <textarea id="message" name="message" required placeholder="Worum geht es? (Optional: 1–2 Terminvorschläge)"></textarea>
+          <textarea id="message" name="message" required></textarea>
         </div>
+
+        <input type="hidden" name="_subject" value="Neue Reiki Anfrage (Website)">
+        <input type="hidden" name="_captcha" value="false">
 
         <button class="btn" type="submit">Nachricht senden</button>
 
-        <p class="fineprint">
+        <div class="fineprint">
           Mit dem Absenden erklärst du dich einverstanden, dass ich deine Angaben zur Bearbeitung deiner Anfrage verwende.
-        </p>
+        </div>
       </form>
+
+      <p class="fineprint" style="margin-top:16px;">
+        Hinweis: Reiki kann begleitend unterstützen, ersetzt jedoch keine Diagnose oder Behandlung durch Ärzt:innen oder Therapeut:innen.
+      </p>
     </main>
 
-    <!-- ✅ FOOTER (jeśli masz w main.js) -->
     <div id="site-footer"></div>
-
   </div>
 
-  <!-- ✅ MENU/FOOTER: IMPORTANT — relative path -->
-  <script src="../main.js" defer></script>
+  <!-- Jeśli main.js jest w root -> /main.js
+       Jeśli jest w /reiki/ -> main.js -->
+  <script src="/main.js" defer></script>
 
-
-  <!-- ✅ iframe loader + anti-cache -->
   <script>
     (function(){
-      const frame  = document.getElementById("reikiBookingFrame");
+      const frame = document.getElementById("reikiBookingFrame");
       const loader = document.getElementById("reikiBookingLoader");
       if(!frame || !loader) return;
 
       const base = frame.getAttribute("src");
-      loader.style.display = "block";
-
-      // anti-cache
+      // cache-buster
       frame.src = base + (base.includes("?") ? "&" : "?") + "v=" + Date.now();
 
       frame.addEventListener("load", () => {
         loader.style.display = "none";
       }, { once:true });
 
-      // fallback after 12s
-      setTimeout(() => { loader.style.display = "none"; }, 12000);
+      setTimeout(() => loader.style.display = "none", 12000);
     })();
   </script>
 
