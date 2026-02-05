@@ -7,8 +7,6 @@
   <title>Kontakt – Reiki in Karlsruhe &amp; Pfinztal | Termin anfragen</title>
   <meta name="description" content="Kontakt für Reiki in Karlsruhe &amp; Pfinztal: Anfrage senden, Termin vereinbaren, Fragen klären. Ruhige Begleitung für innere Balance, Stressabbau &amp; Klarheit." />
 
-  <!-- Jeśli styles.css jest w tym samym folderze co kontakt.html -> zostaw styles.css
-       Jeśli styles.css jest w ROOT -> zmień na /styles.css -->
   <link rel="stylesheet" href="styles.css" />
 
   <style>
@@ -134,13 +132,11 @@
 
 <body data-page="kontakt">
 
-<section class="hero fullbleed hero-top" aria-label="Bildbereich"
- style="background-image:url('annadulebareiki.jpg');"
+  <!-- HERO – tak samo jak na stronie głównej -->
+  <section class="hero fullbleed hero-top" aria-label="Bildbereich" style="background-image:url('annadulebareiki.jpg');"></section>
 
-</section>
-
-<div class="headerbar">
-
+  <!-- Header/Menu – tak samo jak na stronie głównej -->
+  <div class="headerbar fullbleed">
     <div id="site-header"></div>
   </div>
 
@@ -154,15 +150,13 @@
         ⏳ Bitte einen Moment… die freien Termine werden geladen.
       </div>
 
-      <!-- ✅ TU MUSI BYĆ PRAWDZIWY LINK, nie placeholder -->
-     <iframe
-  id="reikiBookingFrame"
-  class="bookingFrame"
-  src="https://script.google.com/macros/s/AKfycbw3a7x4GxXUAHhyZthon0DOaDQTbns65ArRJ0T67vIVRkZdRE-DH4R3tiFgg_uZGNOpcw/exec"
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade"
-  title="Reiki – Termin reservieren"></iframe>
-
+      <iframe
+        id="reikiBookingFrame"
+        class="bookingFrame"
+        src="https://script.google.com/macros/s/AKfycbw3a7x4GxXUAHhyZthon0DOaDQTbns65ArRJ0T67vIVRkZdRE-DH4R3tiFgg_uZGNOpcw/exec"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Reiki – Termin reservieren"></iframe>
 
       <p class="fineprint">Nach der Reservierung melde ich mich persönlich mit allen Details.</p>
     </section>
@@ -216,10 +210,10 @@
     <div id="site-footer"></div>
   </div>
 
-  <!-- Jeśli main.js jest w root -> /main.js
-       Jeśli jest w tym samym folderze -> main.js -->
-  <script src="/main.js" defer></script>
+  <!-- wspólny header/footer -->
+  <script src="main.js"></script>
 
+  <!-- booking loader (BEZ ZMIAN FUNKCJI) -->
   <script>
     (function(){
       const frame = document.getElementById("reikiBookingFrame");
