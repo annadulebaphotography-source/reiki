@@ -37,7 +37,7 @@
       overflow:hidden;
       border:1px solid rgba(0,0,0,.08);
       box-shadow: var(--shadow);
-      background:#000;
+     
       position:relative;
       min-height:220px;
     }
@@ -47,13 +47,15 @@
       background-image:url('annadulebareiki2.jpg');
       background-size:cover;
       background-position:center 45%;
-      filter:saturate(1.02);
-      transform:scale(1.02);
+     filter:none;
+transform:scale(1.02);
+  
+
     }
     .heroStrip::after{
-      content:"";
-      position:absolute; inset:0;
-      background:linear-gradient(90deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.22) 45%, rgba(0,0,0,.10) 100%);
+  content:"";
+  position:absolute; inset:0;
+  background:transparent;
     }
     .heroContent{
       position:relative;
