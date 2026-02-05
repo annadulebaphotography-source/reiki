@@ -298,4 +298,27 @@ body::after{
   50% { transform: scale(1.05) translateY(-10px); }
   100% { transform: scale(1) translateY(0); }
 }
+/* === HERO: subtle floating image (all pages) === */
+
+.hero{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* delikatny ruch */
+  animation: slowFloat 40s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* jeśli chcesz mniej ruchu: zwiększ 40s na 55s */
+@keyframes slowFloat{
+  0%   { transform: scale(1) translateY(0); }
+  50%  { transform: scale(1.05) translateY(-10px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+/* Szacunek dla osób z "reduce motion" */
+@media (prefers-reduced-motion: reduce){
+  .hero{ animation: none; }
+}
 
