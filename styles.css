@@ -345,4 +345,58 @@ body::after{
   z-index: 2;
   background: var(--bg);
 }
+/* --- Subtle hero motion (Ken Burns) for .hero-top --- */
+.hero-top{
+  position: relative;
+  overflow: hidden;
+  background: none !important; /* tło przejmie pseudo-element */
+}
+
+/* obrazek w pseudo-element, żeby dało się go animować */
+.hero-top::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: var(--hero-img, none);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  will-change: transform, background-position;
+  animation: heroKenBurns 18s ease-in-out infinite alternate;
+}
+
+/* delikatny film/grain/kontrast – opcjonalnie, wygląda premium */
+.hero-top::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.10) 0%,
+    rgba(0,0,0,.05) 35%,
+    rgba(0,0,0,.12) 100%
+  );
+  pointer-events:none;
+}
+
+/* animacja: minimalny zoom + minimalny pan */
+@keyframes heroKenBurns{
+  0%{
+    transform: scale(1.02);
+    background-position: 50% 45%;
+  }
+  100%{
+    transform: scale(1.07);
+    background-position: 52% 55%;
+  }
+}
+
+/* szanujemy osoby, które nie chcą animacji */
+@media (prefers-reduced-motion: reduce){
+  .hero-top::before{
+    animation: none !important;
+    transform: scale(1.03);
+    background-position: center;
+  }
+}
 
