@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       hero.style.setProperty("--hero-img", `url("${url}")`);
 
       // 3) czyścimy normalne tło, żeby nie było podwójnie
-      hero.style.backgroundImage = "none";
+     
     });
   });
 })();
