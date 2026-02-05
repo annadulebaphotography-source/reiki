@@ -6,135 +6,80 @@
 
   <title>Reiki Angebote in Karlsruhe & Pfinztal – Sitzungen 80–100 €</title>
   <meta name="description" content="Reiki Sitzungen in Karlsruhe & Pfinztal: ruhige Begleitung für innere Balance, Stressabbau, besseren Schlaf & Klarheit. Dauer ca. 60 Minuten. Preis 80–100 €." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
 
-  <link rel="canonical" href="https://annaduleba-reiki.com/angebot.html">
+  <link rel="canonical" href="https://annaduleba-reiki.com/angebot.html" />
+  <meta name="theme-color" content="#f6f2ea" />
 
+  <!-- Open Graph (optional, ale warto) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Reiki Angebote in Karlsruhe & Pfinztal – Sitzungen 80–100 €" />
+  <meta property="og:description" content="Reiki Sitzungen in Karlsruhe & Pfinztal: ruhige Begleitung für innere Balance, Stressabbau, besseren Schlaf & Klarheit." />
+  <meta property="og:url" content="https://annaduleba-reiki.com/angebot.html" />
+  <meta property="og:image" content="https://annaduleba-reiki.com/annadulebareiki.jpg" />
+  <meta property="og:image:alt" content="Reiki Karlsruhe & Pfinztal – innere Balance und Ruhe" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-only styles (layout of Angebot) -->
   <style>
-    :root{
-      --bg:#f6f2ea;
-      --card:#ffffff;
-      --card2:#fbf8f2;
-      --text:#1b1b1b;
-      --muted:#5e5a52;
-      --line:rgba(20,20,20,.10);
-      --accent:#b79a63;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
-      --radius:12px;
-      --max:1100px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.6;
-    }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
-
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:18px;
-      padding:10px 0 18px;
-      border-bottom:1px solid var(--line);
-    }
-    .brand{display:flex; flex-direction:column; gap:4px;}
-    .brand strong{font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
-    .brand span{font-size:13px; color:var(--muted)}
-
-    .nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:14px;}
-    .nav a{text-decoration:none; color:var(--muted); padding:8px 10px; border-radius:999px;}
-    .nav a:hover{background:rgba(255,255,255,.6); color:var(--text)}
-    .nav .cta{background:var(--accent); color:#fff; border:1px solid rgba(0,0,0,.08);}
-    .nav .cta:hover{opacity:.92}
-    .nav .active{background:rgba(255,255,255,.65); color:var(--text); border:1px solid var(--line);}
-
-    .lang{display:flex; gap:10px; align-items:center; font-size:13px; color:var(--muted);}
-    .lang .pill{border:1px solid var(--line); padding:8px 10px; border-radius:999px; background:rgba(255,255,255,.75); color:var(--text); user-select:none;}
-    .lang .pill.muted{opacity:.75; cursor:default;}
-
-    #menu-toggle{ display:none; }
-    .burger{display:none; width:44px; height:44px; border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,.75); align-items:center; justify-content:center; flex-direction: column; gap:5px; padding:10px; cursor:pointer;}
-    .burger span{display:block; width:18px; height:2px; background:var(--text); border-radius:999px;}
-
-    @media (max-width: 900px){
-      .nav{display:none; width:100%; flex-direction:column; gap:6px; margin-top:12px;}
-      #menu-toggle:checked + .burger + .nav{display:flex;}
-      .burger{ display:flex; }
-      .lang{ display:none; }
-      .topbar{ flex-wrap:wrap; align-items:flex-start; }
-      h1{ font-size:28px; }
-    }
-
+    /* layout tylko dla tej podstrony */
     .page{margin-top:22px; display:grid; grid-template-columns: 1.2fr .8fr; gap:18px; align-items:start;}
     @media (max-width: 980px){ .page{grid-template-columns: 1fr;} }
 
-    .panel{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px;}
+    .panel{background:#fff; border:1px solid rgba(20,20,20,.10); border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.08); padding:22px;}
     .aside{display:grid; gap:14px;}
-    .note{background:rgba(255,255,255,.75); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px;}
-    .kicker{display:inline-block; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;}
+    .note{background:rgba(255,255,255,.75); border:1px solid rgba(20,20,20,.10); border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.08); padding:16px;}
 
-    h1{margin:0 0 8px; font-size:34px; line-height:1.15; letter-spacing:-.02em;}
-    .sub{margin:0 0 18px; color:var(--muted); font-size:15px}
-    h2{margin:22px 0 10px; font-size:18px; letter-spacing:.02em;}
-    p{margin:10px 0; color:var(--muted); font-size:15px}
-    .lead{margin:10px 0 0; color:var(--text); font-size:15px}
+    .kicker{display:inline-block; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:rgba(0,0,0,.55); margin-bottom:8px;}
 
-    ul{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:15px}
-    li{margin:6px 0}
+    /* żeby typografia była spójna z Twoim stylem */
+    .panel h1{margin:0 0 8px; font-size:34px; line-height:1.15; letter-spacing:-.02em;}
+    @media (max-width:780px){ .panel h1{font-size:28px;} }
+
+    .sub{margin:0 0 18px; color:rgba(0,0,0,.55); font-size:15px}
+    .panel h2{margin:22px 0 10px; font-size:18px; letter-spacing:.02em;}
+    .panel p{margin:10px 0; color:rgba(0,0,0,.55); font-size:15px}
+    .panel .lead{margin:10px 0 0; color:#1b1b1b; font-size:15px}
+
+    .panel ul{margin:10px 0 0; padding-left:18px; color:rgba(0,0,0,.55); font-size:15px}
+    .panel li{margin:6px 0}
 
     .price{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:10px}
-    .badge{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid var(--line); background:var(--card2); color:var(--text); font-weight:700; font-size:14px; white-space:nowrap}
-    .badge small{font-weight:600; color:var(--muted)}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid rgba(20,20,20,.10); background:#fbf8f2; color:#1b1b1b; font-weight:700; font-size:14px; white-space:nowrap}
+    .badge small{font-weight:600; color:rgba(0,0,0,.55)}
 
     .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-    .btn{display:inline-flex; align-items:center; justify-content:center; padding:12px 16px; border-radius:12px; border:1px solid var(--line); background:rgba(255,255,255,.95); text-decoration:none; font-weight:800; color:var(--text); white-space:nowrap}
-    .btn.primary{background:var(--accent); color:#fff; border-color:rgba(0,0,0,.08)}
+
+    /* Buttony spójne z Twoim stylem (jeśli masz już .btn w styles.css, to ten blok możesz usunąć) */
+    .btn{display:inline-flex; align-items:center; justify-content:center; padding:12px 16px; border-radius:12px; border:1px solid rgba(20,20,20,.10); background:rgba(255,255,255,.95); text-decoration:none; font-weight:800; color:#1b1b1b; white-space:nowrap}
+    .btn.primary{background:#b79a63; color:#fff; border-color:rgba(0,0,0,.08)}
     .btn:hover{transform: translateY(-1px)}
     .btn:active{transform: translateY(0)}
 
     .faq{margin-top:24px; display:grid; gap:10px}
-    details{background:var(--card2); border:1px solid var(--line); border-radius:12px; padding:12px 14px}
-    summary{cursor:pointer; font-weight:800; color:var(--text); list-style:none}
+    details{background:#fbf8f2; border:1px solid rgba(20,20,20,.10); border-radius:12px; padding:12px 14px}
+    summary{cursor:pointer; font-weight:800; color:#1b1b1b; list-style:none}
     summary::-webkit-details-marker{display:none}
-    details p{margin:10px 0 0; color:var(--muted)}
-
-    footer{margin-top:34px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); padding-top:18px}
+    details p{margin:10px 0 0; color:rgba(0,0,0,.55)}
   </style>
 </head>
 
-<body>
-  <section class="hero fullbleed hero-top" aria-label="Bildbereich"
- style="background-image:url('annadulebareiki.jpg');"
+<body data-page="angebot">
 
-</section>
+  <!-- HERO NA SAMEJ GÓRZE (TAK SAMO JAK NA STRONIE GŁÓWNEJ) -->
+  <section class="hero fullbleed hero-top" aria-label="Bildbereich"
+    style="background-image:url('annadulebareiki.jpg');">
+  </section>
+
+  <!-- MENU POD HERO (ładujesz wspólny nagłówek z main.js) -->
+  <div class="headerbar fullbleed">
+    <div id="site-header"></div>
+  </div>
 
   <div class="wrap">
-    <div class="topbar">
-      <div class="brand">
-        <strong>Reiki</strong>
-        <span>Innere Balance • bewusste Veränderung</span>
-      </div>
+    <main class="page" aria-label="Angebot Seite">
 
-      <input type="checkbox" id="menu-toggle" hidden>
-      <label for="menu-toggle" class="burger" aria-label="Menu"><span></span><span></span><span></span></label>
-
-      <nav class="nav" aria-label="Navigation">
-        <a href="index.html">Start</a>
-        <a href="worum.html">Worum es geht</a>
-        <a class="active" href="angebot.html">Angebot</a>
-        <a href="ueber-mich.html">Über mich</a>
-        <a class="cta" href="kontakt.html">Kontakt</a>
-      </nav>
-
-      <div class="lang" aria-label="Sprachauswahl">
-        <span class="pill">DE</span>
-        <span class="pill muted" title="Bald verfügbar">PL</span>
-      </div>
-    </div>
-
-    <main class="page">
       <section class="panel" aria-label="Angebot">
         <span class="kicker">Angebot</span>
         <h1>Reiki Sitzungen in Karlsruhe &amp; Pfinztal</h1>
@@ -213,11 +158,11 @@
         <div class="note"><span class="kicker">Rahmen</span><p style="margin:0">Ca. 60 Minuten · Einzeltermine · 80–100 €</p></div>
         <div class="note"><span class="kicker">Hinweis</span><p style="margin:0">Begleitend – kein Ersatz für ärztliche/therapeutische Behandlung.</p></div>
       </aside>
-    </main>
 
-    <footer>© <span id="y"></span> • Reiki • Klarheit, Balance, bewusste Veränderung</footer>
+      <div id="site-footer"></div>
+    </main>
   </div>
 
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script src="main.js"></script>
 </body>
 </html>
