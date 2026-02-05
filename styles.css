@@ -399,4 +399,10 @@ body::after{
     background-position: center;
   }
 }
+/* Auf einen Blick – opis pod boldem */
+.list li span{
+  display:block;
+  margin-top:4px;
+  opacity:.75;
+}
 
