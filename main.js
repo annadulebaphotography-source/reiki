@@ -20,12 +20,12 @@ async function loadPart(selector, url) {
   if (!el) return;
 
   const res = await fetch(url, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Nie mogę wczytać: ${url} (${res.status})`);
+  if (!res.ok) throw new Error(`Kann nicht geladen werden: ${url} (${res.status})`);
 
   el.innerHTML = await res.text();
 }
 
-/* ✅ REVEAL (powolne pojawianie się elementów przy scrollu) */
+/* ✅ REVEAL */
 function initReveal() {
   const items = document.querySelectorAll(".reveal");
   if (!items.length) return;
@@ -44,17 +44,18 @@ function initReveal() {
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    await loadPart("#site-header", "/header.html");
-    await loadPart("#site-footer", "/footer.html");
+    // ✅ W folderze /reiki/ muszą być ścieżki RELATYWNE
+    await loadPart("#site-header", "header.html");
+    await loadPart("#site-footer", "footer.html");
 
     initBurger();
-    initReveal(); // ✅ dodane – po załadowaniu header/footer
+    initReveal();
   } catch (e) {
     console.error(e);
   }
 });
 
-// --- HERO subtle motion: move inline background-image into CSS var for animation ---
+// --- HERO subtle motion ---
 (function () {
   function extractUrl(bg) {
     const m = bg && bg.match(/url\(["']?(.*?)["']?\)/i);
