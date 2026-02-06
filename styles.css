@@ -897,4 +897,14 @@ body{
 .hero-anna {
   margin-top: 0 !important;
 }
+/* zmniejszamy odstęp między górnym podpisem a hero */
+
+.sig-strip {
+  padding-bottom: 40px !important;
+}
+
+.hero-anna {
+  margin-top: 0 !important;
+  padding-top: 40px !important;
+}
 
