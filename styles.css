@@ -947,13 +947,8 @@ section.container.space-xl {
 }
 /* FULL WIDTH PINK BAND */
 
-section.fullbleed.pink-band{
-
-  width:100%;
-  background:#f3e6e6;
- padding:55px 0 !important;
-
-
+.fullbleed.pink-band{
+  padding:55px 0 !important;  /* było 80px */
   margin:0;
 }
 
