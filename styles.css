@@ -1060,5 +1060,14 @@ body.page-worum main{
 }
 .fullbleed-pink-band{ padding: 22px 0; }
 .fullbleed-pink-band{ margin: 8px 0 0; }
+/* ===============================
+   GLOBAL PINK BAND (all pages)
+   =============================== */
+.fullbleed-pink-band{
+  width:100%;
+  background:#f3e6e8;   /* jeśli masz inny róż, podmień */
+  padding:22px 0;       /* wysokość paska */
+  margin:10px 0 0;      /* oddech nad paskiem */
+}
 
 
