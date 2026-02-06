@@ -1043,5 +1043,9 @@ body.page-about main{
 body.page-worum main{
   padding-top: 80px;
 }
+.fullbleed.pink-band{
+  padding:42px 0 !important;
+  margin:0;
+}
 
 
