@@ -889,4 +889,12 @@ body{
 .hero-anna__sig {
   display: none !important;
 }
+/* tighten space between top hero and next section */
+.sig-strip {
+  padding-bottom: 40px !important;
+}
+
+.hero-anna {
+  margin-top: 0 !important;
+}
 
