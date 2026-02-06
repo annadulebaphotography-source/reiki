@@ -974,5 +974,45 @@ section + .fullbleed.pink-band{
   border:2px solid #fff !important;
   background:#fff;
 }
+/* ===== ÜBER MICH – FIX: różowy pasek full width + biały frame zdjęcia + bezpieczny odstęp ===== */
+
+body[data-page="ueber-mich"] section.fullbleed.pink-band{
+  background:#f3e6e6 !important;   /* różowy pasek przez całą szerokość */
+  padding:90px 0 !important;
+  margin:0 !important;
+}
+
+body[data-page="ueber-mich"] .space-xl{
+  padding-top:120px !important;   /* żeby "Über mich" nie było ucięte */
+  padding-bottom:70px !important;
+}
+
+/* ZABIJAMY różowe tło na kafelku, bo pasek ma być różowy, a kafelek czysty */
+body[data-page="ueber-mich"] .fullbleed.pink-band .split{
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+/* BIAŁA RAMKA / KADR dla zdjęcia */
+body[data-page="ueber-mich"] .fullbleed.pink-band .media{
+  background:#fff !important;
+  padding:14px !important;
+  border-radius:22px !important;
+  box-shadow:0 18px 40px rgba(0,0,0,.08);
+}
+
+body[data-page="ueber-mich"] .fullbleed.pink-band .media img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:0 !important;             /* żadnej różowej ramki na img */
+  border-radius:18px !important;
+}
+
+/* Kafelek z tekstem – jasny, elegancki, bez różowych obwódek */
+body[data-page="ueber-mich"] .fullbleed.pink-band .card{
+  border:1px solid #fff !important;
+  background:rgba(255,255,255,.82) !important;
+}
 
 
