@@ -57,25 +57,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 // --- HERO subtle motion: move inline background-image into CSS var for animation ---
 (function () {
   function extractUrl(bg) {
-    // bg wygląda jak: url("annadulebareiki.jpg")
     const m = bg && bg.match(/url\(["']?(.*?)["']?\)/i);
     return m ? m[1] : "";
   }
 
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".hero-top").forEach(hero => {
-      // 1) bierzemy background-image z inline style albo z computed style
       const inlineBg = hero.style.backgroundImage;
       const computedBg = getComputedStyle(hero).backgroundImage;
 
       const url = extractUrl(inlineBg) || extractUrl(computedBg);
       if (!url) return;
 
-      // 2) ustawiamy CSS variable, którą używa ::before
       hero.style.setProperty("--hero-img", `url("${url}")`);
-
-      // 3) (opcjonalnie) czyścimy normalne tło, żeby nie było podwójnie
-      // hero.style.backgroundImage = "none";
     });
   });
 })();
