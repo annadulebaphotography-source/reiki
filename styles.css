@@ -943,4 +943,23 @@ section.container.space-xl {
 .space-xl {
   padding-top: 50px;
 }
+/* FULL WIDTH PINK BAND */
+
+.fullbleed.pink-band{
+  width:100%;
+  background:#f3e6e6;
+  padding:80px 0;
+  margin:0;
+}
+
+/* container inside pink band */
+.fullbleed.pink-band .container{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+/* fix top gap from previous section */
+section + .fullbleed.pink-band{
+  margin-top:40px;
+}
 
