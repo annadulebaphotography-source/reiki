@@ -874,4 +874,15 @@ body{
 .page-home main{
   padding-top: 64px;
 }
+/* === cleanup hero: remove mini label + tiny preview === */
+
+/* mini podpis */
+.hero-anna__eyebrow {
+  display: none !important;
+}
+
+/* mała miniaturka zdjęcia */
+.hero-anna__profile {
+  display: none !important;
+}
 
