@@ -1,322 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Worum es geht – Reiki in Karlsruhe & Pfinztal | Natur, Ruhe, Klarheit</title>
-  <meta name="description" content="Worum es bei meiner Reiki-Arbeit wirklich geht: innere Ruhe, Klarheit, Grenzen, Stabilität – und Verbindung zur Natur. Reiki in Karlsruhe & Pfinztal, auch als intuitiver Spaziergang im Wald oder auf der Wiese.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="canonical" href="https://annaduleba-reiki.com/worum.html">
-  <meta name="theme-color" content="#f6f2ea">
+  <title>Worum es geht – Reiki in Karlsruhe & Pfinztal | Anna Duleba</title>
+  <meta name="description" content="Worum es bei meiner Reiki-Begleitung geht: innere Ruhe, Stabilität, klare Grenzen und Veränderung im Alltag – ruhig erklärt, ohne Druck. Reiki in Karlsruhe & Pfinztal." />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Worum es geht – Reiki in Karlsruhe & Pfinztal | Natur, Ruhe, Klarheit">
-  <meta property="og:description" content="Reiki als ruhiger, klarer Prozess: Stabilität, Grenzen, innere Ruhe – und Verbindung zur Natur. Karlsruhe & Pfinztal.">
-  <meta property="og:url" content="https://annaduleba-reiki.com/worum.html">
-  <meta property="og:image" content="https://annaduleba-reiki.com/annadulebareiki2.jpg">
-  <meta property="og:image:alt" content="Reiki in der Natur – Ruhe, Klarheit und innere Stabilität">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Worum es geht – Reiki in Karlsruhe & Pfinztal">
-  <meta name="twitter:description" content="Ruhig, klar, bodenständig: Reiki für innere Stabilität – oft in der Natur (Wald/Wiese), auch als intuitiver Spaziergang.">
-  <meta name="twitter:image" content="https://annaduleba-reiki.com/annadulebareiki2.jpg">
-
-  <link rel="preload" as="image" href="annadulebareiki2.jpg">
-  <link rel="stylesheet" href="styles.css">
-
-  <style>
-    /* Zachowuję wygląd tej strony (heroStrip + editorial), ale bez własnego menu */
-    body{ overflow-x:hidden; }
-
-    .heroStrip{
-      margin-top:18px;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(0,0,0,.08);
-      box-shadow: var(--shadow);
-     
-      position:relative;
-      min-height:220px;
-    }
-    .heroStrip::before{
-      content:"";
-      position:absolute; inset:0;
-      background-image:url('annadulebareiki2.jpg');
-      background-size:cover;
-      background-position:center 45%;
-     filter:none;
-transform:scale(1.02);
-  
-
-    }
-    .heroStrip::after{
-  content:"";
-  position:absolute; inset:0;
-  background:transparent;
-    }
-    .heroContent{
-      position:relative;
-      padding:22px 22px;
-      max-width:78ch;
-      color:#fff;
-      text-shadow:0 2px 10px rgba(0,0,0,.45);
-    }
-    .kicker{
-      font-size:12px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      opacity:.92;
-      margin:0 0 8px;
-    }
-    .heroTitle{
-      margin:0 0 10px;
-      font-size:28px;
-      line-height:1.18;
-      letter-spacing:-.02em;
-    }
-    .heroLead{
-      margin:0;
-      font-size:15px;
-      opacity:.92;
-    }
-
-    .card{
-      margin-top:18px;
-    }
-
-    .editorial{
-      display:grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap:22px;
-      align-items:start;
-    }
-    @media (max-width: 980px){
-      .editorial{grid-template-columns:1fr;}
-      .heroTitle{font-size:24px}
-    }
-
-    .imageCard{
-      background: var(--card2);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:14px;
-    }
-    .imageCard img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:12px;
-      box-shadow:0 8px 22px rgba(0,0,0,.14);
-    }
-    .caption{
-      margin-top:10px;
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.5;
-    }
-
-    h1{
-      margin:0 0 10px;
-      font-size:30px;
-      line-height:1.2;
-      letter-spacing:-.01em;
-    }
-    p{margin:0 0 14px; color:var(--muted); font-size:16px}
-    strong{color:var(--text)}
-    .accent{color:var(--accent); font-weight:800}
-
-    .pillRow{display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 6px}
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.7);
-      color:var(--text);
-      font-size:13px;
-      white-space:nowrap;
-    }
-
-    .divider{
-      margin:14px 0 16px;
-      height:1px;
-      background:var(--line);
-    }
-
-    .callout{
-      margin-top:14px;
-      background:rgba(183,154,99,.10);
-      border:1px solid rgba(183,154,99,.25);
-      border-radius:14px;
-      padding:14px 14px;
-      color:var(--text);
-    }
-    .callout p{color:var(--text); margin:0; font-size:15px}
-
-    .btnRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 16px;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,.10);
-      background:rgba(255,255,255,.92);
-      font-weight:800;
-      color:var(--text);
-      text-decoration:none;
-    }
-    .btn.primary{
-      background:var(--accent);
-      color:#fff;
-      border-color:rgba(0,0,0,.08);
-    }
-
-    .seo{
-      margin-top:16px;
-      background:rgba(255,255,255,.75);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:18px 22px;
-    }
-    .seo h2{margin:0 0 8px; font-size:16px; letter-spacing:.02em;}
-    .seo p{margin:8px 0 0; color:var(--muted); font-size:15px; max-width:88ch;}
-  </style>
-
-  <!-- FAQ Schema (SEO) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Worum geht es bei Reiki in meiner Arbeit?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Reiki ist für mich ein ruhiger, klarer Prozess, der innere Stabilität, Grenzen und Ruhe stärkt. Es geht um Wahrnehmung, Klarheit und tragfähige Veränderung im Alltag – ohne Show und ohne Wunder-Versprechen."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Machst du Reiki auch in der Natur?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Ja. Natur ist für mich ein direkter Zugang zu Stille, Erdung und innerem Licht. Deshalb findet Reiki auf Wunsch auch draußen statt – im Wald oder auf der Wiese, oft verbunden mit einem intuitiven Spaziergang."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Für wen ist das passend?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Für Menschen, die viel tragen, funktionieren und wieder bei sich ankommen möchten – mehr Ruhe im Kopf, klarere Grenzen und Stabilität im Alltag. In Karlsruhe, Pfinztal und Umgebung."
-        }
-      }
-    ]
-  }
-  </script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body data-page="worum">
+<body class="page-worum">
 
-  <!-- HERO – identycznie jak na stronie głównej (poprawny HTML) -->
-  <section class="hero fullbleed hero-top" aria-label="Bildbereich" style="background-image:url('annadulebareiki.jpg');"></section>
+  <!-- Header (burger/menu) -->
+  <div id="site-header" class="site-header-overlay"></div>
 
-  <!-- Header/Menu – identycznie jak na stronie głównej -->
-  <div class="headerbar fullbleed">
-    <div id="site-header"></div>
-  </div>
+  <main>
 
-  <div class="wrap">
+    <!-- Top intro podobny do home -->
+    <section class="container space-xl reveal">
+      <header class="section-head">
+        <h1 class="hero-anna__title">Worum es geht.</h1>
+        <p class="muted">
+          Kein Druck, keine Show, keine Versprechen. Reiki ist für mich ein ruhiger, klarer Prozess:
+          mehr Stabilität im Körper, mehr Ruhe im Kopf, klarere Grenzen – Schritt für Schritt.
+        </p>
+      </header>
 
-    <main class="card" aria-label="Worum es geht">
-      <div class="editorial">
-        <aside class="imageCard">
-          <img src="annadulebareiki2.jpg" alt="Reiki in der Natur in Karlsruhe und Pfinztal – Ruhe, Klarheit und innere Stabilität">
-          <div class="caption">
-            Reiki draußen: Wald, Wiese, Stille. Nicht als „Show“, sondern als natürlicher Rahmen,
-            um wieder zu spüren, was wirklich da ist.
-          </div>
-        </aside>
-
-        <section>
-          <h1>Worum es in meiner Reiki-Arbeit geht</h1>
-
-          <div class="pillRow" aria-label="Schwerpunkte">
-            <span class="pill">Innere Ruhe</span>
-            <span class="pill">Klarheit &amp; Grenzen</span>
-            <span class="pill">Stabilität im Alltag</span>
-            <span class="pill">Natur &amp; Licht</span>
-          </div>
-
-          <p>
-            Für mich ist Reiki kein „Zauber“ und keine Abkürzung. Es ist ein ruhiger, klarer Prozess,
-            der dich zurück in Kontakt mit dir selbst bringt – damit du bewusst entscheiden kannst,
-            statt im Automatismus zu reagieren.
-          </p>
-
-          <p>
-            Ich begleite dich dabei, <strong>Muster zu erkennen</strong>, deine <strong>Grenzen zu spüren</strong>
-            und <strong>inneren Halt</strong> aufzubauen. Es geht nicht darum, etwas im Außen zu „reparieren“,
-            sondern die Basis in dir zu stabilisieren – Schritt für Schritt.
-          </p>
-
-          <div class="divider"></div>
-
-          <p>
-            Ein zentraler Teil meiner Arbeit ist die <strong>Verbindung zur Natur</strong>.
-            Für mich bedeutet Reiki auch: sich mit der <span class="accent">ursprünglichen Kraft von Licht</span>
-            und Lebendigkeit zu verbinden. Deshalb findet Reiki auf Wunsch nicht nur im Raum,
-            sondern auch <strong>im Wald oder auf der Wiese</strong> statt.
-          </p>
-
-          <div class="callout">
-            <p>
-              <strong>Intuitiver Spaziergang</strong> (optional): eine ruhige, geführte Geh-Session, in der wir
-              Wahrnehmung, Atmung, innere Signale und klare Ausrichtung verbinden – damit Ruhe nicht nur „fühlbar“,
-              sondern im Alltag auch <strong>haltbar</strong> wird.
-            </p>
-          </div>
-
-          <p style="margin-top:14px;">
-            Wenn du möchtest, schauen wir gemeinsam:
-            Was stresst dich wirklich? Wo verlierst du dich? Was brauchst du, um wieder in Ruhe zu kommen –
-            und diese Ruhe im Alltag zu halten?
-          </p>
-
-          <p>
-            <strong>Meine Haltung:</strong> Klarheit, Respekt, Struktur. Keine Dramatisierung, keine Versprechen,
-            keine Abhängigkeit. Du bleibst immer die Person, die entscheidet.
-          </p>
-
-          <div class="btnRow">
-            <a class="btn primary" href="kontakt.html">Kontakt aufnehmen</a>
-            <a class="btn" href="angebot.html">Angebot ansehen</a>
-          </div>
-        </section>
+      <div class="stack" style="display:grid; gap:18px; max-width:900px;">
+        <p>
+          Vielleicht kennst du das: Du funktionierst, aber innerlich ist es laut. Entscheidungen werden schwer,
+          der Körper bleibt angespannt. Reiki kann dich dabei unterstützen, dein Nervensystem zu beruhigen und dich wieder besser zu spüren.
+        </p>
+        <p>
+          Mir ist wichtig, dass du realistisch verstehst, was Reiki leisten kann – und was nicht.
+          Reiki ersetzt keine medizinische oder psychotherapeutische Behandlung, kann aber eine wertvolle Ergänzung sein.
+        </p>
       </div>
-    </main>
-
-    <section class="seo" aria-label="Reiki Karlsruhe Pfinztal SEO">
-      <h2>Reiki in Karlsruhe &amp; Pfinztal: naturverbunden, klar, tragfähig</h2>
-      <p>
-        Wenn du nach <strong>Reiki in Karlsruhe</strong> oder <strong>Reiki in Pfinztal</strong> suchst:
-        Meine Arbeit ist bewusst ruhig und bodenständig – mit Fokus auf <strong>innere Stabilität</strong>,
-        <strong>Stressregulation</strong>, klare <strong>Grenzen</strong> und mehr <strong>Ruhe im Alltag</strong>.
-        Auf Wunsch verbinden wir Reiki mit der Natur: <strong>Wald</strong>, <strong>Wiese</strong>,
-        Stille – als natürlicher Rahmen für Klarheit und innere Ordnung.
-      </p>
     </section>
 
+    <!-- Split sections w tym samym stylu co na screenie -->
+    <section class="container space-xl">
+
+      <article class="split reveal">
+        <div class="media"><img src="reiki1%20(3).png" alt="Was Reiki dir geben kann"></div>
+        <div class="card">
+          <div class="eyebrow">WORUM ES GEHT</div>
+          <h2>Was Reiki dir geben kann</h2>
+          <p>
+            Mehr Ruhe, mehr Selbstkontakt, mehr innere Stabilität – damit Veränderung nicht nur „im Kopf“ passiert,
+            sondern im Alltag tragfähig wird.
+          </p>
+          <a class="btn btn-primary" href="kontakt.html#booking">Termin anfragen</a>
+        </div>
+      </article>
+
+      <article class="split split-reverse reveal">
+        <div class="media"><img src="reiki1%20(2).png" alt="Klarheit und Grenzen"></div>
+        <div class="card">
+          <div class="eyebrow">KLARHEIT • GRENZEN</div>
+          <h2>Weniger Schuldgefühl. Mehr klare Entscheidungen.</h2>
+          <p>
+            Wir schauen gemeinsam, wo du dich übergehst, wo du dich anpasst und warum.
+            Ziel: Grenzen spüren, respektvoll setzen – und dich dabei innerlich sicher fühlen.
+          </p>
+          <a class="btn btn-ghost" href="angebot.html">Angebot ansehen</a>
+        </div>
+      </article>
+
+      <article class="split reveal">
+        <div class="media"><img src="reiki4.png" alt="Reiki in der Natur"></div>
+        <div class="card">
+          <div class="eyebrow">NATUR • ERDUNG</div>
+          <h2>Reiki auch draußen – Wald, Wiese, Stille.</h2>
+          <p>
+            Auf Wunsch verbinden wir Reiki mit der Natur. Für viele ist das der schnellste Weg,
+            wieder „runterzukommen“ und Klarheit zu spüren – ruhig, geerdet, ohne Überforderung.
+          </p>
+          <a class="btn btn-ghost" href="kontakt.html">Frage stellen</a>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Footer -->
     <div id="site-footer"></div>
-  </div>
+
+  </main>
 
   <script src="main.js"></script>
 </body>
