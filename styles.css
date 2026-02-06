@@ -1069,5 +1069,16 @@ body.page-worum main{
   padding:22px 0;       /* wysokość paska */
   margin:10px 0 0;      /* oddech nad paskiem */
 }
+/* --- Pink band fix (Worum es geht) --- */
+
+.fullbleed-pink-band{
+  background:#f3e6e6;
+  margin-top:-140px;      /* podciąga pasek do góry */
+}
+
+.fullbleed-pink-band .container{
+  padding-top:120px;     /* grubość paska */
+  padding-bottom:120px;
+}
 
 
