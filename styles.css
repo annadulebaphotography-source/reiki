@@ -907,4 +907,11 @@ body{
   margin-top: 0 !important;
   padding-top: 40px !important;
 }
+/* PRO shadow pod zdjęciami w kafelkach */
+
+.split .media img,
+.sig-photo img {
+  box-shadow: 0 22px 50px rgba(0,0,0,.18);
+  border-radius: 6px;
+}
 
