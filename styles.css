@@ -922,4 +922,9 @@ section.container.space-xl {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+.card,
+.split,
+.media img {
+  border-radius: 0 !important;
+}
 
