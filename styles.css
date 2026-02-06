@@ -962,4 +962,9 @@ section.container.space-xl {
 section + .fullbleed.pink-band{
   margin-top:40px;
 }
+/* card only inside pink band (Über mich) */
+.fullbleed.pink-band .card{
+  border:1px solid #fff;
+  background:rgba(255,255,255,0.55);
+}
 
