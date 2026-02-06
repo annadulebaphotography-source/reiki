@@ -866,4 +866,12 @@ body{
   .tiles-anna__inner{ grid-template-columns: 1fr; }
   .hero-anna__text{ background: rgba(255,255,255,.62); }
 }
+.site-header-overlay{
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+}
+.page-home main{
+  padding-top: 64px;
+}
 
