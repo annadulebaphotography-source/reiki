@@ -927,4 +927,11 @@ section.container.space-xl {
 .media img {
   border-radius: 0 !important;
 }
+.split {
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  background: #f3e7e7;
+}
+.media img {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
 
