@@ -1047,5 +1047,9 @@ body.page-worum main{
   padding:42px 0 !important;
   margin:0;
 }
+.page-ueber-mich .fullbleed.pink-band,
+.page-worum .fullbleed.pink-band{
+  /* to co już masz */
+}
 
 
