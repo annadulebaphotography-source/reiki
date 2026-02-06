@@ -914,4 +914,8 @@ body{
   box-shadow: 0 22px 50px rgba(0,0,0,.18);
   border-radius: 6px;
 }
+.split {
+  max-width: 900px;
+  margin: 0 auto 90px;
+}
 
