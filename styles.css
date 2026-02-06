@@ -1040,5 +1040,8 @@ body.page-about main{
     gap:16px;
   }
 }
+body.page-worum main{
+  padding-top: 80px;
+}
 
 
