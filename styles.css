@@ -1042,51 +1042,15 @@ body.page-about main{
 }
 body.page-worum main{
   padding-top: 80px;
-}
-.fullbleed.pink-band{
-  padding:42px 0 !important;
-  margin:0;
-}
-.page-ueber-mich .fullbleed.pink-band,
-.page-worum .fullbleed.pink-band{
-  /* to co już masz */
-}
-/* Pink band – global (works on every page) */
-.fullbleed-pink-band{
-  width: 100%;
-  background: #f3e6e8;          /* dopasuj do swojego różu */
-  padding: 38px 0;              /* wysokość paska */
-  margin: 18px 0 0;             /* oddech nad paskiem */
-}
-.fullbleed-pink-band{ padding: 22px 0; }
-.fullbleed-pink-band{ margin: 8px 0 0; }
-/* ===============================
-   GLOBAL PINK BAND (all pages)
-   =============================== */
-.fullbleed-pink-band{
-  width:100%;
-  background:#f3e6e8;   /* jeśli masz inny róż, podmień */
-  padding:22px 0;       /* wysokość paska */
-  margin:10px 0 0;      /* oddech nad paskiem */
-}
-/* --- Pink band fix (Worum es geht) --- */
 
-.fullbleed-pink-band{
-  background:#f3e6e6;
-  margin-top:-140px;      /* podciąga pasek do góry */
-}
-
-.fullbleed-pink-band .container{
-  padding-top:120px;     /* grubość paska */
-  padding-bottom:120px;
-}
 /* ===== FULLBLEED PINK BAND (ONE SOURCE OF TRUTH) ===== */
 .fullbleed-pink-band{
   width: 100%;
   background: #f3e6e8;
   margin: 0;
-  padding: 80px 0;     /* grubość paska */
-  margin-top: -220px;  /* podciąga pasek do góry */
+ padding:140px 0;
+     /* grubość paska */
+ margin-top:-220px;  /* podciąga pasek do góry */
 }
 
 /* żeby container nie robił dodatkowej „grubości” */
