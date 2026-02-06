@@ -951,7 +951,8 @@ section.fullbleed.pink-band{
 
   width:100%;
   background:#f3e6e6;
- padding:55px 0;
+ padding:55px 0 !important;
+
 
   margin:0;
 }
