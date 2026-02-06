@@ -1014,5 +1014,8 @@ body[data-page="ueber-mich"] .fullbleed.pink-band .card{
   border:1px solid #fff !important;
   background:rgba(255,255,255,.82) !important;
 }
+body.page-about main{
+  padding-top: 90px;
+}
 
 
