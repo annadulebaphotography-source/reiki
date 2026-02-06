@@ -1026,5 +1026,17 @@ body.page-about main{
     margin-bottom:12px;
   }
 }
+/* Über mich – odstęp między przyciskami na mobile */
+@media (max-width: 768px){
+  .ctaRow{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:12px !important;
+  }
+  .ctaRow .btn{
+    width:100%;
+    text-align:center;
+  }
+}
 
 
