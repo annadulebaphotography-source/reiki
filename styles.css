@@ -1019,5 +1019,12 @@ body[data-page="ueber-mich"] .fullbleed.pink-band .card{
 body.page-about main{
   padding-top: 90px;
 }
+/* mobile spacing between buttons */
+@media (max-width: 768px){
+  .sig-cta a,
+  .hero-anna__cta a{
+    margin-bottom:12px;
+  }
+}
 
 
