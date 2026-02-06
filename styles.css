@@ -918,4 +918,8 @@ body{
   max-width: 900px;
   margin: 0 auto 90px;
 }
+section.container.space-xl {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 
