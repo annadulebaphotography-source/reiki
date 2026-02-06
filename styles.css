@@ -885,4 +885,8 @@ body{
 .hero-anna__profile {
   display: none !important;
 }
+/* remove signature image in hero */
+.hero-anna__sig {
+  display: none !important;
+}
 
