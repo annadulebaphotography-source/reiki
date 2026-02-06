@@ -25,19 +25,38 @@ async function loadPart(selector, url) {
   el.innerHTML = await res.text();
 }
 
+/* ✅ REVEAL (powolne pojawianie się elementów przy scrollu) */
+function initReveal() {
+  const items = document.querySelectorAll(".reveal");
+  if (!items.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add("is-visible");
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  items.forEach(el => io.observe(el));
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     await loadPart("#site-header", "/header.html");
     await loadPart("#site-footer", "/footer.html");
 
     initBurger();
+    initReveal(); // ✅ dodane – po załadowaniu header/footer
   } catch (e) {
     console.error(e);
   }
 });
+
 // --- HERO subtle motion: move inline background-image into CSS var for animation ---
-(function(){
-  function extractUrl(bg){
+(function () {
+  function extractUrl(bg) {
     // bg wygląda jak: url("annadulebareiki.jpg")
     const m = bg && bg.match(/url\(["']?(.*?)["']?\)/i);
     return m ? m[1] : "";
@@ -50,13 +69,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       const computedBg = getComputedStyle(hero).backgroundImage;
 
       const url = extractUrl(inlineBg) || extractUrl(computedBg);
-      if(!url) return;
+      if (!url) return;
 
       // 2) ustawiamy CSS variable, którą używa ::before
       hero.style.setProperty("--hero-img", `url("${url}")`);
 
-      // 3) czyścimy normalne tło, żeby nie było podwójnie
-     
+      // 3) (opcjonalnie) czyścimy normalne tło, żeby nie było podwójnie
+      // hero.style.backgroundImage = "none";
     });
   });
 })();
