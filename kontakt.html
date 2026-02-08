@@ -80,23 +80,18 @@
       padding:22px 18px 70px;
       position:relative;
     }
-    .wrap::before{
-      content:"";
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      top:0;                 /* pas zaczyna się od razu pod nagłówkiem strony */
-      width:100vw;
-      height:720px;          /* obejmuje rezerwację + start kontaktu */
-      background:var(--bg);
-      z-index:-1;
-    }
-    @media (max-width:780px){
-      .page-title{font-size:38px}
-      .wrap::before{height:820px;}
-    }
-
-    .card{
+  .wrap::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:0;
+  width:100vw;
+  bottom:0;              /* ✅ zamiast height */
+  background:var(--bg);
+  z-index:-1;
+}
+   .card{
       margin-top:28px;
       background:var(--card);
       border:1px solid var(--line);
