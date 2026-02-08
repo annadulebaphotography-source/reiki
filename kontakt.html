@@ -11,7 +11,7 @@
 
   <style>
     :root{
-      --bg:#f6e2ea;                 /* spójny róż jak na innych stronach */
+      --bg:#f6e2ea;
       --card:#ffffff;
       --text:#2a1f23;
       --muted:#7a5a63;
@@ -30,27 +30,12 @@
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      background:#fff;               /* klucz do spójności */
+      background:#fff;
       color:var(--text);
       line-height:1.7;
     }
 
-    /* Fallback dla fullbleed/hero – żeby nie znikało nawet gdy CSS globalny nie złapie */
-    .fullbleed{
-      width:100vw;
-      margin-left:calc(50% - 50vw);
-      margin-right:calc(50% - 50vw);
-    }
-    .hero{
-      min-height:360px;
-      background-size:cover;
-      background-position:center 35%;
-      background-repeat:no-repeat;
-    }
-    @media (max-width:780px){
-      .hero{ min-height:260px; background-position:center 30%; }
-    }
-
+    /* Header */
     .headerbar{
       width:100%;
       background:#fff;
@@ -62,24 +47,53 @@
       padding:14px 18px;
     }
 
+    /* Page heading (jak inne podstrony) */
+    .page-top{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:46px 18px 22px;
+      text-align:center;
+    }
+    .page-kicker{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(42,31,35,.55);
+      margin-bottom:10px;
+    }
+    .page-title{
+      margin:0 0 10px;
+      font-size:46px;
+      letter-spacing:-0.02em;
+      color:var(--text);
+    }
+    .page-sub{
+      margin:0;
+      color:rgba(42,31,35,.60);
+      font-size:16px;
+    }
+
+    /* Pink band only behind the content area */
     .wrap{
       max-width:var(--max);
       margin:0 auto;
       padding:22px 18px 70px;
       position:relative;
     }
-
-    /* Różowy pas tylko pod treścią (spokojnie, premium) */
     .wrap::before{
       content:"";
       position:absolute;
       left:50%;
       transform:translateX(-50%);
-      top:140px;                  /* start pasa (pod menu) */
+      top:0;                 /* pas zaczyna się od razu pod nagłówkiem strony */
       width:100vw;
-      height:620px;               /* obejmuje rezerwację + początek kontaktu */
+      height:720px;          /* obejmuje rezerwację + start kontaktu */
       background:var(--bg);
       z-index:-1;
+    }
+    @media (max-width:780px){
+      .page-title{font-size:38px}
+      .wrap::before{height:820px;}
     }
 
     .card{
@@ -90,10 +104,7 @@
       box-shadow:var(--shadow);
       padding:34px;
     }
-    @media (max-width:780px){
-      .card{ padding:22px; }
-      .wrap::before{ height:720px; } /* trochę więcej miejsca na mobile */
-    }
+    @media (max-width:780px){ .card{ padding:22px; } }
 
     h1{margin:0 0 12px; font-size:34px; letter-spacing:-0.02em}
     h2{margin:0 0 10px; font-size:26px; letter-spacing:-0.01em}
@@ -177,13 +188,17 @@
 
 <body data-page="kontakt">
 
-  <!-- HERO -->
-  <section class="hero fullbleed hero-top" aria-label="Bildbereich" style="background-image:url('annadulebareiki.jpg');"></section>
-
   <!-- Header/Menu -->
-  <div class="headerbar fullbleed">
+  <div class="headerbar">
     <div id="site-header"></div>
   </div>
+
+  <!-- Nagłówek strony (zamiast hero zdjęcia) -->
+  <header class="page-top">
+    <div class="page-kicker">REIKI · KARLSRUHE &amp; PFINZTAL</div>
+    <h1 class="page-title">Kontakt</h1>
+    <p class="page-sub">Ruhig erklärt. Ohne Druck. Ohne Versprechen.</p>
+  </header>
 
   <div class="wrap">
 
@@ -207,7 +222,7 @@
     </section>
 
     <main class="card">
-      <h1>Kontakt</h1>
+      <h2>Nachricht senden</h2>
       <p>Schreib mir kurz, was gerade wichtig für dich ist. Ich antworte ruhig, klar und ohne Druck.</p>
 
       <div class="hint">
@@ -255,7 +270,6 @@
     <div id="site-footer"></div>
   </div>
 
-  <!-- wspólny header/footer -->
   <script src="main.js"></script>
 
   <!-- booking loader (BEZ ZMIAN FUNKCJI) -->
