@@ -1233,6 +1233,11 @@ body[data-page="ueber-mich"] .pink-band {
   padding-top: clamp(40px, 4vw, 70px);
   padding-bottom: clamp(40px, 4vw, 70px);
 }
+/* Über mich – pink band 35% mniej „powietrza” */
+body[data-page="ueber-mich"] .pink-band .space-xl{
+  padding-top: clamp(40px, 4vw, 70px);
+  padding-bottom: clamp(40px, 4vw, 70px);
+}
 
 
 
