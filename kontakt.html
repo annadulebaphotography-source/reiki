@@ -11,7 +11,7 @@
 
   <style>
     :root{
-      --bg:#fdecef;
+      --bg:#f6e2ea;                 /* spójny róż jak na innych stronach */
       --card:#ffffff;
       --text:#2a1f23;
       --muted:#7a5a63;
@@ -19,7 +19,6 @@
 
       --accent:#b04a6a;
       --accent-strong:#8f3450;
-      --accent-soft:#f7d3df;
 
       --shadow:0 14px 40px rgba(176,74,106,.14);
       --radius:16px;
@@ -31,27 +30,73 @@
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      background:var(--bg);
+      background:#fff;               /* klucz do spójności */
       color:var(--text);
       line-height:1.7;
     }
 
-    .headerbar{width:100%;}
-    #site-header{max-width:var(--max); margin:0 auto; padding:12px 18px 0;}
+    /* Fallback dla fullbleed/hero – żeby nie znikało nawet gdy CSS globalny nie złapie */
+    .fullbleed{
+      width:100vw;
+      margin-left:calc(50% - 50vw);
+      margin-right:calc(50% - 50vw);
+    }
+    .hero{
+      min-height:360px;
+      background-size:cover;
+      background-position:center 35%;
+      background-repeat:no-repeat;
+    }
+    @media (max-width:780px){
+      .hero{ min-height:260px; background-position:center 30%; }
+    }
 
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
+    .headerbar{
+      width:100%;
+      background:#fff;
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    #site-header{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:22px 18px 70px;
+      position:relative;
+    }
+
+    /* Różowy pas tylko pod treścią (spokojnie, premium) */
+    .wrap::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      top:140px;                  /* start pasa (pod menu) */
+      width:100vw;
+      height:620px;               /* obejmuje rezerwację + początek kontaktu */
+      background:var(--bg);
+      z-index:-1;
+    }
 
     .card{
-      margin-top:22px;
+      margin-top:28px;
       background:var(--card);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:22px;
+      padding:34px;
+    }
+    @media (max-width:780px){
+      .card{ padding:22px; }
+      .wrap::before{ height:720px; } /* trochę więcej miejsca na mobile */
     }
 
-    h1{margin:0 0 10px; font-size:34px}
-    h2{margin:0 0 10px; font-size:26px}
+    h1{margin:0 0 12px; font-size:34px; letter-spacing:-0.02em}
+    h2{margin:0 0 10px; font-size:26px; letter-spacing:-0.01em}
     p{margin:0 0 14px; color:var(--muted); font-size:16px}
 
     .hint{
@@ -132,10 +177,10 @@
 
 <body data-page="kontakt">
 
-  <!-- HERO – tak samo jak na stronie głównej -->
+  <!-- HERO -->
   <section class="hero fullbleed hero-top" aria-label="Bildbereich" style="background-image:url('annadulebareiki.jpg');"></section>
 
-  <!-- Header/Menu – tak samo jak na stronie głównej -->
+  <!-- Header/Menu -->
   <div class="headerbar fullbleed">
     <div id="site-header"></div>
   </div>
@@ -226,14 +271,11 @@
         return;
       }
 
-      // cache-buster (ok, ale tylko jeśli base wygląda na URL)
       try{
         const u = new URL(base);
         u.searchParams.set("v", Date.now().toString());
         frame.src = u.toString();
-      }catch(e){
-        // jeśli to nie jest pełny URL, nie ruszamy
-      }
+      }catch(e){}
 
       frame.addEventListener("load", () => {
         loader.style.display = "none";
