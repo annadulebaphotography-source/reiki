@@ -1115,7 +1115,7 @@ body[data-page="angebot"] .pink-band::before { content:""; position:absolute; to
 body[data-page="angebot"] .pink-band > * { position:relative; z-index:1; }
 /* Angebot – podciągamy treść bliżej nagłówka */
 body[data-page="angebot"] .pink-band .container{
-  padding-top: 24px !important;
+  padding-top: 18px !important;
 }
 
 /* jeśli nadal jest za nisko – dodatkowo */
