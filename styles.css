@@ -1180,3 +1180,25 @@ body.page-about main > *:first-child,
 body.page-worum main > *:first-child{
   margin-top: 10px;
 }
+/* =========================================================
+   FIX: titles hidden under sticky header
+   Only: Über mich + Worum
+========================================================= */
+
+/* Über mich */
+body.page-about[data-page="ueber-mich"] main{
+  padding-top: 130px; /* jeśli trzeba: 140px */
+}
+body.page-about[data-page="ueber-mich"] h1,
+body.page-about[data-page="ueber-mich"] h2{
+  scroll-margin-top: 130px;
+}
+
+/* Worum (jeśli masz class page-worum + data-page="worum") */
+body.page-worum[data-page="worum"] main{
+  padding-top: 130px;
+}
+body.page-worum[data-page="worum"] h1,
+body.page-worum[data-page="worum"] h2{
+  scroll-margin-top: 130px;
+}
