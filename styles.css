@@ -1208,7 +1208,7 @@ body[data-page="worum"] h2{
 
 /* Worum – spokojny oddech u góry (jak Angebot) */
 body[data-page="worum"] main{
-  padding-top: 220px !important;
+  padding-top: 140px !important;
 }
 
 /* Kontakt – ten sam oddech */
