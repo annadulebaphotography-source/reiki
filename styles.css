@@ -1177,5 +1177,6 @@ section[style*="#f6e4e8"] {
   padding-top: 96px !important;
   padding-bottom: 96px !important;
 }
+body { outline: 6px solid red !important; }
 
 
