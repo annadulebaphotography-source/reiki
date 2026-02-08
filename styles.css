@@ -1122,5 +1122,18 @@ body[data-page="angebot"] .pink-band .container{
 body[data-page="angebot"] .pink-band{
   margin-top: -40px;
 }
+/* ===============================
+   ANGEBOT – pozycja różowego pasa
+   =============================== */
+
+/* grubość różowego pasa */
+body[data-page="angebot"] .pink-band::before{
+  height: clamp(260px, 34vw, 420px);
+}
+
+/* podciągnięcie pasa pod nagłówek */
+body[data-page="angebot"] .pink-band{
+  margin-top: -120px;
+}
 
 
