@@ -1224,6 +1224,11 @@ body[data-page="ueber-mich"] h1{
 body[data-page="kontakt"] .hero-anna{
   padding-bottom: clamp(40px, 6vw, 80px);
 }
+/* więcej oddechu nad nagłówkiem – jak w Angebot */
+body[data-page="worum"] .container:first-of-type,
+body[data-page="kontakt"] .container:first-of-type {
+  padding-top: clamp(80px, 12vw, 140px);
+}
 
 
 
