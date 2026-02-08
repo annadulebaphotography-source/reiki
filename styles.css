@@ -1144,3 +1144,14 @@ section[style*="#f6e2ea"] > *:first-child,
 section[style*="#f6e4e8"] > *:first-child {
   margin-top: 0 !important;
 }
+/* === GLOBAL: spójny fullbleed/hero (bez ryzyka) === */
+.fullbleed{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+}
+.hero{
+  background-size:cover;
+  background-position:center 35%;
+  background-repeat:no-repeat;
+}
