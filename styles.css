@@ -1110,5 +1110,8 @@ body[data-page="angebot"] .pink-band > * {
   position: relative;
   z-index: 1;
 }
+body[data-page="angebot"] .pink-band { position:relative; background:transparent !important; }
+body[data-page="angebot"] .pink-band::before { content:""; position:absolute; top:0; left:0; width:100%; height:clamp(220px,32vw,360px); background:#f3e3e6; z-index:0; }
+body[data-page="angebot"] .pink-band > * { position:relative; z-index:1; }
 
 
