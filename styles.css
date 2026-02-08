@@ -1214,29 +1214,17 @@ body[data-page="worum"] main{
 /* Kontakt – ten sam oddech */
 body[data-page="kontakt"] main{
   padding-top: 220px !important;
-/* Über mich – zmniejszenie różowego pasa o ~35% */
-body[data-page="ueber-mich"] section{
-  padding-top: clamp(48px, 6vw, 72px);
-  padding-bottom: clamp(48px, 6vw, 72px);
+
 }
-/* Über mich – zmniejszenie różowego tła o ~35% */
-body[data-page="ueber-mich"] section.container{
-  padding-top: clamp(40px, 4vw, 70px) !important;
-  padding-bottom: clamp(40px, 4vw, 70px) !important;
+/* ÜBER MICH – zmniejsz różowy pas (fullbleed pink-band) */
+body[data-page="ueber-mich"] section.fullbleed.pink-band{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
-/* DEBUG: pokaż mi, co ma padding i tło */
-body[data-page="ueber-mich"] .section-head { outline: 3px solid red !important; }
-body[data-page="ueber-mich"] .container { outline: 3px solid blue !important; }
-body[data-page="ueber-mich"] section { outline: 3px solid lime !important; }
-/* Über mich – pink band 35% weniger Höhe */
-body[data-page="ueber-mich"] .pink-band {
-  padding-top: clamp(40px, 4vw, 70px);
-  padding-bottom: clamp(40px, 4vw, 70px);
-}
-/* Über mich – pink band 35% mniej „powietrza” */
-body[data-page="ueber-mich"] .pink-band .space-xl{
-  padding-top: clamp(40px, 4vw, 70px);
-  padding-bottom: clamp(40px, 4vw, 70px);
+
+body[data-page="ueber-mich"] section.fullbleed.pink-band .container.space-xl{
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
 }
 
 
