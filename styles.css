@@ -1133,7 +1133,7 @@ body[data-page="angebot"] .pink-band::before{
 
 /* podciągnięcie pasa pod nagłówek */
 body[data-page="angebot"] .pink-band{
-  margin-top: -140px;
+  margin-top: -160px;
 }
 
 
