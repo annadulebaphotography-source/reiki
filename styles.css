@@ -1150,5 +1150,32 @@ main section * {
 section {
   height: auto;
 }
+/* === ANGEBOT: HARD CSS RESET (NO HTML CHANGES) === */
+
+/* 1. Zatrzymaj wszelkie sztuczne wysokości */
+section {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* 2. Uspokój pionowe marginesy w ofercie */
+.angebot-quickgrid,
+.angebot-faq,
+.angebot-list {
+  margin-top: 0 !important;
+}
+
+/* 3. Zabezpieczenie kart / białych boxów */
+section > div {
+  position: static !important;
+  transform: none !important;
+}
+
+/* 4. Różowe tło – tylko padding, zero przesuwania */
+section[style*="#f6e2ea"],
+section[style*="#f6e4e8"] {
+  padding-top: 96px !important;
+  padding-bottom: 96px !important;
+}
 
 
