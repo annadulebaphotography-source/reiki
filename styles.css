@@ -1229,6 +1229,26 @@ body[data-page="ueber-mich"] section.fullbleed.pink-band .container.space-xl{
   padding-top: 40px !important;
   padding-bottom: 40px !important;
 }
+/* ===============================
+   KONTAKT – zmniejszenie różowego pasa
+   =============================== */
+
+body[data-page="kontakt"] section.fullbleed.pink-band {
+  padding: 0 !important;
+}
+
+body[data-page="kontakt"] section.fullbleed.pink-band .container.space-xl {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body[data-page="kontakt"] section.fullbleed.pink-band .container.space-xl {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+}
 
 
 
