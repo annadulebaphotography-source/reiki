@@ -1228,6 +1228,11 @@ body[data-page="ueber-mich"] section.container{
 body[data-page="ueber-mich"] .section-head { outline: 3px solid red !important; }
 body[data-page="ueber-mich"] .container { outline: 3px solid blue !important; }
 body[data-page="ueber-mich"] section { outline: 3px solid lime !important; }
+/* Über mich – pink band 35% weniger Höhe */
+body[data-page="ueber-mich"] .pink-band {
+  padding-top: clamp(40px, 4vw, 70px);
+  padding-bottom: clamp(40px, 4vw, 70px);
+}
 
 
 
