@@ -1187,7 +1187,7 @@ body.page-worum main > *:first-child{
 
 /* Über mich */
 body.page-about[data-page="ueber-mich"] main{
-  padding-top: 130px; /* jeśli trzeba: 140px */
+  padding-top: 180px; /* jeśli trzeba: 140px */
 }
 body.page-about[data-page="ueber-mich"] h1,
 body.page-about[data-page="ueber-mich"] h2{
