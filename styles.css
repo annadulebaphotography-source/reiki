@@ -1122,3 +1122,25 @@ body[data-page="angebot"] .pink-band .container{
 body[data-page="angebot"] .pink-band{
   margin-top: -40px;
 }
+/* === ANGEBOT: tylko kosmetyka odstępów (bez ruszania HTML) === */
+
+/* 1) Zmniejsz gigantyczną pustą przestrzeń nad różową sekcją */
+main {
+  padding-top: 0 !important;
+}
+
+/* 2) Jeśli nagłówek "Angebot" siedzi w jakimś hero – zbij marginesy h1/p */
+h1 { margin-bottom: 14px !important; }
+h1 + p { margin-top: 0 !important; }
+
+/* 3) Różowa sekcja: mniej powietrza u góry (żeby karta była wyżej) */
+section[style*="#f6e2ea"],
+section[style*="#f6e4e8"] {
+  padding-top: 70px !important;
+}
+
+/* 4) Karta: żeby nie miała dodatkowego odsunięcia od góry */
+section[style*="#f6e2ea"] > *:first-child,
+section[style*="#f6e4e8"] > *:first-child {
+  margin-top: 0 !important;
+}
