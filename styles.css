@@ -1156,3 +1156,27 @@ section[style*="#f6e4e8"] > *:first-child {
   background-position:center 35%;
   background-repeat:no-repeat;
 }
+/* =========================================================
+   FIX: H1 on "Über mich" + "Worum" hidden under sticky header
+   (page-specific, zero global hammers)
+========================================================= */
+
+/* 1) Anchor safety (jeśli kiedyś linkujesz do #sekcji) */
+body.page-about h1,
+body.page-about h2,
+body.page-worum h1,
+body.page-worum h2{
+  scroll-margin-top: 120px;
+}
+
+/* 2) Add top offset ONLY on these pages */
+body.page-about main,
+body.page-worum main{
+  padding-top: 120px;
+}
+
+/* 3) If the title still sits too high, give the first page header a bit of air */
+body.page-about main > *:first-child,
+body.page-worum main > *:first-child{
+  margin-top: 10px;
+}
