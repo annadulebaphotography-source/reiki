@@ -1135,5 +1135,9 @@ body[data-page="angebot"] .pink-band::before{
 body[data-page="angebot"] .pink-band{
   margin-top: -160px;
 }
+/* === ANGEBOT: różowy pas ma być podciągnięty pod nagłówek === */
+body[data-page="angebot"] .pink-band{
+  margin-top: -160px !important; /* im bardziej minus, tym wyżej */
+}
 
 
