@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Reiki Angebot in Karlsruhe &amp; Pfinztal | Anna Duleba</title>
-  <meta name="description" content="Reiki Sitzungen in Karlsruhe &amp; Pfinztal: ruhige Begleitung für innere Balance, Stressabbau, besseren Schlaf &amp; Klarheit. Dauer ca. 60 Minuten. Preis 80–100 €." />
+  <title>Angebot – Reiki in Karlsruhe &amp; Pfinztal | Anna Duleba</title>
+  <meta name="description" content="Reiki Sitzungen in Karlsruhe &amp; Pfinztal: ruhig, klar und ohne Druck. Dauer ca. 60 Minuten. Preis 80–100 €. Termin anfragen." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <link rel="canonical" href="https://annaduleba-reiki.com/angebot.html" />
@@ -13,65 +13,61 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Reiki Angebot in Karlsruhe &amp; Pfinztal | Anna Duleba" />
-  <meta property="og:description" content="Reiki Sitzungen in Karlsruhe &amp; Pfinztal: ruhige Begleitung für innere Balance, Stressabbau, besseren Schlaf &amp; Klarheit." />
+  <meta property="og:title" content="Angebot – Reiki in Karlsruhe &amp; Pfinztal | Anna Duleba" />
+  <meta property="og:description" content="Reiki Sitzungen in Karlsruhe &amp; Pfinztal: ruhig, klar und ohne Druck. Dauer ca. 60 Minuten. Preis 80–100 €." />
   <meta property="og:url" content="https://annaduleba-reiki.com/angebot.html" />
   <meta property="og:image" content="https://annaduleba-reiki.com/annadulebareiki.jpg" />
   <meta property="og:image:alt" content="Reiki Karlsruhe &amp; Pfinztal – innere Balance und Ruhe" />
 
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Page-only styles (nur Layout/FAQ, ohne Eingriff in dein globales CSS) -->
+  <!-- Page-only styles: nur für Angebot-Layout (3 kleine Kacheln in einer Reihe auf Desktop) -->
   <style>
-    .angebot-grid{
+    .angebot-quickgrid{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-      align-items:start;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+      margin-top:16px;
     }
     @media (max-width: 980px){
-      .angebot-grid{ grid-template-columns: 1fr; }
+      .angebot-quickgrid{ grid-template-columns: 1fr; }
     }
 
-    .angebot-aside{ display:grid; gap:14px; }
+    .angebot-list{
+      margin:10px 0 0;
+      padding-left:18px;
+    }
+    .angebot-list li{ margin:6px 0; }
 
-    .angebot-price{
-      display:flex;
+    .angebot-faq{
+      display:grid;
       gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
       margin-top:10px;
     }
-    .angebot-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(20,20,20,.10);
-      background:#fbf8f2;
-      color:#1b1b1b;
-      font-weight:700;
-      font-size:14px;
-      white-space:nowrap;
-    }
-    .angebot-badge small{ font-weight:600; color:rgba(0,0,0,.55); }
-
-    .angebot-faq{ margin-top:18px; display:grid; gap:10px; }
-    .angebot-faq details{
+    details{
       background:#fbf8f2;
       border:1px solid rgba(20,20,20,.10);
       border-radius:12px;
       padding:12px 14px;
     }
-    .angebot-faq summary{
+    summary{
       cursor:pointer;
       font-weight:800;
       color:#1b1b1b;
       list-style:none;
     }
-    .angebot-faq summary::-webkit-details-marker{ display:none; }
-    .angebot-faq p{ margin:10px 0 0; color:rgba(0,0,0,.55); }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin:10px 0 0; color:rgba(0,0,0,.55); }
+
+    /* jeśli masz globalne .ctaRow, to tego nie ruszamy; to tylko zabezpieczenie */
+    @media (max-width: 768px){
+      .ctaRow{
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+      }
+      .ctaRow .btn{ width:100%; text-align:center; }
+    }
   </style>
 </head>
 
@@ -93,133 +89,139 @@
       </header>
     </section>
 
-    <!-- Pink band + Content -->
+    <!-- PINK BAND: ma być „pasem”, a nie tłem do końca strony (kontrolujesz go CSS-em przez ::before) -->
     <section class="fullbleed pink-band">
-      <div class="container space-xl reveal">
+      <div class="container space-xl reveal" style="max-width: 980px;">
 
-        <div class="angebot-grid">
+        <!-- BIAŁY KAFEL NA RÓŻOWYM PASIE -->
+        <section class="card" aria-label="Reiki Angebot">
+          <div class="eyebrow">REIKI SITZUNG</div>
+          <h2 style="margin-top:6px;">Reiki in Karlsruhe &amp; Pfinztal</h2>
 
-          <!-- Hauptinhalt -->
-          <section class="card" aria-label="Reiki Angebot">
-            <div class="eyebrow">REIKI SITZUNG</div>
-            <h2 style="margin-top:6px;">Reiki in Karlsruhe &amp; Pfinztal</h2>
+          <p>
+            Reiki als ruhige, bewusste Begleitung – für Menschen aus <strong>Karlsruhe</strong>, <strong>Pfinztal</strong> und Umgebung,
+            die Stress abbauen, besser schlafen und wieder mehr innere Ruhe, Klarheit und Stabilität im Alltag finden möchten.
+          </p>
 
-            <p>
-              Reiki als ruhige, bewusste Begleitung – für Menschen aus <strong>Karlsruhe</strong>, <strong>Pfinztal</strong> und Umgebung,
-              die Stress abbauen, besser schlafen und wieder mehr innere Ruhe, Klarheit und Stabilität im Alltag finden möchten.
+          <p class="muted" style="margin: 0;">
+            Meine Reiki-Arbeit richtet sich an Menschen, die viel tragen, funktionieren – und wieder bei sich ankommen wollen.
+            Im Mittelpunkt stehen Wahrnehmung, Regulation und ein ehrlicher, ruhiger Prozess.
+          </p>
+
+          <div class="ctaRow" style="margin-top:16px;">
+            <a class="btn btn-primary" href="kontakt.html#booking">Termin anfragen</a>
+            <a class="btn btn-ghost" href="worum.html">Mehr Infos: Worum es geht</a>
+          </div>
+        </section>
+
+        <!-- 3 KAFELKI POD HERO (na desktop w jednym rzędzie) -->
+        <div class="angebot-quickgrid">
+          <div class="card">
+            <div class="eyebrow">KURZ &amp; KLAR</div>
+            <p class="muted" style="margin:0;">
+              Reiki in Karlsruhe &amp; Pfinztal – für mehr Ruhe, Balance und Klarheit im Alltag.
             </p>
+          </div>
 
-            <p class="muted">
-              Meine Reiki-Arbeit richtet sich an Menschen, die viel tragen, funktionieren – und wieder bei sich ankommen wollen.
-              Im Mittelpunkt stehen Wahrnehmung, Regulation und ein ehrlicher, ruhiger Prozess.
+          <div class="card">
+            <div class="eyebrow">RAHMEN</div>
+            <p class="muted" style="margin:0;">
+              Ca. 60 Minuten · Einzeltermine · 80–100 €
             </p>
+          </div>
 
-            <div class="card" style="margin-top:16px;">
-              <div class="eyebrow">WAS DICH ERWARTET</div>
-              <ul style="margin:10px 0 0; padding-left:18px;">
-                <li>ein geschützter, ruhiger Raum</li>
-                <li>achtsame Präsenz ohne Bewertung</li>
-                <li>Zeit zum Ankommen, Nachspüren und Innehalten</li>
-                <li>Unterstützung bei innerer Unruhe, Stress und emotionaler Überforderung</li>
-                <li>mehr Klarheit im Umgang mit Grenzen, Beziehungen und Verantwortung</li>
-              </ul>
-            </div>
-
-            <div class="card" style="margin-top:14px;">
-              <div class="eyebrow">FÜR WEN ES SINNVOLL SEIN KANN</div>
-              <ul style="margin:10px 0 0; padding-left:18px;">
-                <li>bei innerer Unruhe, Anspannung oder Erschöpfung</li>
-                <li>wenn Gedanken nicht zur Ruhe kommen</li>
-                <li>bei stressigen Lebensphasen oder emotionalen Umbrüchen</li>
-                <li>für Eltern, die wieder klarer und ruhiger präsent sein möchten</li>
-                <li>für Menschen, die bewusst und respektvoll mit sich arbeiten wollen</li>
-              </ul>
-            </div>
-
-            <div class="card" style="margin-top:14px;">
-              <div class="eyebrow">ABLAUF &amp; RAHMEN</div>
-              <ul style="margin:10px 0 0; padding-left:18px;">
-                <li>Einzeltermine nach Vereinbarung</li>
-                <li>Dauer: ca. 60 Minuten (inkl. kurzem Vorgespräch + Zeit zum Nachspüren)</li>
-                <li>Ort: ruhige, geschützte Umgebung (Karlsruhe &amp; Pfinztal)</li>
-              </ul>
-            </div>
-
-            <div class="card" style="margin-top:14px;">
-              <div class="eyebrow">KOSTEN</div>
-              <div class="angebot-price">
-                <div class="angebot-badge">80 – 100 € <small>/ ca. 60 Minuten</small></div>
-                <div class="angebot-badge"><small>Rahmen:</small> nach Dauer &amp; individuellem Setting</div>
-              </div>
-              <p class="muted" style="margin-top:10px;">
-                Wenn du unsicher bist, ob Reiki gerade passt: Schreib mir kurz. Ich antworte ruhig und ohne Druck.
-              </p>
-            </div>
-
-            <div class="card" style="margin-top:14px;">
-              <div class="eyebrow">FAQ</div>
-              <div class="angebot-faq">
-                <details>
-                  <summary>Wie wirkt Reiki?</summary>
-                  <p>Reiki kann helfen, Stress abzubauen, innere Ruhe zu fördern und Klarheit im Alltag zu unterstützen – ohne Versprechen und in deinem Tempo.</p>
-                </details>
-                <details>
-                  <summary>Wie lange dauert eine Sitzung?</summary>
-                  <p>In der Regel ca. 60 Minuten inklusive kurzem Vorgespräch und Zeit zum Nachspüren.</p>
-                </details>
-                <details>
-                  <summary>Muss ich an etwas glauben?</summary>
-                  <p>Nein. Wichtig ist nur, dass du dir Raum gibst und wahrnimmst, was sich zeigt.</p>
-                </details>
-                <details>
-                  <summary>Wo findet die Sitzung statt?</summary>
-                  <p>In ruhiger Umgebung in Karlsruhe &amp; Pfinztal. Die Details klären wir individuell.</p>
-                </details>
-              </div>
-            </div>
-
-            <div class="ctaRow" style="margin-top:16px;">
-              <a class="btn btn-primary" href="kontakt.html#booking">Termin anfragen</a>
-              <a class="btn btn-ghost" href="worum.html">Mehr Infos: Worum es geht</a>
-            </div>
-          </section>
-
-          <!-- Sidebar -->
-          <aside class="angebot-aside" aria-label="Kurzinfos">
-            <div class="card">
-              <div class="eyebrow">KURZ &amp; KLAR</div>
-              <p class="muted" style="margin:0;">
-                Reiki in Karlsruhe &amp; Pfinztal – für mehr Ruhe, Balance und Klarheit im Alltag.
-              </p>
-            </div>
-
-            <div class="card">
-              <div class="eyebrow">RAHMEN</div>
-              <p class="muted" style="margin:0;">
-                Ca. 60 Minuten · Einzeltermine · 80–100 €
-              </p>
-            </div>
-
-            <div class="card">
-              <div class="eyebrow">HINWEIS</div>
-              <p class="muted" style="margin:0;">
-                Begleitend – kein Ersatz für ärztliche oder psychotherapeutische Diagnose/Behandlung.
-              </p>
-            </div>
-
-            <div class="card">
-              <div class="eyebrow">NÄCHSTER SCHRITT</div>
-              <p class="muted" style="margin:0 0 12px;">
-                Wenn du magst, schreib mir 2–3 Sätze zu deiner Situation. Ich melde mich respektvoll zurück.
-              </p>
-              <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                <a class="btn btn-primary" href="kontakt.html#booking">Kontakt aufnehmen</a>
-                <a class="btn btn-ghost" href="ueber-mich.html">Über mich</a>
-              </div>
-            </div>
-          </aside>
-
+          <div class="card">
+            <div class="eyebrow">HINWEIS</div>
+            <p class="muted" style="margin:0;">
+              Begleitend – kein Ersatz für ärztliche oder psychotherapeutische Diagnose/Behandlung.
+            </p>
+          </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- AB HIER: normalne tło (jak na innych podstronach) -->
+    <section class="container space-xl reveal">
+      <div class="stack" style="display:grid; gap:16px; max-width: 980px; margin: 0 auto;">
+
+        <div class="card">
+          <div class="eyebrow">WAS DICH ERWARTET</div>
+          <ul class="angebot-list">
+            <li>ein geschützter, ruhiger Raum</li>
+            <li>achtsame Präsenz ohne Bewertung</li>
+            <li>Zeit zum Ankommen, Nachspüren und Innehalten</li>
+            <li>Unterstützung bei innerer Unruhe, Stress und emotionaler Überforderung</li>
+            <li>mehr Klarheit im Umgang mit Grenzen, Beziehungen und Verantwortung</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">FÜR WEN REIKI SINNVOLL SEIN KANN</div>
+          <ul class="angebot-list">
+            <li>bei innerer Unruhe, Anspannung oder Erschöpfung</li>
+            <li>wenn Gedanken nicht zur Ruhe kommen</li>
+            <li>bei stressigen Lebensphasen oder emotionalen Umbrüchen</li>
+            <li>für Eltern, die wieder klarer und ruhiger präsent sein möchten</li>
+            <li>für Menschen, die bewusst und respektvoll mit sich arbeiten wollen</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">ABLAUF &amp; RAHMEN</div>
+          <ul class="angebot-list">
+            <li>Einzeltermine nach Vereinbarung</li>
+            <li>Dauer: ca. 60 Minuten (inkl. kurzem Vorgespräch + Zeit zum Nachspüren)</li>
+            <li>Ort: ruhige, geschützte Umgebung (Karlsruhe &amp; Pfinztal)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">KOSTEN</div>
+          <p style="margin:0;">
+            <strong>80–100 €</strong> · <span class="muted">ca. 60 Minuten</span>
+          </p>
+          <p class="muted" style="margin:10px 0 0;">
+            Der genaue Rahmen hängt von Dauer und Setting ab. Wenn du unsicher bist: schreib mir kurz – ohne Druck.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">FAQ</div>
+
+          <div class="angebot-faq">
+            <details>
+              <summary>Wie wirkt Reiki?</summary>
+              <p>Reiki kann begleitend unterstützen, Stress zu regulieren und mehr innere Ruhe zu finden – ohne Versprechen und in deinem Tempo.</p>
+            </details>
+            <details>
+              <summary>Wie lange dauert eine Sitzung?</summary>
+              <p>In der Regel ca. 60 Minuten inklusive kurzem Vorgespräch und Zeit zum Nachspüren.</p>
+            </details>
+            <details>
+              <summary>Muss ich an etwas glauben?</summary>
+              <p>Nein. Wichtig ist nur, dass du dir Raum gibst und wahrnimmst, was sich zeigt.</p>
+            </details>
+            <details>
+              <summary>Wo findet die Sitzung statt?</summary>
+              <p>In ruhiger Umgebung in Karlsruhe &amp; Pfinztal. Die Details klären wir individuell.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">NÄCHSTER SCHRITT</div>
+          <h2 style="margin-bottom:8px;">Wenn du Reiki in Karlsruhe oder Pfinztal suchst</h2>
+          <p class="muted" style="margin-top:0;">
+            Schreib mir gern 2–3 Sätze zu deiner Situation. Ich melde mich respektvoll zurück – ohne Druck.
+          </p>
+
+          <div class="ctaRow" style="margin-top:12px;">
+            <a class="btn btn-primary" href="kontakt.html#booking">Kontakt aufnehmen</a>
+            <a class="btn btn-ghost" href="ueber-mich.html">Über mich</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
