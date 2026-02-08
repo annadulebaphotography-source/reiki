@@ -1113,5 +1113,14 @@ body[data-page="angebot"] .pink-band > * {
 body[data-page="angebot"] .pink-band { position:relative; background:transparent !important; }
 body[data-page="angebot"] .pink-band::before { content:""; position:absolute; top:0; left:0; width:100%; height:clamp(220px,32vw,360px); background:#f3e3e6; z-index:0; }
 body[data-page="angebot"] .pink-band > * { position:relative; z-index:1; }
+/* Angebot – podciągamy treść bliżej nagłówka */
+body[data-page="angebot"] .pink-band .container{
+  padding-top: 24px !important;
+}
+
+/* jeśli nadal jest za nisko – dodatkowo */
+body[data-page="angebot"] .pink-band{
+  margin-top: -40px;
+}
 
 
