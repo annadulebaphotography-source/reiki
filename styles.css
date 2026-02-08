@@ -1219,6 +1219,11 @@ body[data-page="ueber-mich"] section{
   padding-top: clamp(48px, 6vw, 72px);
   padding-bottom: clamp(48px, 6vw, 72px);
 }
+/* Über mich – zmniejszenie różowego tła o ~35% */
+body[data-page="ueber-mich"] section.container{
+  padding-top: clamp(40px, 4vw, 70px) !important;
+  padding-bottom: clamp(40px, 4vw, 70px) !important;
+}
 
 
 
