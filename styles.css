@@ -1075,5 +1075,17 @@ body.page-angebot .pink-band {
   padding-bottom: 64px !important;
   margin-top: 40px !important;
 }
+/* === Angebot: H1 nie może wchodzić pod header === */
+body[data-page="angebot"] main{
+  padding-top: 140px !important;
+}
+
+/* === Angebot: różowy pas MUSI być widoczny === */
+body[data-page="angebot"] .pink-band,
+body[data-page="angebot"] .fullbleed-pink-band{
+  background:#f3e6e8 !important;
+  padding: 80px 0 !important;
+  margin-top: 40px !important;
+}
 
 
