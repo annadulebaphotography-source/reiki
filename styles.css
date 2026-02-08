@@ -1208,6 +1208,20 @@ body[data-page="worum"] h1,
 body[data-page="worum"] h2{
   scroll-margin-top: 180px;
 }
+/* =========================================================
+   REAL FIX: page title hidden under sticky header
+   Targets the actual title block, not main
+========================================================= */
+
+/* Worum */
+body[data-page="worum"] h1{
+  margin-top: 140px !important;
+}
+
+/* Über mich */
+body[data-page="ueber-mich"] h1{
+  margin-top: 140px !important;
+}
 
 
 
