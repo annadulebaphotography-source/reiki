@@ -575,29 +575,3 @@ main{
 /* =========================================================
    END
 ========================================================= */
-/* =========================================================
-   PATCH: pages with .site-header-overlay
-   Fixes cut titles on "Worum" and "Über mich"
-========================================================= */
-
-/* 1) If some pages still use .site-header-overlay in HTML,
-      make it behave like normal sticky header (not absolute). */
-.site-header-overlay{
-  position: sticky !important;
-  top: 0;
-  z-index: 9999;
-  background: rgba(246,242,234,.92);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(6px);
-}
-
-/* 2) IMPORTANT: with sticky header we do NOT need global main padding.
-      It caused extra gaps on pages that were already OK. */
-main{
-  padding-top: 0 !important;
-}
-
-/* 3) Safety: keep room for anchors / headings when you jump on-page */
-h1, h2{
-  scroll-margin-top: calc(var(--header-h) + 16px);
-}
