@@ -1224,6 +1224,10 @@ body[data-page="ueber-mich"] section.container{
   padding-top: clamp(40px, 4vw, 70px) !important;
   padding-bottom: clamp(40px, 4vw, 70px) !important;
 }
+/* DEBUG: pokaż mi, co ma padding i tło */
+body[data-page="ueber-mich"] .section-head { outline: 3px solid red !important; }
+body[data-page="ueber-mich"] .container { outline: 3px solid blue !important; }
+body[data-page="ueber-mich"] section { outline: 3px solid lime !important; }
 
 
 
