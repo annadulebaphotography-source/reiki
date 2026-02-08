@@ -1087,5 +1087,28 @@ body[data-page="angebot"] .fullbleed-pink-band{
   padding: 80px 0 !important;
   margin-top: 40px !important;
 }
+/* === Angebot: pink band o kontrolowanej grubości === */
+body[data-page="angebot"] .pink-band {
+  position: relative;
+  background: transparent !important;
+}
+
+/* wizualny pas */
+body[data-page="angebot"] .pink-band::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(220px, 32vw, 360px); /* TU kontrolujesz grubość */
+  background: #f3e3e6;
+  z-index: 0;
+}
+
+/* content ma być nad pasem */
+body[data-page="angebot"] .pink-band > * {
+  position: relative;
+  z-index: 1;
+}
 
 
