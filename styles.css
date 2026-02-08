@@ -1063,5 +1063,17 @@ body.page-worum main{
 .section-head {
   margin-bottom: clamp(24px, 6vw, 48px);
 }
+/* === FORCE FIX: Titel nie chowa się pod headerem === */
+body.page-angebot main {
+  padding-top: 120px !important;
+}
+
+/* === FORCE FIX: różowy pas widoczny i z oddechem === */
+body.page-angebot .pink-band {
+  background: #f3e3e6 !important;
+  padding-top: 64px !important;
+  padding-bottom: 64px !important;
+  margin-top: 40px !important;
+}
 
 
