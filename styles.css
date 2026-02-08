@@ -981,8 +981,11 @@ body[data-page="ueber-mich"] section.fullbleed.pink-band{
 }
 
 body[data-page="ueber-mich"] .space-xl{
-  padding-top:120px !important;   /* żeby "Über mich" nie było ucięte */
-  padding-bottom:70px !important;
+ body[data-page="ueeber-mich"] .space-xl{
+  padding-top: 78px !important;
+  padding-bottom: 45px !important;
+}
+
 }
 
 /* ZABIJAMY różowe tło na kafelku, bo pasek ma być różowy, a kafelek czysty */
