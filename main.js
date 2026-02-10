@@ -74,3 +74,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 })();
+fetch("content.json")
+  .then(response => response.json())
+  .then(content => {
+
+    // WORUM
+    if (document.body.dataset.page === "worum") {
+      const worum = content.worum;
+
+      if (worum) {
+        const h1 = document.getElementById("worum-h1");
+        const intro = document.getElementById("worum-intro");
+        const text1 = document.getElementById("worum-text1");
+        const text2 = document.getElementById("worum-text2");
+
+        if (h1) h1.textContent = worum.h1;
+        if (intro) intro.textContent = worum.intro;
+        if (text1) text1.textContent = worum.text1;
+        if (text2) text2.textContent = worum.text2;
+      }
+    }
+
+  })
+  .catch(err => console.error("Content JSON error:", err));
