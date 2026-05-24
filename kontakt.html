@@ -191,15 +191,15 @@
   <!-- Nagłówek strony (zamiast hero zdjęcia) -->
   <header class="page-top">
     <div class="page-kicker">REIKI · KARLSRUHE &amp; PFINZTAL</div>
-    <h1 class="page-title">Kontakt</h1>
-    <p class="page-sub">Ruhig erklärt. Ohne Druck. Ohne Versprechen.</p>
+    <h1 class="page-title" data-cms="heroTitle">Kontakt</h1>
+    <p class="page-sub" data-cms="heroText">Ruhig erklärt. Ohne Druck. Ohne Versprechen.</p>
   </header>
 
   <div class="wrap">
 
     <section class="card">
-      <h2>Reiki-Termin direkt reservieren</h2>
-      <p>Wähle einen freien Termin (<strong>Mo &amp; Mi, 17:00–19:00</strong>).</p>
+      <h2 data-cms="bookingTitle">Reiki-Termin direkt reservieren</h2>
+      <p data-cms="bookingText">Wähle einen freien Termin (<strong>Mo &amp; Mi, 17:00–19:00</strong>).</p>
 
       <div id="reikiBookingLoader" class="bookingLoader">
         ⏳ Bitte einen Moment… die freien Termine werden geladen.
@@ -217,8 +217,8 @@
     </section>
 
     <main class="card">
-      <h2>Nachricht senden</h2>
-      <p>Schreib mir kurz, was gerade wichtig für dich ist. Ich antworte ruhig, klar und ohne Druck.</p>
+      <h2 data-cms="messageTitle">Nachricht senden</h2>
+      <p data-cms="messageText">Schreib mir kurz, was gerade wichtig für dich ist. Ich antworte ruhig, klar und ohne Druck.</p>
 
       <div class="hint">
         <strong>Hinweis:</strong> Wenn du magst, nenn direkt 1–2 Terminvorschläge (Wochentag/Uhrzeit).<br>
@@ -266,6 +266,8 @@
   </div>
 
   <script src="main.js"></script>
+<script type="module" src="content.js"></script>
+<script type="module" src="admin.js"></script>
 
   <!-- booking loader (BEZ ZMIAN FUNKCJI) -->
   <script>
