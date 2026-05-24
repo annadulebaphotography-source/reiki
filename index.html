@@ -10,11 +10,10 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="page-home">
+<body class="page-home" data-page="home">
 
 <!-- ✅ Header (Burger/Menu) wird per main.js geladen -->
 <div id="site-header" class="site-header-overlay"></div>
-
 <main>
   <section class="sig-strip">
 <div class="container sig-grid reveal">
@@ -22,12 +21,12 @@
 <div class="sig-brand">
 <img class="sig-sign" src="Reiki-unterschrift.png" alt="Anna Duleba – Reiki Unterschrift">
 
-<p class="sig-sub">
+<p class="sig-sub" data-cms="signatureText">
 Reiki in Karlsruhe &amp; Pfinztal — ruhige, klare Begleitung.
 </p>
 
 <div class="sig-cta">
-<a class="btn btn-primary" href="kontakt.html#booking">Termin anfragen</a>
+<a class="btn btn-primary" href="kontakt.html#booking" data-cms="buttonText">Termin anfragen</a>
 <a class="btn btn-ghost" href="angebot.html">Angebot ansehen</a>
 </div>
 </div>
@@ -40,26 +39,26 @@ Reiki in Karlsruhe &amp; Pfinztal — ruhige, klare Begleitung.
 </section>
 <section class="container space-xl reveal">
 <header class="section-head">
-<h1 class="hero-anna__title">Mehr Ruhe im Kopf. Mehr Sicherheit im Körper.</h1>
+<h1 class="hero-anna__title" data-cms="heroTitle">Mehr Ruhe im Kopf. Mehr Sicherheit im Körper.</h1>
 
-<p class="muted">
+<p class="muted" data-cms="heroText">
 Reiki begleitet dich sanft zurück in deine innere Stabilität – mit Klarheit, Respekt und in deinem Tempo.
 Du musst nichts „leisten“. Du darfst ankommen.
 </p>
 </header>
 
 <div class="stack" style="display:grid; gap:18px; max-width:900px;">
-<p>
+<p data-cms="introText1">
 Vielleicht kennst du das: Im Kopf ist es ständig laut, Entscheidungen werden schwer, der Körper bleibt in Alarmbereitschaft.
 Reiki kann dich dabei unterstützen, dein Nervensystem zu beruhigen, dich wieder besser zu spüren und deine Grenzen klarer wahrzunehmen.
 </p>
 
-<p>
+<p data-cms="introText2">
 Meine Begleitung ist ruhig und konkret. Kein Druck, keine Überforderung.
 Wir arbeiten mit dem, was da ist – Schritt für Schritt. Ziel ist nicht „perfekt funktionieren“, sondern mehr Stabilität, Selbstkontakt und innere Klarheit.
 </p>
 
-<p>
+<p data-cms="introText3">
 Reiki ersetzt keine medizinische oder psychotherapeutische Behandlung – kann aber eine sehr wertvolle, ergänzende Unterstützung sein,
 besonders in stressigen Lebensphasen, bei innerer Unruhe, emotionaler Erschöpfung oder wenn du wieder mehr bei dir ankommen möchtest.
 </p>
@@ -80,9 +79,9 @@ besonders in stressigen Lebensphasen, bei innerer Unruhe, emotionaler Erschöpfu
 <div class="hero-anna__text">
 <p class="hero-anna__eyebrow">REIKI • KARLSRUHE &amp; PFINZTAL</p>
 
-<h1 class="hero-anna__title">Ankommen. Durchatmen. Wieder bei dir sein.</h1>
+<h1 class="hero-anna__title" data-cms="secondHeroTitle">Ankommen. Durchatmen. Wieder bei dir sein.</h1>
 
-<p class="hero-anna__lead">
+<p class="hero-anna__lead" data-cms="secondHeroText">
 Reiki begleitet dich sanft zurück in deine innere Stabilität – mit Klarheit, Respekt und in deinem Tempo.
 Du musst nichts leisten. Du darfst ankommen.
 </p>
@@ -102,12 +101,11 @@ Du musst nichts leisten. Du darfst ankommen.
 <div class="media"><img src="reiki1%20(2).png" alt="Reiki Begleitung"></div>
 <div class="card">
   <div class="eyebrow">REIKI • BEGLEITUNG</div>
-  <h2>Reiki Session in Karlsruhe & Pfinztal – Termin jetzt anfragen.</h2>
-  <p>
+  <h2 data-cms="sessionTitle">Reiki Session in Karlsruhe & Pfinztal – Termin jetzt anfragen.</h2>
+  <p data-cms="sessionText">
     Eine ruhige 1:1 Reiki-Session in geschützter Atmosphäre – zum Loslassen, Regulieren und Wieder-bei-dir-Ankommen. Sanft, klar und ohne Druck.
 </p>
-  </p>
-  <a class="btn btn-primary" href="kontakt.html#booking">Termin anfragen</a>
+  <a class="btn btn-primary" href="kontakt.html#booking" data-cms="buttonText">Termin anfragen</a>
 </div>
 </article>
 
@@ -136,6 +134,7 @@ Du musst nichts leisten. Du darfst ankommen.
 </main>
 
 <script src="main.js"></script>
-
+<script type="module" src="content.js"></script>
+<script type="module" src="admin.js"></script>
 </body>
 </html>
