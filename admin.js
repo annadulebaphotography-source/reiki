@@ -1,7 +1,7 @@
 import { auth, updateDoc, setDoc, onAuthStateChanged } from "./firebase.js";
 import { pageRef } from "./content.js";
 
-const ADMIN_EMAILS = ["annadulebaphotography@gmail.com"];
+const ADMIN_EMAILS = ["annaduleba.reiki@gmail.com", "annadulebaphotography@gmail.com"];
 
 function isAdmin(user) {
   if (!user?.email) return false;

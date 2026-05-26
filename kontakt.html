@@ -154,6 +154,32 @@
 
     .fineprint{font-size:13px; color:var(--muted); margin-top:10px}
 
+    .contactDetails{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+    .contactDetail{
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,.72);
+    }
+    .contactDetail strong{
+      display:block;
+      margin-bottom:4px;
+      color:var(--text);
+      font-size:13px;
+    }
+    .contactDetail a{
+      color:var(--accent-strong);
+      text-decoration:none;
+      overflow-wrap:anywhere;
+    }
+    .contactDetail a:hover{text-decoration:underline;}
+    @media (max-width:780px){ .contactDetails{grid-template-columns:1fr;} }
+
     /* Honeypot */
     .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
 
@@ -210,6 +236,27 @@
   </header>
 
   <div class="wrap">
+
+    <section class="card">
+      <h2>Direkter Kontakt</h2>
+      <p>Wenn du eine Frage hast oder lieber direkt schreiben möchtest, erreichst du mich hier:</p>
+
+      <div class="contactDetails">
+        <div class="contactDetail">
+          <strong>Telefon</strong>
+          <a href="tel:+4915705785865">01570 5785865</a>
+        </div>
+        <div class="contactDetail">
+          <strong>E-Mail</strong>
+          <a href="mailto:annaduleba.reiki@gmail.com">annaduleba.reiki@gmail.com</a>
+        </div>
+        <div class="contactDetail">
+          <strong>Adresse</strong>
+          Friedhofstr. 10<br>
+          75045 Walzbachtal
+        </div>
+      </div>
+    </section>
 
     <section class="card">
       <h2 data-cms="bookingTitle">Reiki-Termin direkt reservieren</h2>
