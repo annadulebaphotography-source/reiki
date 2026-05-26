@@ -151,7 +151,8 @@ a{color:inherit}
 .nav-container {
   max-width:1100px;
   margin:auto;
-  padding:15px 20px;
+  min-height:104px;
+  padding:18px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -166,7 +167,7 @@ a{color:inherit}
 
 .nav-logo{
   display:block;
-  width:170px;
+  width:230px;
   height:auto;
 }
 
@@ -194,9 +195,17 @@ a{color:inherit}
 
 @media(max-width:800px){
 
+.nav-container {
+  min-height:84px;
+}
+
+.nav-logo{
+  width:178px;
+}
+
 .nav {
   position:absolute;
-  top:65px;
+  top:84px;
   left:0;
   right:0;
   background:white;
@@ -455,15 +464,110 @@ body{
   margin-bottom: 14px;
 }
 
-.reiki-hero-motion{
+.hero-poppy-wrapper{
+  position:absolute;
+  left:max(-170px, calc(50% - 700px));
+  top:clamp(36px, 7vw, 70px);
+  z-index:1;
+  width:clamp(210px, 22vw, 340px);
+  pointer-events:none;
+  opacity:.34;
+  mix-blend-mode:multiply;
+}
+
+.poppy-artwork{
+  display:block;
+  width:100%;
+  height:auto;
+  opacity:.28;
+  transform-origin:bottom center;
+  will-change:transform;
+  animation:poppySway 18s ease-in-out infinite alternate;
+}
+
+.seed{
+  position:absolute;
+  top:31%;
+  left:65%;
+  width:3px;
+  height:3px;
+  border-radius:50%;
+  background:rgba(90, 75, 70, .13);
+  opacity:0;
+  filter:blur(.2px);
+  will-change:transform, opacity;
+}
+
+.seed::after{
+  content:"";
   position:absolute;
   inset:0;
-  z-index:1;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  opacity:.95;
-  mix-blend-mode:multiply;
+  border-radius:50%;
+  border:.5px solid rgba(90, 75, 70, .08);
+}
+
+.seed-1{ animation: drift1 13s linear infinite; animation-delay:0s; }
+.seed-2{ animation: drift2 15s linear infinite; animation-delay:2.2s; }
+.seed-3{ animation: drift3 14s linear infinite; animation-delay:4.4s; }
+.seed-4{ animation: drift4 18s linear infinite; animation-delay:1.2s; }
+.seed-5{ animation: drift5 16s linear infinite; animation-delay:6s; }
+.seed-6{ animation: drift6 19s linear infinite; animation-delay:3.4s; }
+.seed-7{ animation: drift7 14s linear infinite; animation-delay:7.5s; }
+.seed-8{ animation: drift8 21s linear infinite; animation-delay:9s; }
+
+@keyframes poppySway{
+  0%{ transform:rotate(-.45deg) translate3d(0,0,0); }
+  50%{ transform:rotate(.25deg) translate3d(1px,-1px,0); }
+  100%{ transform:rotate(.55deg) translate3d(0,1px,0); }
+}
+
+@keyframes drift1{
+  0%{ transform:translate3d(0,0,0) scale(.72); opacity:0; }
+  18%{ opacity:.12; }
+  72%{ opacity:.045; }
+  100%{ transform:translate3d(118px,-42px,0) scale(1); opacity:0; }
+}
+@keyframes drift2{
+  0%{ transform:translate3d(0,0,0) scale(.65); opacity:0; }
+  14%{ opacity:.10; }
+  100%{ transform:translate3d(98px,-26px,0) scale(.92); opacity:0; }
+}
+@keyframes drift3{
+  0%{ transform:translate3d(0,0,0) scale(.56); opacity:0; }
+  18%{ opacity:.105; }
+  100%{ transform:translate3d(142px,-38px,0) scale(1); opacity:0; }
+}
+@keyframes drift4{
+  0%{ transform:translate3d(0,0,0) scale(.7); opacity:0; }
+  20%{ opacity:.085; }
+  100%{ transform:translate3d(156px,-58px,0) scale(.95); opacity:0; }
+}
+@keyframes drift5{
+  0%{ transform:translate3d(0,0,0) scale(.62); opacity:0; }
+  22%{ opacity:.09; }
+  100%{ transform:translate3d(88px,-66px,0) scale(.9); opacity:0; }
+}
+@keyframes drift6{
+  0%{ transform:translate3d(0,0,0) scale(.58); opacity:0; }
+  16%{ opacity:.07; }
+  100%{ transform:translate3d(170px,-34px,0) scale(.95); opacity:0; }
+}
+@keyframes drift7{
+  0%{ transform:translate3d(0,0,0) scale(.52); opacity:0; }
+  12%{ opacity:.09; }
+  100%{ transform:translate3d(136px,-18px,0) scale(.85); opacity:0; }
+}
+@keyframes drift8{
+  0%{ transform:translate3d(0,0,0) scale(.6); opacity:0; }
+  20%{ opacity:.06; }
+  100%{ transform:translate3d(190px,-52px,0) scale(.96); opacity:0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .poppy-artwork,
+  .seed{
+    animation:none !important;
+  }
 }
 
 .sig-sub{
@@ -658,6 +762,12 @@ body{
   .tiles{ grid-template-columns: 1fr; }
   .split, .split-reverse{ grid-template-columns: 1fr; }
   .split-reverse .media, .split-reverse .card{ order: initial; }
+  .hero-poppy-wrapper{
+    left:-122px;
+    top:32px;
+    width:230px;
+    opacity:.24;
+  }
 }
 /* =========================
    ANNA REIKI – PREMIUM UI
