@@ -64,6 +64,31 @@ function initAdminLoader() {
   });
 }
 
+function initPoppySeeds() {
+  const fields = document.querySelectorAll("[data-seed-field]");
+  if (!fields.length) return;
+
+  fields.forEach((field) => {
+    if (field.dataset.ready === "true") return;
+    field.dataset.ready = "true";
+
+    const count = window.matchMedia("(max-width: 720px)").matches ? 18 : 28;
+    for (let i = 0; i < count; i += 1) {
+      const seed = document.createElement("span");
+      seed.className = "poppy-seed";
+      seed.style.setProperty("--x", `${42 + Math.random() * 46}%`);
+      seed.style.setProperty("--y", `${12 + Math.random() * 42}%`);
+      seed.style.setProperty("--size", `${1.6 + Math.random() * 3.8}px`);
+      seed.style.setProperty("--drift-x", `${-16 + Math.random() * 42}px`);
+      seed.style.setProperty("--drift-y", `${48 + Math.random() * 96}px`);
+      seed.style.setProperty("--duration", `${18 + Math.random() * 16}s`);
+      seed.style.setProperty("--delay", `${Math.random() * -24}s`);
+      seed.style.setProperty("--opacity", `${0.16 + Math.random() * 0.22}`);
+      field.appendChild(seed);
+    }
+  });
+}
+
 /* ✅ REVEAL */
 function initReveal() {
   const items = document.querySelectorAll(".reveal");
@@ -83,6 +108,7 @@ function initReveal() {
 
 document.addEventListener("DOMContentLoaded", async () => {
   initAdminLoader();
+  initPoppySeeds();
 
   try {
     await loadPart("#site-header", "/header.html");

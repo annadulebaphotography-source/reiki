@@ -268,27 +268,8 @@ a{color:inherit}
   .flowers-bl{ left: -80px; bottom: -90px; }
   .flowers-tr{ right: -80px; top: -90px; }
 }
-/* ===== KWIATKI NA SAMYM DOLE STRONY ===== */
-
 body{
   position:relative;
-}
-
-body::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:420px; /* wysokość kwiatków */
-  background:url("flowers.png") center bottom / contain no-repeat;
-  filter:opacity(40%);
-  pointer-events:none;
-  opacity:0.9;
-}
-.flowers{
-  opacity:0.4;
-  pointer-events:none;
 }
 .hero-bg {
   animation: slowFloat 25s ease-in-out infinite;
@@ -874,6 +855,168 @@ body{
 }
 .page-home main{
   padding-top: 64px;
+}
+
+/* Reiki hero branding: separate artwork, signature and seed layers */
+.reiki-brand-hero{
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+  min-height: clamp(560px, 68vw, 760px);
+  padding: clamp(76px, 9vw, 130px) 0 clamp(70px, 8vw, 120px) !important;
+  background:
+    radial-gradient(circle at 24% 38%, rgba(236, 220, 210, .74), transparent 34%),
+    linear-gradient(135deg, #fbfaf7 0%, #f2e6e2 48%, #eee1db 100%);
+  border: 0;
+}
+
+.reiki-brand-hero::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:38%;
+  background:linear-gradient(180deg, rgba(251,250,248,0), var(--bg) 92%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.reiki-brand-hero__inner{
+  position:relative;
+  z-index:3;
+  min-height: clamp(430px, 48vw, 590px);
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+.reiki-brand-hero__content{
+  width:min(560px, 58vw);
+  margin-left:auto;
+  padding: clamp(16px, 3vw, 30px) 0;
+}
+
+.reiki-brand-hero__signature{
+  display:block;
+  width:min(520px, 100%);
+  height:auto;
+  margin:0 0 16px;
+  opacity:.94;
+  filter: contrast(1.02);
+}
+
+.reiki-brand-hero .sig-sub{
+  max-width:42ch;
+  color:rgba(76, 65, 58, .72);
+}
+
+.reiki-brand-hero__art{
+  position:absolute;
+  z-index:1;
+  left:max(-84px, calc(50% - 660px));
+  bottom:clamp(-120px, -8vw, -62px);
+  width:clamp(390px, 45vw, 650px);
+  height:clamp(560px, 62vw, 790px);
+  pointer-events:none;
+}
+
+.reiki-brand-hero__pods{
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:auto;
+  opacity:.52;
+  transform-origin:48% 92%;
+  will-change:transform, opacity;
+  animation:poppySway 16s ease-in-out infinite;
+}
+
+.poppy-seed-field{
+  position:absolute;
+  inset:0;
+  overflow:visible;
+  z-index:2;
+  transform:translateZ(0);
+}
+
+.poppy-seed{
+  position:absolute;
+  left:var(--x);
+  top:var(--y);
+  width:var(--size);
+  height:calc(var(--size) * .72);
+  border:1px solid rgba(112, 96, 88, .44);
+  border-radius:50%;
+  background:rgba(245, 238, 231, .45);
+  opacity:var(--opacity);
+  transform:translate3d(0,0,0) rotate(12deg);
+  will-change:transform, opacity;
+  animation:poppySeedDrift var(--duration) ease-in-out var(--delay) infinite;
+}
+
+@keyframes poppySway{
+  0%,100%{ transform:translate3d(0,0,0) rotate(-.45deg); opacity:.50; }
+  50%{ transform:translate3d(8px,-8px,0) rotate(.65deg); opacity:.58; }
+}
+
+@keyframes poppySeedDrift{
+  0%{ transform:translate3d(0,0,0) rotate(4deg); opacity:0; }
+  16%{ opacity:var(--opacity); }
+  62%{ opacity:calc(var(--opacity) * .78); }
+  100%{ transform:translate3d(var(--drift-x), var(--drift-y), 0) rotate(96deg); opacity:0; }
+}
+
+@media (max-width: 860px){
+  .reiki-brand-hero{
+    min-height: 620px;
+    padding-top: 104px !important;
+  }
+
+  .reiki-brand-hero__inner{
+    align-items:flex-end;
+    justify-content:center;
+    min-height:500px;
+  }
+
+  .reiki-brand-hero__content{
+    width:min(560px, 92vw);
+    text-align:center;
+  }
+
+  .reiki-brand-hero__signature{
+    width:min(430px, 88vw);
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .reiki-brand-hero .sig-sub{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .reiki-brand-hero .sig-cta{
+    justify-content:center;
+  }
+
+  .reiki-brand-hero__art{
+    left:50%;
+    bottom:118px;
+    width:min(78vw, 430px);
+    height:min(112vw, 590px);
+    transform:translateX(-58%);
+    opacity:.78;
+  }
+
+  .poppy-seed{
+    opacity:calc(var(--opacity) * .72);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .reiki-brand-hero__pods,
+  .poppy-seed{
+    animation:none !important;
+  }
 }
 /* === cleanup hero: remove mini label + tiny preview === */
 
