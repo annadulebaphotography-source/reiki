@@ -15,6 +15,12 @@ function initBurger() {
   });
 }
 
+function setFooterYear() {
+  document.querySelectorAll("#y").forEach((el) => {
+    el.textContent = new Date().getFullYear();
+  });
+}
+
 async function loadPart(selector, url) {
   const el = document.querySelector(selector);
   if (!el) return;
@@ -23,6 +29,39 @@ async function loadPart(selector, url) {
   if (!res.ok) throw new Error(`Kann nicht geladen werden: ${url} (${res.status})`);
 
   el.innerHTML = await res.text();
+}
+
+function shouldLoadAdminTools() {
+  const params = new URLSearchParams(window.location.search);
+  return ["localhost", "127.0.0.1"].includes(window.location.hostname) ||
+    params.has("admin") ||
+    window.localStorage.getItem("showCmsLogin") === "1";
+}
+
+async function loadAdminTools() {
+  if (document.querySelector('script[data-admin-tools="true"]')) return;
+
+  await import("./content.js");
+
+  const script = document.createElement("script");
+  script.type = "module";
+  script.src = "/admin.js";
+  script.dataset.adminTools = "true";
+  document.body.appendChild(script);
+}
+
+function initAdminLoader() {
+  if (shouldLoadAdminTools()) {
+    window.localStorage.setItem("showCmsLogin", "1");
+    loadAdminTools().catch((error) => console.error("Admin tools failed:", error));
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.altKey && event.key.toLowerCase() === "a") {
+      window.localStorage.setItem("showCmsLogin", "1");
+      loadAdminTools().catch((error) => console.error("Admin tools failed:", error));
+    }
+  });
 }
 
 /* ✅ REVEAL */
@@ -43,13 +82,15 @@ function initReveal() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  initAdminLoader();
+
   try {
-    // ✅ W folderze /reiki/ muszą być ścieżki RELATYWNE
-    await loadPart("#site-header", "header.html");
-    await loadPart("#site-footer", "footer.html");
+    await loadPart("#site-header", "/header.html");
+    await loadPart("#site-footer", "/footer.html");
 
     initBurger();
     initReveal();
+    setFooterYear();
   } catch (e) {
     console.error(e);
   }

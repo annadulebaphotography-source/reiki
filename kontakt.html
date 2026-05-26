@@ -178,6 +178,20 @@
       box-shadow:0 10px 30px rgba(0,0,0,.08);
     }
     @media (max-width:780px){ .bookingFrame{height:1120px;} }
+    .bookingConsent{
+      display:grid;
+      gap:12px;
+      margin:10px 0 14px;
+      padding:16px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.75);
+      color:var(--muted);
+      font-size:14px;
+    }
+    .bookingConsent p{margin:0;}
+    .bookingConsent .btn{width:max-content;}
+    @media (max-width:780px){ .bookingConsent .btn{width:100%;} }
   </style>
 </head>
 
@@ -202,16 +216,22 @@
       <p data-cms="bookingText">Wähle einen freien Termin (<strong>Mo &amp; Mi, 17:00–19:00</strong>).</p>
 
       <div id="reikiBookingLoader" class="bookingLoader">
-        ⏳ Bitte einen Moment… die freien Termine werden geladen.
+        Die Terminbuchung wird erst nach deiner Bestätigung geladen.
+      </div>
+
+      <div id="reikiBookingConsent" class="bookingConsent">
+        <p>Für die direkte Reservierung wird ein externer Buchungsdienst über Google Apps Script geladen. Vor deiner Bestätigung wird keine Verbindung dorthin hergestellt.</p>
+        <button class="btn" type="button" id="loadBooking">Terminbuchung laden</button>
       </div>
 
       <iframe
         id="reikiBookingFrame"
         class="bookingFrame"
-        src="https://script.google.com/macros/s/AKfycbw3a7x4GxXUAHhyZthon0DOaDQTbns65ArRJ0T67vIVRkZdRE-DH4R3tiFgg_uZGNOpcw/exec"
+        data-src="https://script.google.com/macros/s/AKfycbw3a7x4GxXUAHhyZthon0DOaDQTbns65ArRJ0T67vIVRkZdRE-DH4R3tiFgg_uZGNOpcw/exec"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="Reiki – Termin reservieren"></iframe>
+        title="Reiki – Termin reservieren"
+        hidden></iframe>
 
       <p class="fineprint">Nach der Reservierung melde ich mich persönlich mit allen Details.</p>
     </section>
@@ -266,33 +286,43 @@
   </div>
 
   <script src="main.js"></script>
-<script type="module" src="content.js"></script>
-<script type="module" src="admin.js"></script>
 
-  <!-- booking loader (BEZ ZMIAN FUNKCJI) -->
+  <!-- booking loader: opt-in before external Google Apps Script iframe -->
   <script>
     (function(){
       const frame = document.getElementById("reikiBookingFrame");
       const loader = document.getElementById("reikiBookingLoader");
-      if(!frame || !loader) return;
+      const consent = document.getElementById("reikiBookingConsent");
+      const button = document.getElementById("loadBooking");
+      if(!frame || !loader || !consent || !button) return;
 
-      const base = frame.getAttribute("src") || "";
+      const base = frame.dataset.src || "";
       if(!base || base === "URL_IFRAME"){
-        loader.innerHTML = "⚠️ Konfiguration fehlt: Bitte setze den korrekten Buchungs-Link im iframe (src).";
+        loader.textContent = "Konfiguration fehlt: Bitte setze den korrekten Buchungs-Link.";
         return;
       }
 
-      try{
-        const u = new URL(base);
-        u.searchParams.set("v", Date.now().toString());
-        frame.src = u.toString();
-      }catch(e){}
+      function loadBooking(){
+        consent.hidden = true;
+        loader.textContent = "Bitte einen Moment... die freien Termine werden geladen.";
+        frame.hidden = false;
+
+        try{
+          const u = new URL(base);
+          u.searchParams.set("v", Date.now().toString());
+          frame.src = u.toString();
+        }catch(e){
+          frame.src = base;
+        }
+
+        window.localStorage.setItem("bookingOptIn", "1");
+      }
+
+      button.addEventListener("click", loadBooking);
 
       frame.addEventListener("load", () => {
         loader.style.display = "none";
       }, { once:true });
-
-      setTimeout(() => loader.style.display = "none", 12000);
     })();
   </script>
 
