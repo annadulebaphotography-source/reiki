@@ -3,6 +3,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
+  signInWithRedirect,
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -28,13 +29,17 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const provider = new GoogleAuthProvider();
-export { doc, getDoc, setDoc, updateDoc, onAuthStateChanged, signInWithPopup, signOut };
+export { doc, getDoc, setDoc, updateDoc, onAuthStateChanged, signInWithPopup, signInWithRedirect, signOut };
 
 window.loginGoogle = async function () {
   try {
     await signInWithPopup(auth, provider);
   } catch (error) {
     console.error(error);
+    if (error?.code === "auth/popup-blocked" || error?.code === "auth/cancelled-popup-request") {
+      await signInWithRedirect(auth, provider);
+      return;
+    }
     alert(error.message);
   }
 };
