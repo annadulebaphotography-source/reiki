@@ -31,6 +31,10 @@ async function loadPart(selector, url) {
   el.innerHTML = await res.text();
 }
 
+function prepareAdminLogin() {
+  import("./firebase.js").catch((error) => console.error("Admin login failed:", error));
+}
+
 function shouldLoadAdminTools() {
   const params = new URLSearchParams(window.location.search);
   return ["localhost", "127.0.0.1"].includes(window.location.hostname) ||
@@ -60,6 +64,8 @@ async function loadAdminTools(options = {}) {
 }
 
 function initAdminLoader() {
+  prepareAdminLogin();
+
   if (shouldLoadAdminTools()) {
     window.localStorage.setItem("showCmsLogin", "1");
     loadAdminTools().catch((error) => console.error("Admin tools failed:", error));
@@ -67,8 +73,10 @@ function initAdminLoader() {
 
   document.addEventListener("keydown", (event) => {
     if (event.ctrlKey && event.altKey && event.key.toLowerCase() === "a") {
+      event.preventDefault();
       window.localStorage.setItem("showCmsLogin", "1");
-      loadAdminTools({ login: true }).catch((error) => console.error("Admin tools failed:", error));
+      window.loginGoogle?.();
+      loadAdminTools().catch((error) => console.error("Admin tools failed:", error));
     }
   });
 }
