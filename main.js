@@ -38,16 +38,25 @@ function shouldLoadAdminTools() {
     window.localStorage.getItem("showCmsLogin") === "1";
 }
 
-async function loadAdminTools() {
-  if (document.querySelector('script[data-admin-tools="true"]')) return;
+async function loadAdminTools(options = {}) {
+  if (document.querySelector('script[data-admin-tools="true"]')) {
+    if (options.login) window.loginGoogle?.();
+    return;
+  }
 
   await import("./content.js");
 
-  const script = document.createElement("script");
-  script.type = "module";
-  script.src = "/admin.js";
-  script.dataset.adminTools = "true";
-  document.body.appendChild(script);
+  await new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.type = "module";
+    script.src = "/admin.js";
+    script.dataset.adminTools = "true";
+    script.addEventListener("load", resolve, { once: true });
+    script.addEventListener("error", reject, { once: true });
+    document.body.appendChild(script);
+  });
+
+  if (options.login) window.loginGoogle?.();
 }
 
 function initAdminLoader() {
@@ -59,7 +68,7 @@ function initAdminLoader() {
   document.addEventListener("keydown", (event) => {
     if (event.ctrlKey && event.altKey && event.key.toLowerCase() === "a") {
       window.localStorage.setItem("showCmsLogin", "1");
-      loadAdminTools().catch((error) => console.error("Admin tools failed:", error));
+      loadAdminTools({ login: true }).catch((error) => console.error("Admin tools failed:", error));
     }
   });
 }
